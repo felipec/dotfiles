@@ -1,0 +1,13 @@
+[database]
+path=/home/felipec/mail
+
+[user]
+name=Felipe Contreras
+primary_email=felipe.contreras@nokia.com
+other_email=felipe.contreras@gmail.com;
+
+[new]
+tags=unread;inbox;
+
+[maildir]
+sync_level=4
