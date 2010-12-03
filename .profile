@@ -5,3 +5,5 @@ export EDITOR="gvim --nofork"
 
 # export DEBFULLNAME="Felipe Contreras" DEBEMAIL="felipe.contreras@gmail.com"
 # export DEBFULLNAME="Maemo Multimedia" DEBEMAIL="multimedia@maemo.org"
+
+export DESKTOP_SESSION=gnome
