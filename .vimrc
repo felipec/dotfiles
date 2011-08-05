@@ -7,29 +7,11 @@ filetype plugin indent on
 
 set incsearch
 set nobackup
-set gfn=Inconsolata\ 12
+set guifont=Monospace\ 8
 set hi=1000
 set diffopt=filler
 
 colorscheme felipec
-
-if has("cscope")
-	set cscopetag
-	set cscopequickfix=s-,c-,d-,i-,t-,e-
-	set nocscopeverbose
-
-	" set nocscopeverbose
-	" cs add /home/felipec/cscope/cscope.out
-	" set cscopeverbose
-	nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-	nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-	nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-	nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-	nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-	nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-	nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-	nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-endif
 
 au! BufRead,BufNewFile ~/.mutt/* setfiletype muttrc
 au! BufRead,BufNewFile *msn-pecan/*.[ch] source ~/.vim/after/ftplugin/c-old.vim
@@ -41,3 +23,26 @@ au! BufRead,BufNewFile *userspace-dspbridge/*.[ch] source ~/.vim/after/ftplugin/
 
 au! BufRead,BufNewFile *.vala setfiletype vala
 au! BufRead,BufNewFile *.vapi setfiletype vala
+
+if has("cscope")
+    set cscopetag cscopeverbose
+
+    nmap <C-Space>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-Space>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-Space>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-Space>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-Space>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-Space>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+    nmap <C-Space>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <C-Space>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+    nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+    nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+
+endif
