@@ -10,4 +10,4 @@ other_email=felipe.contreras@gmail.com;
 tags=unread;inbox;
 
 [maildir]
-sync_level=4
+synchronize_flags=true

@@ -13,6 +13,7 @@ set ssl_verify_host = no
 
 set move = no
 set reverse_alias = yes
+set sort = threads
 
 ignore x- list- precedence: in-reply-to delivered-to errors-to
 ignore domainkey-signature thread-

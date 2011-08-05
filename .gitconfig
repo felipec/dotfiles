@@ -1,32 +1,35 @@
 [color]
 	ui = auto
 [alias]
+	s = show
 	c = commit
 	r = reset
-        br = branch
+	d = describe --tags
+        b = branch
         rb = rebase
         co = checkout
         st = status
         pi = cherry-pick
         mt = mergetool
         h = help
+	l = log --oneline --decorate
         lc = log ORIG_HEAD.. --stat --no-merges
-	l = log --oneline --decorate --graph
+	lg = log --oneline --decorate --graph
 [merge]
 	tool = gvimdiff
+	defaulttoupstream = true
 [mergetool]
 	prompt = false
 [core]
-        excludesfile = /home/felipec/.gitignore
-[push]
-        default = current
+	excludesfile = /home/felipec/.gitignore
 [sendemail]
 	aliasesfile = /home/felipec/.mutt/aliases
-        aliasfiletype = mutt
+	aliasfiletype = mutt
 	chainreplyto = false
 	confirm = auto
 	smtpserver = /usr/bin/msmtp
-        envelopesender = "auto"
+	envelopesender = auto
+	specifyauthor = false
 [user]
 	name = Felipe Contreras
 	email = felipe.contreras@gmail.com
