@@ -1,29 +1,33 @@
-fpath=( ~/.zsh $fpath )
+autoload -U compinit && compinit
+autoload -U colors && colors
 
-zstyle ':completion:*' completer _complete
-zstyle :compinstall filename '/home/felipec/.zshrc'
-zstyle ':completion:*' special-dirs true
-
-autoload -Uz compinit
-compinit
-
-autoload -U colors
-colors
-
-# autoload bashcompinit
-# bashcompinit
+autoload -U bashcompinit && bashcompinit
+source ~/.git-completion.sh
 
 HISTFILE=~/.histfile
-SAVEHIST=100000
-HISTSIZE=10000
+SAVEHIST=1000000
+HISTSIZE=1000000
+HISTIGNORE="ls:[bf]g:exit:reset:clear:cd *"
+
+# PS1='%m:%~%# '
+PS1='%m:%~$(__git_ps1 "[%%F{5}%s%%f]")%# '
 
 # setopt append_history
-setopt hist_ignore_all_dups
+setopt hist_ignore_space
 setopt hist_no_store
 setopt hist_reduce_blanks
+setopt hist_ignore_dups
 setopt hist_verify
 setopt complete_in_word
 setopt inc_append_history
+
+setopt auto_cd
+setopt correct
+setopt prompt_subst
+
+zshaddhistory() {
+	print -r -- "${1%%$'\n'} ### ${PWD}" >> ~/.histstat || true
+}
 
 bindkey -e
 bindkey "\e[3~" delete-char
@@ -31,26 +35,19 @@ bindkey "\e[2~" quoted-insert
 bindkey "\eOH" beginning-of-line
 bindkey "\eOF" end-of-line
 
-bindkey ' ' magic-space # also do history expansion on space
-bindkey '^I' complete-word # complete on tab, leave expansion to _expand
+bindkey "\e[5~" history-beginning-search-backward
+bindkey "\e[6~" history-beginning-search-forward
 
-# History completion on pgup and pgdown
-autoload -U history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "\e[5~" history-beginning-search-backward-end
-bindkey "\e[6~" history-beginning-search-forward-end
+hash -d data=/data
+hash -d src=/data/src
+hash -d dev=/data/dev
+hash -d home=/data/felipec
+hash -d todo=/data/felipec/todo
+hash -d notes=/data/felipec/notes
 
-hash -d data=/data/public
-hash -d src=/data/public/src
-hash -d dev=/data/public/dev
-hash -d home=/data/public/felipec
-hash -d todo=/data/public/felipec/todo
-hash -d notes=/data/public/felipec/notes
-
-hash -d private=/data/private
-hash -d gst-dsp=/data/public/dev/omap/gst-dsp
-hash -d pecan=/data/public/dev/msn/msn-pecan
+hash -d private=/private
+hash -d gst-dsp=/data/dev/omap/gst-dsp
+hash -d pecan=/data/dev/msn/msn-pecan
 hash -d sb_home="/opt/scratchbox/users/felipec/home/felipec"
 
 alias gitg=/opt/gitg/bin/gitg
@@ -58,18 +55,27 @@ alias gp=~/bin/gst-player
 alias e=/opt/epris/bin/epr
 alias xo=xdg-open
 
-alias mv=mv -i
-alias l=ls
-alias ll=ls -l
+alias v="gvim"
+alias mv="mv -i"
+alias l="ls"
+alias ll="ls -l"
+alias g="git"
+alias gka="gk --all"
 
-alias devh=devhelp -s
+alias devh="devhelp -s"
 
 case $TERM in
-    xterm*)
-        precmd () { print -Pn "\e]0;%n@%m: %~\a" }
-        ;;
+	xterm*)
+		precmd () { print -Pn "\e]0;${TITLE:-%m: %~}\a" }
+		;;
 esac
 
-qf () {
- 	flasher -f --flash-only=nolo,kernel,rootfs -F "$@"
+function gk()
+{
+	gitk $* &
+}
+
+function title()
+{
+	TITLE=$*
 }
