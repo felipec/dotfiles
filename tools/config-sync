@@ -1,0 +1,5 @@
+#!/bin/sh
+
+git ls-files | while read f; do
+  cmp -s {.,~}/"$f" || gvimdiff {.,~}/"$f"
+done
