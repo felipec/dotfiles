@@ -5,15 +5,15 @@
 	c = commit
 	r = reset
 	d = describe --tags
-        b = branch
-        rb = rebase
-        co = checkout
-        st = status
-        pi = cherry-pick
-        mt = mergetool
-        h = help
+	b = branch
+	rb = rebase
+	co = checkout
+	st = status
+	pi = cherry-pick
+	mt = mergetool
+	h = help
 	l = log --oneline --decorate
-        lc = log ORIG_HEAD.. --stat --no-merges
+	lc = log ORIG_HEAD.. --stat --no-merges
 	lg = log --oneline --decorate --graph
 [merge]
 	tool = gvimdiff
