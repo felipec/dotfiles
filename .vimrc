@@ -23,6 +23,7 @@ au! BufRead,BufNewFile *userspace-dspbridge/*.[ch] source ~/.vim/after/ftplugin/
 
 au! BufRead,BufNewFile *.vala setfiletype vala
 au! BufRead,BufNewFile *.vapi setfiletype vala
+au! BufRead,BufNewFile *.json setfiletype json
 
 if has("cscope")
     set cscopetag cscopeverbose
