@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+
+remote_name = ARGV[0]
+
+remote = {}
+`git ls-remote --heads #{remote_name}`.each do |l|
+  id, ref = l.chomp.split("\t")
+  ref.gsub!("refs/heads/", "")
+  remote[ref] = id
+end
+
+local = {}
+`git show-ref --heads`.each do |l|
+  id, ref = l.chomp.split(" ")
+  ref.gsub!("refs/heads/", "")
+  local[ref] = id
+end
+
+todo = []
+
+# only remote
+remote.reject { |k, v| local.has_key?(k) }.each do |k, v|
+  todo << ":#{k}"
+end
+
+# only local
+local.reject { |k, v| remote.has_key?(k) }.each do |k, v|
+  todo << "#{k}"
+end
+
+# both
+remote.reject { |k, v| not local.has_key?(k) }.each do |k, v|
+  next if local[k] == remote[k]
+  todo << "#{k}"
+end
+
+exit if todo.empty?
+
+cmd = "git push -f #{remote_name} #{todo.join(" ")}"
+puts cmd
+# system cmd
