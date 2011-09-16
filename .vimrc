@@ -13,6 +13,8 @@ set diffopt=filler
 
 colorscheme felipec
 
+set fo=tcqn
+
 au! BufRead,BufNewFile ~/.mutt/* setfiletype muttrc
 au! BufRead,BufNewFile *msn-pecan/*.[ch] source ~/.vim/after/ftplugin/c-old.vim
 au! BufRead,BufNewFile *notmuch/*.[ch] source ~/.vim/after/ftplugin/c-nmm.vim
