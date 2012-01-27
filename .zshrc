@@ -15,6 +15,10 @@ HISTIGNORE="ls:[bf]g:exit:reset:clear:cd *"
 # PS1='%m:%~%# '
 PS1='%m:%~$(__git_ps1 "[%%F{5}%s%%f]")%# '
 
+eval $(dircolors -b)
+
+zstyle ':completion:*' list-colors ''
+
 # setopt append_history
 setopt hist_ignore_space
 setopt hist_no_store
@@ -58,6 +62,9 @@ alias gp=~/bin/gst-player
 alias e=/opt/epris/bin/epr
 alias xo=xdg-open
 
+alias ls="ls --color=auto"
+alias grep='grep --color=auto'
+
 alias v="gvim"
 alias mv="mv -i"
 alias l="ls"
@@ -83,3 +90,5 @@ function title()
 {
 	TITLE=$*
 }
+
+compdef _git gk=gitk
