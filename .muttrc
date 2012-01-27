@@ -1,7 +1,7 @@
 set realname = "Felipe Contreras"
 alternates "felipe.contreras@".*
 
-set sendmail = "/usr/bin/msmtp"
+set sendmail = "msmtp"
 set envelope_from = yes
 
 source ~/.mutt/profiles/local
