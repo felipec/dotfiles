@@ -25,6 +25,7 @@
 	prompt = false
 [core]
 	excludesfile = /home/felipec/.gitignore
+	pager = less -FRSX
 [sendemail]
 	aliasesfile = /home/felipec/.mutt/aliases
 	aliasfiletype = mutt
