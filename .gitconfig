@@ -15,6 +15,9 @@
 	l = log --oneline --decorate
 	lc = log ORIG_HEAD.. --stat --no-merges
 	lg = log --oneline --decorate --graph
+	bg = bisect good
+	bb = bisect bad
+	bs = bisect skip
 [merge]
 	tool = gvimdiff
 	defaulttoupstream = true
