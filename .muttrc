@@ -1,5 +1,5 @@
 set realname = "Felipe Contreras"
-alternates "felipe.contreras@".*
+alternates "felipe.contreras@".* "felipec@felipec.org"
 
 set sendmail = "msmtp"
 set envelope_from = yes
