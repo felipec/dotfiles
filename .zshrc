@@ -1,8 +1,11 @@
+fpath=(~/.zsh/completion $fpath)
+
 autoload -U compinit && compinit
 autoload -U colors && colors
 
-autoload -U bashcompinit && bashcompinit
-source ~/.git-completion.sh
+source ~/.git-prompt.sh
+
+zstyle ':completion:*:*:git:*' script ~/.git-completion.sh
 
 HISTFILE=~/.histfile
 SAVEHIST=1000000
