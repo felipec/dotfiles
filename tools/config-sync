@@ -1,5 +1,6 @@
 #!/bin/sh
 
 git ls-files | while read f; do
+  [[ "$f" == tools/* ]] && continue
   cmp -s {.,~}/"$f" || gvimdiff {.,~}/"$f"
 done
