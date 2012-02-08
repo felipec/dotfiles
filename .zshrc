@@ -61,6 +61,7 @@ alias l="ls"
 alias ll="ls -l"
 alias g="git"
 alias gka="gk --all"
+alias gkb="gk --branches ^master"
 
 alias devh="devhelp -s"
 
