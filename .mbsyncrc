@@ -1,0 +1,22 @@
+Expunge None
+Create Both
+SyncState *
+
+MaildirStore local
+Path ~/mail/gmail/
+Trash Trash
+Inbox ~/mail/gmail/INBOX
+
+IMAPStore gmail
+Host imap.gmail.com
+User felipe.contreras@gmail.com
+Pass password
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+UseIMAPS yes
+
+Channel Gmail
+Master :gmail:
+Slave :local:
+Pattern INBOX gst-dsp msn-pecan libscrobbler family git notmuch
+Expunge Both
+Sync Pull Push
