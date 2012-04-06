@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'json'
+
+out = `notmuch show --format=json #{ARGV.join(" ")}`
+r = JSON.parse(out, :max_nesting => 100)
+
+def dump_msg(m, l)
+  fn = m[0]["filename"]
+  system("cat #{fn} | formail -s nokiaformat >> out")
+  m[1].each do |e|
+    dump_msg(e, l + 1)
+  end
+end
+
+r[0].each do |e|
+  dump_msg(e, 0)
+end

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+echo "Importing new mail"
+
+notmuch new
+
+echo "Running global tag additions to tag new mail"
+
+notmuch tag +bugs from:bugzilla-daemon and not tag:bugs and tag:inbox
+notmuch tag +to-me to:felipe.contreras and not tag:to-me and not tag:bugs and tag:inbox
+notmuch tag +sent -inbox -unread from:felipe.contreras and not tag:sent and tag:inbox
+
+echo "Done"

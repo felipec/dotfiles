@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+
+@maildir = ENV['HOME'] + "/mail"
+
+system 'notmuch new'
+
+`notmuch search --output=files tag:delete`.each_line do |fn|
+  fn.chomp!
+  short = fn[@maildir.size + 1 .. -1]
+  if not File.exists?(fn)
+    puts "bad file #{fn}"
+    next
+  end
+  puts "rm #{short}"
+  FileUtils.rm(fn)
+end
+
+system 'notmuch new'
+
+`notmuch search --output=files not tag:inbox`.each_line do |fn|
+  fn.chomp!
+  short = fn[@maildir.size + 1 .. -1]
+  if short =~ /inbox.*?\//
+    if not File.exists?(fn)
+      puts "bad file #{fn}"
+      next
+    end
+    puts "mv #{short}"
+    new = fn.gsub(/inbox.*?\//, 'archive/')
+    FileUtils.mv(fn, new)
+  end
+end
+
+system 'notmuch new'
