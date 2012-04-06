@@ -2,5 +2,10 @@
 
 git ls-files | while read f; do
   [[ "$f" == tools/* ]] && continue
-  cmp -s {.,~}/"$f" || gvimdiff {.,~}/"$f"
+  if [[ -e ~/"$f" ]]
+  then
+    cmp -s {.,~}/"$f" || gvimdiff {.,~}/"$f"
+  else
+    install -D ./"$f" ~/"$f"
+  fi
 done
