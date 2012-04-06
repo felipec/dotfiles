@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+@authors = {}
+
+def parse_blame(line)
+  key, value = line.split(" ", 2)
+  case key
+  when "author"
+    @name = value
+  when "author-mail"
+    @mail = value
+    author = "\"#{@name}\" #{@mail}"
+    @authors[author] = true
+  end
+end
+
+ARGV.each do |filename|
+  patch_file = File.open(filename)
+  patch_file.each_line do |patch_line|
+    case patch_line
+    when /^---\s+(\S+)/
+      @source = $1[2..-1]
+    when /^@@\s-(\d+),(\d+)/
+      blame = `git blame -p -L #{$1},+#{$2} #{@source} | grep author`
+      blame.each_line { |l| parse_blame(l.chomp) }
+    end
+  end
+end
+
+@authors.each_key do |a|
+  puts a
+end
