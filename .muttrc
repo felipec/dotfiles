@@ -30,3 +30,4 @@ source ~/.mutt/color
 source ~/.mutt/aliases
 
 bind index "^" imap-fetch-mail
+auto_view text/html
