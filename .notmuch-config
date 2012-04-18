@@ -7,7 +7,4 @@ primary_email=felipe.contreras@nokia.com
 other_email=felipe.contreras@gmail.com;
 
 [new]
-tags=unread;inbox;
-
-[maildir]
-synchronize_flags=true
+ignore=.mbsyncstate;.uidvalidity;
