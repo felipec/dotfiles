@@ -1,5 +1,5 @@
 [database]
-path=/media/felipec/mail
+path=/run/media/felipec/felipec/mail
 
 [user]
 name=Felipe Contreras
