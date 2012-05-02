@@ -1,2 +1,10 @@
 #!/bin/sh
-gvim -c ':NotMuch'
+
+case ${1-ruby} in
+	normal)
+		gvim -c ':NotMuch'
+		;;
+	ruby)
+		gvim -c ':NotMuchR'
+		;;
+esac
