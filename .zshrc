@@ -52,7 +52,9 @@ hash -d home=/data/felipec
 hash -d todo=/data/felipec/todo
 hash -d notes=/data/felipec/notes
 
-hash -d private=/private
+hash -d key=/run/media/felipec/felipec
+hash -d private=/run/media/felipec/wd_private
+hash -d personal=/run/media/felipec/wd_personal
 hash -d gst-dsp=/data/dev/omap/gst-dsp
 hash -d pecan=/data/dev/msn/msn-pecan
 hash -d sb_home="/opt/scratchbox/users/felipec/home/felipec"
