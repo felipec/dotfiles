@@ -15,16 +15,15 @@ set move = no
 set reverse_alias = yes
 set sort = threads
 
-ignore x- list- precedence: in-reply-to delivered-to errors-to
-ignore domainkey-signature thread-
-ignore mailing-list authentication-results dkim-signature
+ignore *
+unignore from date subject to cc
 
 ## Index
 
 # color header brightblack default ^(From|Subject):
 
 set index_format = "%4C %{%y.%m.%d} %-40.40F %s"
-set attribution = "On %d, %F wrote:"
+set attribution = "%F wrote:"
 
 source ~/.mutt/color
 source ~/.mutt/aliases
