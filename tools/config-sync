@@ -6,6 +6,7 @@ git ls-files | while read f; do
   then
     cmp -s {.,~}/"$f" || gvimdiff {.,~}/"$f"
   else
-    install -D ./"$f" ~/"$f"
+    mkdir -p $(dirname ~/"$f") &&
+    cp -a ./"$f" ~/"$f"
   fi
 done
