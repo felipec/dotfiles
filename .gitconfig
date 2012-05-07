@@ -2,7 +2,7 @@
 	ui = auto
 [alias]
 	s = show
-	c = commit
+	c = commit -v -s
 	r = reset
 	d = describe --tags
 	b = branch
