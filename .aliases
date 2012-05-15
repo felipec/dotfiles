@@ -6,7 +6,7 @@ alias xo=xdg-open
 alias ls="ls --color=auto"
 alias grep='grep --color=auto'
 
-alias v="vim"
+alias v="gvim"
 alias mv="mv -i"
 alias l="ls"
 alias ll="ls -l"
