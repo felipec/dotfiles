@@ -59,34 +59,13 @@ hash -d gst-dsp=/data/dev/omap/gst-dsp
 hash -d pecan=/data/dev/msn/msn-pecan
 hash -d sb_home="/opt/scratchbox/users/felipec/home/felipec"
 
-alias gitg=/opt/gitg/bin/gitg
-alias gp=~/bin/gst-player
-alias e=/opt/epris/bin/epr
-alias xo=xdg-open
-
-alias ls="ls --color=auto"
-alias grep='grep --color=auto'
-
-alias v="vim"
-alias mv="mv -i"
-alias l="ls"
-alias ll="ls -l"
-alias g="git"
-alias gka="gk --all"
-alias gkb="gk --branches ^master"
-
-alias devh="devhelp -s"
+source ~/.aliases
 
 case $TERM in
 	xterm*)
 		precmd () { print -Pn "\e]0;${TITLE:-%m: %~}\a" }
 		;;
 esac
-
-function gk()
-{
-	gitk $* &
-}
 
 function title()
 {
