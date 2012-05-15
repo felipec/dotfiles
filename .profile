@@ -7,3 +7,7 @@ export EDITOR="vim"
 
 # export DEBFULLNAME="Felipe Contreras" DEBEMAIL="felipe.contreras@gmail.com"
 # export DEBFULLNAME="Maemo Multimedia" DEBEMAIL="multimedia@maemo.org"
+
+if test "$PS1" && test "$BASH" && test -r ~/.bashrc; then
+	. ~/.bashrc
+fi
