@@ -1,0 +1,8 @@
+[ui]
+username = Felipe Contrers <felipe.contreras@gmail.com>
+
+[extensions]
+hgk =
+hgext.bookmarks =
+hgext.purge =
+hggit =
