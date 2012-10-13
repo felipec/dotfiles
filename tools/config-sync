@@ -10,3 +10,7 @@ git ls-files | while read f; do
     cp -a ./"$f" ~/"$f"
   fi
 done
+
+# extra
+
+test -f ~/.zprofile || ln -s .profile ~/.zprofile
