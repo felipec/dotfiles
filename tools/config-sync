@@ -7,7 +7,7 @@ git ls-files | while read f; do
     cmp -s {.,~}/"$f" || gvimdiff {.,~}/"$f"
   else
     mkdir -p $(dirname ~/"$f") &&
-    cp -a ./"$f" ~/"$f"
+    cp -av ./"$f" ~/"$f"
   fi
 done
 
