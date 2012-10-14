@@ -1,10 +1,9 @@
 [database]
-path=/run/media/felipec/wd_private/nokia/mail
+path=/run/media/felipec/wd_private/mail
 
 [user]
 name=Felipe Contreras
-primary_email=felipe.contreras@nokia.com
-other_email=felipe.contreras@gmail.com;
+primary_email=felipe.contreras@gmail.com
 
 [new]
 ignore=.mbsyncstate;.uidvalidity;
