@@ -22,6 +22,8 @@ end
 
 current = `uname -r`.chomp
 $versions.delete(current)
+$versions.delete('linux')
+$versions.delete('linux-fallback')
 
 $versions.each_key do |v|
   next if v =~ /\.fc\d+\./ or v =~ /-ARCH$/ or v =~ /\.old$/
