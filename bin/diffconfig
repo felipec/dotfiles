@@ -1,0 +1,65 @@
+#!/usr/bin/env ruby
+
+def readconfig(fn)
+  d = {}
+  File.foreach(fn) do |line|
+    case line
+    when /^CONFIG_(\w+)=(.+)$/
+      key, value = $1, $2
+    when /^# CONFIG_(\w+) is not set$/
+      key, value = $1, 'n'
+    else
+      next
+    end
+    d[key] = value
+  end
+  return d
+end
+
+def print_default(op, config, value, new_value)
+  case op
+  when "-"
+    puts "-%s %s" % [config, value]
+  when "+"
+    puts "+%s %s" % [config, new_value]
+  else
+    puts " %s %s -> %s" % [config, value, new_value]
+  end
+end
+
+def print_normal(op, config, value, new_value)
+  return if not new_value
+  if new_value == "n"
+    puts "# CONFIG_%s is not set" % config
+  else
+    puts "CONFIG_%s=%s" % [config, new_value]
+  end
+end
+
+def print_simple(op, config, value, new_value)
+  return if not new_value
+  puts "CONFIG_%s=%s" % [config, new_value]
+end
+
+@printer = method(:print_default)
+
+a = readconfig(ARGV[0])
+b = readconfig(ARGV[1])
+
+# a not in b
+old = a.keys.reject { |e| b.key?(e) }
+old.sort.each do |e|
+  @printer.call("-", e, a[e], nil)
+end
+
+# changed
+changed = (a.keys & b.keys).reject { |e| a[e] == b[e] }
+changed.sort.each do |e|
+  @printer.call("->", e, a[e], b[e])
+end
+
+# b not in a
+new = b.keys.reject { |e| a.key?(e) }
+new.sort.each do |e|
+  @printer.call("+", e, nil, b[e])
+end
