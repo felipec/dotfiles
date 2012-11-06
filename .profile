@@ -1,4 +1,6 @@
-export PATH="/opt/git/bin:/opt/sb2/bin:/opt/notmuch/bin:/opt/xchat/bin:$HOME/bin:$PATH"
+export PATH="/usr/lib/ccache/bin/:$PATH"
+export PATH="/opt/git/bin:/opt/sb2/bin:/opt/notmuch/bin:/opt/xchat/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 export EMAIL=felipe.contreras@gmail.com
 export EDITOR="vim"
