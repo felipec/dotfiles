@@ -1,8 +1,13 @@
 [ui]
-username = Felipe Contrers <felipe.contreras@gmail.com>
+username = Felipe Contreras <felipe.contreras@gmail.com>
+
+[web]
+cacerts = /etc/ssl/certs/ca-certificates.crt
 
 [extensions]
-hgk =
+hgext.schemes =
 hgext.bookmarks =
 hgext.purge =
+hgk =
 hggit =
+mq =
