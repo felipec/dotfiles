@@ -3,14 +3,14 @@
 remote_name = ARGV[0]
 
 remote = {}
-`git ls-remote --heads #{remote_name}`.each do |l|
+`git ls-remote --heads #{remote_name}`.each_line do |l|
   id, ref = l.chomp.split("\t")
   ref.gsub!("refs/heads/", "")
   remote[ref] = id
 end
 
 local = {}
-`git show-ref --heads`.each do |l|
+`git show-ref --heads`.each_line do |l|
   id, ref = l.chomp.split(" ")
   ref.gsub!("refs/heads/", "")
   local[ref] = id
