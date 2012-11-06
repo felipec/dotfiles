@@ -4,7 +4,7 @@ alternates "felipe.contreras@".* "felipec@felipec.org"
 set sendmail = "msmtp"
 set envelope_from = yes
 
-source ~/.mutt/profiles/local
+source ~/.mutt/profiles/gmail
 
 set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
