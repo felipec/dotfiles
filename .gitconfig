@@ -7,6 +7,8 @@
 	d = describe --tags
 	b = branch
 	rb = rebase
+	rbi = rebase --interactive
+	rbc = rebase --continue
 	co = checkout
 	st = status
 	pi = cherry-pick
@@ -40,3 +42,7 @@
 	email = felipe.contreras@gmail.com
 [receive]
 	denyCurrentBranch = warn
+[push]
+	default = simple
+[url "git@github.com:"]
+	insteadOf = gh:
