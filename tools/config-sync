@@ -1,6 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
-git ls-files | while read f; do
+readarray -t files < <(git ls-files)
+
+for f in "${files[@]}"; do
   [[ "$f" == tools/* ]] && continue
   if [[ -e ~/"$f" ]]
   then
