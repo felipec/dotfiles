@@ -6,7 +6,7 @@ for f in "${files[@]}"; do
   [[ "$f" == tools/* ]] && continue
   if [[ -e ~/"$f" ]]
   then
-    cmp -s {.,~}/"$f" || gvimdiff {.,~}/"$f"
+    cmp -s {.,~}/"$f" || vimdiff {.,~}/"$f"
   else
     mkdir -p $(dirname ~/"$f") &&
     cp -av ./"$f" ~/"$f"
