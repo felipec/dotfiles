@@ -13,6 +13,7 @@
         <value type="int" value="1"/>
         <value type="int" value="7"/>
         <value type="int" value="14"/>
+        <value type="int" value="9"/>
         <value type="int" value="3"/>
         <value type="int" value="15"/>
         <value type="int" value="4"/>
@@ -48,6 +49,11 @@
     <property name="plugin-14" type="string" value="directorymenu">
       <property name="base-directory" type="string" value="/home/felipec"/>
     </property>
-    <property name="plugin-7" type="string" value="separator"/>
+    <property name="plugin-7" type="string" value="separator">
+      <property name="style" type="uint" value="1"/>
+    </property>
+    <property name="plugin-9" type="string" value="windowmenu">
+      <property name="style" type="uint" value="0"/>
+    </property>
   </property>
 </channel>
