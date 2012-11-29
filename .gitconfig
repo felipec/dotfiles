@@ -1,10 +1,11 @@
 [color]
-	ui = auto
+	ui = true
 [alias]
+	d = diff
 	s = show
-	c = commit -v -s
+	c = commit -v
+	p = push
 	r = reset
-	d = describe --tags
 	b = branch
 	rb = rebase
 	rbi = rebase --interactive
@@ -46,3 +47,5 @@
 	default = simple
 [url "git@github.com:"]
 	insteadOf = gh:
+[url "/mnt/personal/"]
+	insteadOf = data:
