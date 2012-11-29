@@ -5,6 +5,7 @@ let g:notmuch_folders = [
 	\ [ 'inbox', 'tag:inbox' ],
 	\ [ 'unread', 'tag:unread' ],
 	\ [ 'to-do', 'tag:to-do' ],
+	\ [ 'git', 'tag:git and tag:unread' ],
 	\ [ 'gst-dsp', 'tag:gst-dsp' ],
 	\ [ 'libscrobbler', 'tag:libscrobbler' ],
 	\ ]
