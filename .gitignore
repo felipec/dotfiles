@@ -48,7 +48,7 @@ abs/
 
 .git-completion.sh
 .git-prompt.sh
-.zsh/completion/_git
+.zsh/_git
 
 .netrc
 .profile
