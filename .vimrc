@@ -8,6 +8,7 @@ filetype plugin indent on
 set incsearch
 set nobackup
 set guifont=Monospace\ 10
+set guioptions=ai
 set hi=1000
 set diffopt=filler
 
