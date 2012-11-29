@@ -10,6 +10,7 @@ zstyle ':completion:*:*:git:*' script ~/.git-completion.sh
 zstyle ':completion:*:descriptions' format '%B%d%b'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu yes=long select
+zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' verbose true
 
 HISTFILE=~/.histfile
@@ -28,7 +29,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 setopt hist_ignore_space
 setopt hist_no_store
 setopt hist_reduce_blanks
-setopt hist_ignore_dups
+setopt hist_ignore_all_dups
 setopt hist_verify
 setopt complete_in_word
 setopt inc_append_history
