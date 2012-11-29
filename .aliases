@@ -22,3 +22,5 @@ alias devh="devhelp -s"
 
 gk() { gitk "$@" & }
 gkb() { gk --branches=$1 ; }
+gkr() { gk --remotes=$1 ; }
+gks() { gk --branches=$1 --simplify-by-decoration ; }
