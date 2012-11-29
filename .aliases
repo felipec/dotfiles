@@ -17,11 +17,8 @@ alias mv="mv -i"
 alias ll="ls -l"
 
 alias gka="gk --all"
-alias gkb="gk --branches ^master"
 
 alias devh="devhelp -s"
 
-function gk()
-{
-	gitk $* &
-}
+gk() { gitk "$@" & }
+gkb() { gk --branches=$1 ; }
