@@ -5,6 +5,7 @@ export PATH="$HOME/bin:$PATH"
 export EMAIL=felipe.contreras@gmail.com
 export EDITOR="vim"
 export LESS=FRSX
+export PYTHON_PATH=/usr/bin/python2
 
 # export DESKTOP_SESSION=gnome
 
