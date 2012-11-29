@@ -1,3 +1,3 @@
-set sw=2
-set ts=2
-set expandtab
+set sw=8
+set ts=8
+set noet
