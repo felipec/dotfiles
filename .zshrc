@@ -7,17 +7,23 @@ source ~/.git-prompt.sh
 
 zstyle ':completion:*:*:git:*' script ~/.git-completion.sh
 
+zstyle ':completion:*:descriptions' format '%B%d%b'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' menu yes=long select
+zstyle ':completion:*' verbose true
+
 HISTFILE=~/.histfile
 SAVEHIST=1000000
 HISTSIZE=1000000
 HISTIGNORE='ls:[bf]g:exit:reset:clear:cd *'
 
 # PS1='%m:%~%# '
-PS1='%m:%~$(__git_ps1 "[%%F{5}%s%%f]")%# '
+PS1='%{$fg_bold[green]%} %# %{$reset_color%}'
+RPS1='%{$fg[white]%}%~$(__git_ps1 "[%%{$fg[yellow]%%}%s%%{$reset_color%%}]") %{$fg_bold[blue]%}%m%{$reset_color%}'
 
 eval $(dircolors -b)
 
-zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 setopt hist_ignore_space
 setopt hist_no_store
@@ -65,7 +71,7 @@ source ~/.aliases
 
 case $TERM in
 xterm*)
-	precmd () { print -Pn "\e]0;${TITLE:-%m: %~}\a" }
+	precmd () { print -Pn "\e]0;${TITLE:-%2~}\a" }
 	;;
 esac
 
