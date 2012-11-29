@@ -10,7 +10,7 @@ zstyle ':completion:*:*:git:*' script ~/.git-completion.sh
 HISTFILE=~/.histfile
 SAVEHIST=1000000
 HISTSIZE=1000000
-HISTIGNORE="ls:[bf]g:exit:reset:clear:cd *"
+HISTIGNORE='ls:[bf]g:exit:reset:clear:cd *'
 
 # PS1='%m:%~%# '
 PS1='%m:%~$(__git_ps1 "[%%F{5}%s%%f]")%# '
@@ -19,7 +19,6 @@ eval $(dircolors -b)
 
 zstyle ':completion:*' list-colors ''
 
-# setopt append_history
 setopt hist_ignore_space
 setopt hist_no_store
 setopt hist_reduce_blanks
@@ -65,13 +64,12 @@ hash -d sb_home="/opt/scratchbox/users/felipec/home/felipec"
 source ~/.aliases
 
 case $TERM in
-	xterm*)
-		precmd () { print -Pn "\e]0;${TITLE:-%m: %~}\a" }
-		;;
+xterm*)
+	precmd () { print -Pn "\e]0;${TITLE:-%m: %~}\a" }
+	;;
 esac
 
-function title()
-{
+function title() {
 	TITLE=$*
 }
 
