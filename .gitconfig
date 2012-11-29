@@ -49,3 +49,5 @@
 	insteadOf = gh:
 [url "/mnt/personal/"]
 	insteadOf = data:
+[rerere]
+	enabled = true
