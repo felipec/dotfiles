@@ -1,4 +1,5 @@
 let g:notmuch_sendmail = 'msmtp'
+let g:notmuch_rb_folders_count_threads = 1
 
 let g:notmuch_folders = [
 	\ [ 'new', 'tag:inbox and tag:unread' ],
@@ -6,6 +7,7 @@ let g:notmuch_folders = [
 	\ [ 'unread', 'tag:unread' ],
 	\ [ 'to-do', 'tag:to-do' ],
 	\ [ 'git', 'tag:git and tag:unread' ],
+	\ [ 'notmuch', 'tag:notmuch and tag:unread' ],
 	\ [ 'gst-dsp', 'tag:gst-dsp' ],
 	\ [ 'libscrobbler', 'tag:libscrobbler' ],
 	\ ]
