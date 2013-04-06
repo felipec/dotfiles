@@ -12,4 +12,6 @@ xset r rate 200 80
 setxkbmap -layout us -variant altgr-intl
 synclient VertEdgeScroll=1
 
+tilda --hidden &
+
 exec startxfce4
