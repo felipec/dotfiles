@@ -9,5 +9,5 @@ hgext.schemes =
 hgext.bookmarks =
 hgext.purge =
 hgk =
-hggit =
 mq =
+hggit =

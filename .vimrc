@@ -16,6 +16,10 @@ colorscheme felipec
 
 set fo=tcqn
 
+if has("gui_running")
+    :set lines=40 columns=120
+endif
+
 au! BufRead,BufNewFile ~/.mutt/* setfiletype muttrc
 au! BufRead,BufNewFile *msn-pecan/*.[ch] source ~/.vim/after/ftplugin/c-old.vim
 au! BufRead,BufNewFile *notmuch/*.[ch] source ~/.vim/after/ftplugin/c-nmm.vim
