@@ -1,0 +1,68 @@
+alignment top_left
+double_buffer yes
+xftfont DejaVu Sans Mono:size=12
+gap_x 20
+gap_y 20
+
+own_window yes
+own_window_class Conky
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent no
+own_window_argb_visual yes
+own_window_argb_value 100
+
+background no
+border_width 1
+cpu_avg_samples 2
+default_color white
+default_outline_color white
+default_shade_color 111
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades yes
+use_xft yes
+minimum_size 1000 1000
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+stippled_borders 0
+update_interval 1.0
+uppercase no
+use_spacer none
+
+TEXT
+$alignc$color $sysname $kernel
+$hr
+${color grey}CPU:$color $cpu% | ${freq_g} GHz | ${acpitemp}°C
+${color 999}${cpugraph 17}
+${voffset -8}
+${color grey}RAM:$color $memperc% ${membar}
+${color grey}Batt:$color ${battery_percent}% ${battery_bar}
+$hr
+${color 999}File systems:
+ ${color grey}root $color${fs_free /} ${fs_bar 6 /}
+ ${color grey}home $color${fs_free /home} ${fs_bar 6 /home}
+ ${color grey}var $color${fs_free /var} ${fs_bar 6 /var}
+ ${color grey}win $color${fs_free /mnt/win} ${fs_bar 6 /mnt/win}
+${voffset -8}
+${color 999}Disk IO:
+${diskiograph /dev/sda 17}
+${font DejaVu Sans Mono:size=10}${color grey}R: $color${diskio_read /dev/sda} $alignr ${color grey}W: $color${diskio_write /dev/sda}
+${font DejaVu Sans Mono:size=12}\
+${if_up wlan0}\
+${voffset -8}
+${color 999}Networking: $color$alignr${wireless_essid wlan0}
+ $color${wireless_link_qual_perc wlan0}% ${wireless_link_bar 4 wlan0}
+ ${color grey}${downspeedgraph wlan0 17,165}  ${upspeedgraph wlan0 17,165}
+ ${font DejaVu Sans Mono:size=10}$color${downspeed wlan0} $alignr ${upspeed wlan0}
+$endif\
+${font DejaVu Sans Mono:size=12}\
+$hr
+${texeci 60 ruby ~/.scripts/notmuch.rb}
+$hr
+${texeci 60 ruby ~/.scripts/gmail.rb}
+$hr
