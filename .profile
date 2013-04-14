@@ -6,11 +6,7 @@ export EMAIL=felipe.contreras@gmail.com
 export EDITOR="vim"
 export LESS=FRSX
 export PYTHON_PATH=/usr/bin/python2
-
-# export DESKTOP_SESSION=gnome
-
-# export DEBFULLNAME="Felipe Contreras" DEBEMAIL="felipe.contreras@gmail.com"
-# export DEBFULLNAME="Maemo Multimedia" DEBEMAIL="multimedia@maemo.org"
+export MAKEFLAGS='-j8'
 
 if test "$PS1" && test "$BASH" && test -r ~/.bashrc; then
 	. ~/.bashrc
