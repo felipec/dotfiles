@@ -1,9 +1,13 @@
 [database]
-path=/run/media/felipec/wd_private/mail
+path=/home/felipec/mail
 
 [user]
 name=Felipe Contreras
 primary_email=felipe.contreras@gmail.com
 
 [new]
+tags=unread;
 ignore=.mbsyncstate;.uidvalidity;
+
+[search]
+exclude_tags=deleted;spam;
