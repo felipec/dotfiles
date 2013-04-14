@@ -39,13 +39,16 @@
 	smtpserver = /usr/bin/msmtp
 	envelopesender = auto
 	specifyauthor = false
+	annotate = true
+[format]
+	coverletter = auto
 [user]
 	name = Felipe Contreras
 	email = felipe.contreras@gmail.com
 [receive]
 	denyCurrentBranch = warn
 [push]
-	default = simple
+	default = current
 [url "git@github.com:"]
 	insteadOf = gh:
 [url "/mnt/personal/"]
