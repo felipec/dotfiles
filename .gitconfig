@@ -21,6 +21,7 @@
 	bg = bisect good
 	bb = bisect bad
 	bs = bisect skip
+	bv = branch -vv
 	current = rev-parse HEAD
 [merge]
 	tool = gvimdiff

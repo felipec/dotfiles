@@ -21,6 +21,5 @@ alias gka="gk --all"
 alias devh="devhelp -s"
 
 gk() { gitk "$@" & }
-gkb() { gk --branches=$1 ; }
-gkr() { gk --remotes=$1 ; }
-gks() { gk --branches=$1 --simplify-by-decoration ; }
+gkm() { gk ^origin/master ${@:-HEAD} ; }
+gkb() { gkm --branches=$1 }
