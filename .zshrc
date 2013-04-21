@@ -7,11 +7,9 @@ source ~/.git-prompt.sh
 
 zstyle ':completion:*:*:git:*' script ~/.git-completion.sh
 
-zstyle ':completion:*:descriptions' format '%B%d%b'
-zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu yes=long select
 zstyle ':completion:*' use-cache yes
-zstyle ':completion:*' verbose true
+zstyle ':completion:*:functions' ignored-patterns '_*'
 
 HISTFILE=~/.histfile
 SAVEHIST=1000000
@@ -36,6 +34,7 @@ setopt inc_append_history
 setopt auto_cd
 setopt correct
 setopt prompt_subst
+setopt auto_param_slash
 
 zshaddhistory() {
 	print -r -- "${1%%$'\n'} ### ${PWD}" >> ~/.histstat || true
