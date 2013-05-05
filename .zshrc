@@ -56,6 +56,7 @@ hash -d home=/data/felipec
 hash -d todo=/data/felipec/todo
 hash -d notes=/data/felipec/notes
 
+hash -d g=~/dev/git
 hash -d mnt=/run/media/felipec
 hash -d key=~mnt/felipec
 hash -d data=~mnt/wd
