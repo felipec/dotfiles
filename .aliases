@@ -22,4 +22,4 @@ alias devh="devhelp -s"
 
 gk() { gitk "$@" & }
 gkm() { gk ^origin/master ${@:-HEAD} ; }
-gkb() { gkm --branches=$1 }
+gkb() { gkm --branches=$1 ; }
