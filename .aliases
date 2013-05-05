@@ -6,7 +6,6 @@ alias e=/opt/epris/bin/epr
 alias xo=xdg-open
 
 alias ls="ls --color=auto"
-alias grep='grep --color=auto'
 
 alias g="git"
 alias m="m"
