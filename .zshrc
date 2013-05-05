@@ -79,4 +79,4 @@ function title() {
 	TITLE=$*
 }
 
-compdef _git gk=gitk
+compdef _git gk=gitk gkm=gitk gkb=gitk
