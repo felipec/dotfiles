@@ -29,10 +29,10 @@
 [mergetool]
 	prompt = false
 [core]
-	excludesfile = /home/felipec/.gitignore
+	excludesfile = ~/.gitignore
 	pager = less -FRSX
 [sendemail]
-	aliasesfile = /home/felipec/.mutt/aliases
+	aliasesfile = ~/.mutt/aliases
 	aliasfiletype = mutt
 	chainreplyto = false
 	confirm = never
