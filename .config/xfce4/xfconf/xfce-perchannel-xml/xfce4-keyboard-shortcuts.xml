@@ -34,6 +34,7 @@
       <property name="XF86AudioLowerVolume" type="string" value="amixer set Master 5%-"/>
       <property name="XF86AudioMute" type="string" value="amixer set Master toggle"/>
       <property name="XF86AudioRaiseVolume" type="string" value="amixer set Master 5%+"/>
+      <property name="&lt;Super&gt;space" type="string" value="xfce4-terminal --drop-down --hide-menubar"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
