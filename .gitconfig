@@ -2,7 +2,8 @@
 	ui = true
 [alias]
 	d = diff
-	s = show
+	s = stage
+	o = show
 	c = commit -v
 	p = push
 	r = reset
