@@ -76,3 +76,7 @@ function title() {
 }
 
 compdef _git gk=gitk gkm=gitk
+
+_git_related() {
+	_git_log
+}
