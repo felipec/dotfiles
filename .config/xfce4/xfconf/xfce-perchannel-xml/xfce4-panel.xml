@@ -20,7 +20,6 @@
         <value type="int" value="5"/>
         <value type="int" value="6"/>
         <value type="int" value="8"/>
-        <value type="int" value="2"/>
       </property>
     </property>
   </property>
@@ -29,7 +28,6 @@
       <property name="show-button-title" type="bool" value="false"/>
       <property name="button-icon" type="string" value="xfce4_xicon2"/>
     </property>
-    <property name="plugin-2" type="string" value="actions"/>
     <property name="plugin-3" type="string" value="tasklist">
       <property name="flat-buttons" type="bool" value="true"/>
       <property name="grouping" type="uint" value="1"/>
