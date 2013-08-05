@@ -1,0 +1,14 @@
+#!/bin/sh
+
+notmuch tag --batch <<EOF
++to-me to:felipe.contreras and tag:new
++sent -unread from:felipe.contreras and tag:new
+
++notmuch to:notmuch@notmuchmail.org and tag:new
++gst-dsp to:gst-dsp@googlegroups.com and tag:new
++libscrobbler to:libscrobbler@googlegroups.com and tag:new
++msn-pecan to:msn-pecan@googlegroups.com and tag:new
++git to:git@vger.kernel.org and tag:new
+
+-new tag:new
+EOF

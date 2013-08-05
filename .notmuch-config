@@ -6,7 +6,7 @@ name=Felipe Contreras
 primary_email=felipe.contreras@gmail.com
 
 [new]
-tags=unread;
+tags=unread;new;
 ignore=.mbsyncstate;.uidvalidity;
 
 [search]
