@@ -20,8 +20,6 @@ Dir.glob("*") do |fn|
   $versions[fn] = true
 end
 
-current = `uname -r`.chomp
-$versions.delete(current)
 $versions.delete('linux')
 $versions.delete('linux-fallback')
 
@@ -29,5 +27,5 @@ $versions.each_key do |v|
   next if v =~ /\.fc\d+\./ or v =~ /-ARCH$/ or v =~ /\.old$/
   print "#{v} [yN]: "
   next if not STDIN.gets =~ /^y/i
-  system "rm -rfv /boot/{config,System.map,vmlinuz}-#{v} /boot/System-#{v}.map /boot/initramfs-#{v}.img /lib/modules/#{v}/"
+  system "rm -rf /boot/{config,System.map,vmlinuz}-#{v} /boot/System-#{v}.map /boot/initramfs-#{v}.img /lib/modules/#{v}/"
 end
