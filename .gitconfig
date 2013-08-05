@@ -3,7 +3,7 @@
 [alias]
 	d = diff
 	s = stage
-	o = show
+	o = show -C
 	c = commit -v
 	p = push
 	r = reset
@@ -23,10 +23,12 @@
 	bb = bisect bad
 	bs = bisect skip
 	bv = branch -vv
-	current = rev-parse HEAD
+	short = show --quiet --format='%C(auto)%h (%s)%C(reset)'
 [merge]
 	tool = gvimdiff
 	defaulttoupstream = true
+[branch]
+	autosetupmerge = always
 [mergetool]
 	prompt = false
 [core]
@@ -35,11 +37,9 @@
 [sendemail]
 	aliasesfile = ~/.mutt/aliases
 	aliasfiletype = mutt
-	chainreplyto = false
 	confirm = never
 	smtpserver = /usr/bin/msmtp
 	envelopesender = auto
-	specifyauthor = false
 	annotate = true
 [format]
 	coverletter = auto
