@@ -15,7 +15,20 @@
 .pki/
 .icons/
 .local/
-.config/
+
+.config/Thunar/
+.config/chromium/
+.config/dconf/
+.config/enchant/
+.config/evince/
+.config/gajim/
+.config/gtk-*/
+.config/htop/
+.config/libreoffice/
+.config/spotify/
+.config/transmission/
+.config/viewnior/
+.config/vlc/
 
 .ICEauthority
 .Xauthority
