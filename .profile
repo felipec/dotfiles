@@ -1,6 +1,7 @@
 export PATH="/usr/lib/ccache/bin/:$PATH"
-export PATH="/opt/git/bin:/opt/sb2/bin:/opt/notmuch/bin:/opt/xchat/bin:$PATH"
+export PATH="/opt/git/bin:/opt/sb2/bin:/opt/notmuch/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
 
 export EMAIL=felipe.contreras@gmail.com
 export EDITOR="vim"
