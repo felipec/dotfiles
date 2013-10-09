@@ -1,3 +1,6 @@
+[user]
+	name = Felipe Contreras
+	email = felipe.contreras@gmail.com
 [color]
 	ui = true
 [alias]
@@ -43,9 +46,6 @@
 	annotate = true
 [format]
 	coverletter = auto
-[user]
-	name = Felipe Contreras
-	email = felipe.contreras@gmail.com
 [receive]
 	denyCurrentBranch = warn
 [push]
