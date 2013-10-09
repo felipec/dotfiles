@@ -44,3 +44,5 @@
 	insteadOf = data:
 [rerere]
 	enabled = true
+[notes]
+	rewriteref = refs/notes/*
