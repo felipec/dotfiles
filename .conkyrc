@@ -1,6 +1,6 @@
 alignment top_left
 double_buffer yes
-xftfont monospace:size=12
+xftfont monospace:size=10
 use_xft yes
 gap_x 20
 gap_y 20
@@ -36,7 +36,7 @@ uppercase no
 use_spacer none
 
 TEXT
-${font monospace:size=12}\
+${font monospace:size=10}\
 $alignc$color $sysname $kernel
 $hr
 ${color grey}CPU:$color $cpu% | ${freq_g} GHz | ${acpitemp}°C
@@ -54,19 +54,19 @@ ${color 999}File systems:
 ${voffset -8}
 ${color 999}Disk IO:
 ${diskiograph /dev/sda 17}
-${font monospace:size=10}${color grey}R: $color${diskio_read /dev/sda} $alignr ${color grey}W: $color${diskio_write /dev/sda}
-${font monospace:size=12}\
+${font monospace:size=8}${color grey}R: $color${diskio_read /dev/sda} $alignr ${color grey}W: $color${diskio_write /dev/sda}
+${font monospace:size=10}\
 ${if_up wlan0}\
 ${voffset -8}
 ${color 999}Networking: $color$alignr${wireless_essid wlan0}
  $color${wireless_link_qual_perc wlan0}% ${wireless_link_bar 4 wlan0}
  ${color grey}${downspeedgraph wlan0 17,165}  ${upspeedgraph wlan0 17,165}
- ${font monospace:size=10}$color${downspeed wlan0} $alignr ${upspeed wlan0}
+ ${font monospace:size=8}$color${downspeed wlan0} $alignr ${upspeed wlan0}
 $endif\
-${font monospace:size=12}\
+${font monospace:size=10}\
 $hr
 ${texeci 60 ruby ~/.scripts/notmuch.rb}
 $hr
 ${texeci 60 ruby ~/.scripts/gmail.rb}
 $hr
-${font monospace:size=12}\
+${font monospace:size=10}\
