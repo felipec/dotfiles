@@ -25,7 +25,7 @@
 [merge]
 	tool = gvimdiff
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.config/git/ignore
 	mode = progress
 [sendemail]
 	aliasesfile = ~/.mutt/aliases
