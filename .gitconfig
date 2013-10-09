@@ -9,11 +9,8 @@
 	p = push
 	r = reset
 	b = branch
-	rb = rebase
 	rbi = rebase --interactive
 	rbc = rebase --continue
-	co = checkout
-	st = status
 	pi = cherry-pick
 	mt = mergetool
 	h = help
@@ -23,17 +20,13 @@
 	bg = bisect good
 	bb = bisect bad
 	bs = bisect skip
-	bv = branch -vv
+	bv = branch -v
 	short = show --quiet --format='%C(auto)%h (%s)%C(reset)'
 [merge]
 	tool = gvimdiff
-	defaulttoupstream = true
-[branch]
-	autosetupmerge = always
-[mergetool]
-	prompt = false
 [core]
 	excludesfile = ~/.gitignore
+	mode = progress
 [sendemail]
 	aliasesfile = ~/.mutt/aliases
 	aliasfiletype = mutt
@@ -45,8 +38,6 @@
 	coverletter = auto
 [receive]
 	denyCurrentBranch = warn
-[push]
-	default = current
 [url "git@github.com:"]
 	insteadOf = gh:
 [url "/mnt/personal/"]
