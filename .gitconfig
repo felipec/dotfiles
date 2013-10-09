@@ -1,8 +1,6 @@
 [user]
 	name = Felipe Contreras
 	email = felipe.contreras@gmail.com
-[color]
-	ui = true
 [alias]
 	d = diff
 	s = stage
@@ -36,7 +34,6 @@
 	prompt = false
 [core]
 	excludesfile = ~/.gitignore
-	pager = less -FRSX
 [sendemail]
 	aliasesfile = ~/.mutt/aliases
 	aliasfiletype = mutt
