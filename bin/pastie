@@ -4,7 +4,7 @@ require 'net/http'
 require 'uri'
 
 $languages = {
-  nil => 6,
+  :'' => 6,
   :actionscript => 2,
   :bash => 13,
   :c_sharp => 20,
@@ -40,7 +40,7 @@ def create(content, language: nil, restricted: false)
   return $1 if resp.body =~ /<a href="(.*)">/
 end
 
-$language = nil
+$language = ''
 $restricted = false
 
 ARGV.delete_if do |cur|
