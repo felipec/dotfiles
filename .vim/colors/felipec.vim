@@ -1,4 +1,9 @@
 " Maintainer: Felipe Contreras <felipe.contreras@gmail.com>
+"
+" References:
+" http://vimcasts.org/episodes/creating-colorschemes-for-vim/
+" :runtime syntax/hitest.vim
+" https://github.com/gerw/vim-HiLinkTrace
 
 set background=dark
 
@@ -10,72 +15,71 @@ endif
 
 let g:colors_name = "felipec"
 
+if exists("b:current_syntax")
+  if b:current_syntax == "diff"
+    syn match diffFileId "^diff.*"
+    syn match diffFile "^index .*"
+    syn match diffOldFile "^--- .*"
+    syn match diffNewFile "^+++ .*"
+  elseif b:current_syntax == "vim"
+    syn match vimHiGuiRgb contained "#\x\{3\}\>"
+  endif
+endif
+
 " General colors
-" hi Cursor guifg=NONE guibg=#656565 gui=none
-" hi Normal guifg=#f6f3e8 guibg=#242424 gui=none
-hi Cursor guifg=NONE guibg=#dddd00 gui=none
-hi Normal guifg=#f6f3e8 guibg=#000000 gui=none
+hi Normal guifg=#eee ctermfg=7 guibg=#111 ctermbg=233 gui=none
+hi Cursor guifg=NONE guibg=#bde ctermbg=153 gui=none
+hi MatchParen guibg=#56a ctermbg=61
+
+" UI colors
+hi ErrorMsg guifg=#000 ctermfg=0 guibg=#fc8 ctermbg=222 gui=bold
+hi Folded guifg=#88f ctermfg=105 guibg=#333 ctermbg=236 gui=bold
+hi FoldColumn guifg=#88f ctermfg=105 guibg=#333 ctermbg=236 gui=bold
+hi NonText guifg=#888 ctermfg=102 guibg=#333 ctermbg=236 gui=none
+hi Search guifg=#60a ctermfg=55 guibg=#dbe ctermbg=183 gui=underline
+hi SpellBad guisp=#b55
+hi SpellCap guisp=#55b
+hi SpellRare guisp=#b5b
+hi SpellLocal guisp=#5bb
+hi LineNr guifg=#bb8 ctermfg=144
+hi CursorLineNr guifg=#ee8 ctermfg=228 gui=bold
+hi CursorLine guibg=#444 ctermbg=238
+hi CursorColumn guibg=#444 ctermbg=238
+hi Visual guibg=#333 ctermbg=236
+hi Pmenu guifg=#213 ctermfg=235 guibg=#dbe ctermbg=183
+hi PmenuSel guifg=#dbe ctermfg=183 guibg=#213 ctermbg=235
 
 " Syntax highlighting
-hi Comment guifg=#999988 gui=italic
+hi Comment guifg=#999 ctermfg=246 gui=italic
 
 "" Constants
-hi Constant guifg=#ff8080 gui=none
-hi String guifg=#5ce55c gui=italic
-hi Boolean guifg=#ff8080 gui=bold
+hi Constant guifg=#f88 ctermfg=210 gui=none
+hi String guifg=#6e6 ctermfg=83 gui=italic
+hi Boolean guifg=#f88 ctermfg=210 gui=bold
 
-hi Identifier guifg=#ff80ff gui=none
-hi Function guifg=#80ff80 gui=bold
+hi Identifier guifg=#f8f ctermfg=213 gui=none
+hi Function guifg=#8f8 ctermfg=120 gui=bold
 
-hi Statement guifg=#80bfff gui=none
-hi PreProc guifg=#bf80ff gui=none
-hi Type guifg=#e5ff80 gui=none
-hi Special guifg=#dae6cf gui=none
+hi Statement guifg=#8cf ctermfg=117 gui=none
+hi PreProc guifg=#c8f ctermfg=177 gui=none
+hi Type guifg=#ef8 ctermfg=228 gui=none
+hi Special guifg=#fd8 ctermfg=222 gui=none
 
-hi Todo guifg=#444444 guibg=#8f8f8f gui=bold
-hi Error guifg=#000000 guibg=#ffbf80 gui=bold
+hi Todo guifg=#444 ctermfg=238 guibg=#999 ctermbg=246 gui=bold
+hi Error guifg=#000 ctermfg=0 guibg=#fc8 ctermbg=222 gui=bold
 
-" hi Keyword guifg=#8ac6f2
+hi Underlined guifg=#8af ctermfg=111 gui=underline
 
-" hi VertSplit guifg=#444444 guibg=#444444
-" hi Folded guibg=#384048 guifg=#a0a8b0
-" hi Visual guifg=#f6f3e8 guibg=#444444
-" hi SpecialKey guifg=#808080 guibg=#343434
+hi DiffAdd guibg=#354 ctermbg=238 gui=none
+hi DiffDelete guifg=#433 ctermfg=237 guibg=#433 ctermbg=237 gui=none
+hi DiffChange guibg=#345 ctermbg=238 gui=none
+hi DiffText guibg=#345 ctermbg=238 gui=none
 
-hi NonText guifg=#808080 guibg=#333333 gui=none
+hi diffAdded guifg=#5f5 ctermfg=83 gui=none
+hi diffRemoved guifg=#f55 ctermfg=203 gui=none
+hi diffFileId guifg=#60a ctermfg=55 guibg=#dbe ctermbg=183 gui=none
+hi diffFile guifg=#999 ctermfg=246 gui=none
+hi diffOldFile guifg=#9f9 ctermfg=120 gui=none
+hi diffNewFile guifg=#f99 ctermfg=210 gui=none
 
-hi DiffAdd guibg=#224444 gui=none
-hi DiffDelete guifg=#ff8080 guibg=#442222 gui=none
-hi DiffChange guibg=#444444 gui=none
-hi DiffText guibg=#5e5e5e gui=bold
-
-hi ErrorMsg guifg=#000000 guibg=#ffbf80 gui=bold
-hi Folded guifg=#8080ff guibg=#333333 gui=bold
-hi FoldColumn guifg=#8080ff guibg=#333333 gui=bold
-
-hi diffAdded guifg=#0a0 gui=none
-hi diffRemoved guifg=#f00 gui=none
-hi diffFile guifg=#60a guibg=#dbe gui=none
-hi diffOldFile guifg=#9a9 gui=none
-hi diffNewFile guifg=#f99 gui=none
-
-" terminal
-
-" Syntax highlighting
-hi Comment ctermfg=lightgray cterm=none
-
-"" Constants
-hi Constant ctermfg=red cterm=bold
-hi String ctermfg=green cterm=bold
-hi Boolean ctermfg=red cterm=bold,standout
-
-hi Identifier ctermfg=magenta cterm=bold
-hi Function ctermfg=green cterm=bold
-
-hi Statement ctermfg=cyan cterm=none
-hi PreProc ctermfg=magenta cterm=none
-hi Type ctermfg=yellow cterm=bold
-hi Special ctermfg=white cterm=none
-
-hi Todo ctermfg=darkgray ctermbg=lightgray cterm=bold
-hi Error ctermfg=red ctermbg=none cterm=bold,standout
+hi Keyword guifg=#8ff ctermfg=123
