@@ -1,5 +1,7 @@
 fpath=(~/.zsh $fpath)
 
+export TERM=xterm-256color
+
 autoload -U compinit && compinit
 autoload -U colors && colors
 
