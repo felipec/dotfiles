@@ -59,6 +59,7 @@ hash -d home=~data/felipec
 hash -d todo=~data/felipec/todo
 hash -d notes=~data/felipec/notes
 
+hash -d d=~/dev
 hash -d g=~/dev/git
 hash -d l=~/dev/linux
 
