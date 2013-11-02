@@ -11,4 +11,4 @@ xset r rate 200 80
 setxkbmap -layout us -variant altgr-intl
 synclient PalmDetect=1
 
-exec startxfce4
+{ compton -b; exec startxfce4; }
