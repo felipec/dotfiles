@@ -1,4 +1,4 @@
-alignment top_left
+alignment top_right
 double_buffer yes
 xftfont monospace:size=10
 use_xft yes
