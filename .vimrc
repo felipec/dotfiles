@@ -11,6 +11,7 @@ set guifont=Monospace\ 10
 set guioptions=ai
 set hi=1000
 set diffopt=filler
+set clipboard=unnamedplus
 
 colorscheme felipec
 
