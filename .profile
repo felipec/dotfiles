@@ -1,5 +1,6 @@
 export PATH="/usr/lib/ccache/bin/:$PATH"
 export PATH="/opt/git/bin:/opt/sb2/bin:/opt/notmuch/bin:$PATH"
+export PATH="/opt/xfce/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
 
@@ -9,6 +10,7 @@ export LESS=FRSX
 export PYTHON_PATH=/usr/bin/python2
 export MAKEFLAGS='-j8'
 export GREP_OPTIONS='--color=auto'
+export LD_LIBRARY_PATH=/opt/xfce/lib
 
 if test "$PS1" && test "$BASH" && test -r ~/.bashrc; then
 	. ~/.bashrc
