@@ -24,6 +24,8 @@
 	short = show --quiet --format='%C(auto)%h (%s)%C(reset)'
 [merge]
 	tool = gvimdiff
+	conflictstyle = diff3
+	log = true
 [core]
 	excludesfile = ~/.config/git/ignore
 	mode = progress
@@ -34,6 +36,7 @@
 	smtpserver = /usr/bin/msmtp
 	envelopesender = auto
 	annotate = true
+	assume8bitEncoding = utf-8
 [format]
 	coverletter = auto
 [receive]
