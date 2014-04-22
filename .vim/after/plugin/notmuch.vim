@@ -12,12 +12,6 @@ let g:notmuch_folders = [
 	\ [ 'libscrobbler', 'tag:libscrobbler' ],
 	\ ]
 
-let g:notmuch_signature = [
-	\ '',
-	\ '-- ',
-	\ 'Felipe Contreras'
-	\ ]
-
 let g:notmuch_custom_search_maps = {
 	\ 'T':		'search_tag("")',
 	\ 't':		'search_tag("+to-do -inbox")',
