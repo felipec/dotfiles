@@ -35,6 +35,8 @@ au! BufRead,BufNewFile *.vapi set ft=vala
 au! BufRead,BufNewFile *.json set ft=json
 au! BufRead,BufNewFile *.t set ft=sh
 
+execute pathogen#infect()
+
 if has("cscope")
     set cscopetag cscopeverbose
 
