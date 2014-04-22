@@ -12,6 +12,7 @@ set guioptions=ai
 set hi=1000
 set diffopt=filler
 set clipboard=unnamedplus
+set laststatus=2
 
 colorscheme felipec
 
