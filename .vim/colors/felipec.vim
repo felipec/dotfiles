@@ -48,6 +48,7 @@ hi CursorColumn guibg=#444 ctermbg=238
 hi Visual guibg=#333 ctermbg=236
 hi Pmenu guifg=#213 ctermfg=235 guibg=#dbe ctermbg=183
 hi PmenuSel guifg=#dbe ctermfg=183 guibg=#213 ctermbg=235
+hi SignColumn guifg=#8ff guibg=#333
 
 " Syntax highlighting
 hi Comment guifg=#999 ctermfg=246 gui=italic
