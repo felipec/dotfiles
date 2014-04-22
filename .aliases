@@ -8,7 +8,7 @@ alias xo=xdg-open
 alias ls="ls --color=auto"
 
 alias g="git"
-alias m="m"
+alias m="mv"
 alias v="gvim"
 alias l="ls"
 alias vd="gvimdiff"
