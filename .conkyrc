@@ -14,6 +14,7 @@ own_window_argb_visual yes
 own_window_argb_value 100
 
 minimum_size 400 1000
+if_up_strictness link
 
 background no
 border_width 1
