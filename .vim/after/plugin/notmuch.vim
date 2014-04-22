@@ -8,8 +8,6 @@ let g:notmuch_folders = [
 	\ [ 'to-do', 'tag:to-do' ],
 	\ [ 'git', 'tag:git and tag:unread' ],
 	\ [ 'notmuch', 'tag:notmuch and tag:unread' ],
-	\ [ 'gst-dsp', 'tag:gst-dsp and tag:unread' ],
-	\ [ 'libscrobbler', 'tag:libscrobbler' ],
 	\ ]
 
 let g:notmuch_custom_search_maps = {
