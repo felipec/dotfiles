@@ -20,7 +20,7 @@
 	bg = bisect good
 	bb = bisect bad
 	bs = bisect skip
-	bv = branch -v
+	bv = branch -v --list
 	short = show --quiet --format='%C(auto)%h (%s)%C(reset)'
 [merge]
 	tool = gvimdiff
