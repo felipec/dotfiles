@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+
+$tdir = '~/.config/transmission/torrents'
+
+$dirs = []
+$dirs << '~/Downloads'
+$dirs << '/run/media/felipec/shared/download'
+$dirs << '/run/media/felipec/data/download'
+
+$inactive = {}
+
+class TFile
+  attr_reader :name, :dir, :file
+  attr_accessor :size
+
+  def initialize(name, dir)
+    @name = name
+    @dir = dir
+    @file = File.join(@dir, @name)
+    @size = nil
+  end
+
+  def <=>(b)
+    @size <=> b.size
+  end
+
+  def to_s
+    @file
+  end
+end
+
+$dirs.each do |d|
+  d = File.expand_path(d)
+  Dir.entries(d).each do |e|
+    next if e[0] == '.'
+    $inactive[e] = TFile.new(e, d)
+  end
+end
+
+Dir.foreach(File.expand_path($tdir)) do |f|
+  next unless f.end_with?('.torrent')
+  if f =~ /(.*)\.\h{16}\.torrent/
+    $inactive.delete($1)
+  end
+end
+
+File.popen(%w[du -s --files0-from=-], 'r+', :err => File::NULL) do |pipe|
+  $inactive.values.each do |e|
+    pipe.write(e.file + "\0")
+    size, file = pipe.readline.split("\t")
+    e.size = size.to_i
+  end
+end
+
+$inactive.values.sort.reverse.each do |e|
+  puts '"%s" (%s)' % [e.name, e.dir]
+end
