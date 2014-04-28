@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require 'tempfile'
+
+# Tool to compare two patch series
+
+def get_log_file(committish)
+  log = `git log -p -C #{committish}`
+  log.gsub!(/^commit .*$/, "commit " + "0" * 40)
+  log.gsub!(/^\s+Signed-off-by: Junio C Hamano <gitster@pobox.com>$\n/, '')
+
+  Tempfile.open('git-compare') do |f|
+    f.write(log)
+    f.path
+  end
+end
+
+exit(1) unless ARGV.size == 2
+
+a = get_log_file(ARGV[0])
+b = get_log_file(ARGV[1])
+system('gvimdiff', '--nofork', a, b)
