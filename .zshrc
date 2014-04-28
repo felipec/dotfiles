@@ -52,6 +52,8 @@ bindkey "\e[5~" history-beginning-search-backward
 bindkey "\e[6~" history-beginning-search-forward
 
 hash -d mnt=/run/media/felipec
+hash -d shared=~mnt/shared
+hash -d download=~mnt/shared/download
 hash -d data=~mnt/data
 hash -d src=~data/src
 hash -d dev=~data/dev
