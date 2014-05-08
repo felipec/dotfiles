@@ -19,3 +19,5 @@ test -f ~/.git-prompt.sh || wget -O ~/.git-prompt.sh \
 	'http://git.kernel.org/?p=git/git.git;a=blob_plain;f=contrib/completion/git-prompt.sh'
 
 chmod go-rw ~/.msmtprc
+
+bundle config BUNDLE_PATH $(ruby -e 'puts Gem.user_dir')
