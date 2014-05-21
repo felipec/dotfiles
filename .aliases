@@ -1,8 +1,6 @@
 #!sh
 
-alias gitg=/opt/gitg/bin/gitg
 alias gp=~/bin/gst-player
-alias e=/opt/epris/bin/epr
 alias xo=xdg-open
 
 alias ls="ls --color=auto"
@@ -16,8 +14,6 @@ alias mv="mv -i"
 alias ll="ls -l"
 
 alias gka="gk --all"
-
-alias devh="devhelp -s"
 
 gk() { gitk "$@" & }
 gkm() { gk ^master ${@:-HEAD} ; }
