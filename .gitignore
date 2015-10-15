@@ -64,6 +64,17 @@ abs/
 .zsh/_git
 
 .netrc
-.profile
 
 .bash_logout
+.rnd
+.steam/
+.steampath
+.steampid
+.themes/
+.notmuch/compose/
+.mutt/cache/
+
+.config/pavucontrol.ini
+.config/git/patch-series/
+
+bin/arm-linux-*
