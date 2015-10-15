@@ -2,6 +2,10 @@
 	name = Felipe Contreras
 	email = felipe.contreras@gmail.com
 [alias]
+	co = checkout
+	ci = commit
+	rb = rebase
+	st = status -s -b
 	d = diff
 	s = stage
 	o = show -C
@@ -23,7 +27,7 @@
 	bv = branch -v --list
 	short = show --quiet --format='%C(auto)%h (%s)%C(reset)'
 [merge]
-	tool = gvimdiff
+	tool = gvimdiff3
 	conflictstyle = diff3
 	log = true
 [core]
@@ -49,3 +53,5 @@
 	enabled = true
 [notes]
 	rewriteref = refs/notes/*
+[tag]
+	sort = version:refname
