@@ -17,7 +17,7 @@ class TFile
     @name = name
     @dir = dir
     @file = File.join(@dir, @name)
-    @size = nil
+    @size = 0
   end
 
   def <=>(b)
