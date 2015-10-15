@@ -9,7 +9,6 @@ export EDITOR="vim"
 export LESS=FRSX
 export PYTHON_PATH=/usr/bin/python2
 export MAKEFLAGS='-j8'
-export GREP_OPTIONS='--color=auto'
 export LD_LIBRARY_PATH=/opt/xfce/lib
 
 if test "$PS1" && test "$BASH" && test -r ~/.bashrc; then

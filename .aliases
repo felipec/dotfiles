@@ -4,6 +4,7 @@ alias gp=~/bin/gst-player
 alias xo=xdg-open
 
 alias ls="ls --color=auto"
+alias grep="grep --color=auto"
 
 alias g="git"
 alias m="mv"
