@@ -61,7 +61,7 @@ ${if_up wlan0}\
 ${voffset -8}
 ${color 999}Networking: $color$alignr${wireless_essid wlan0}
  $color${wireless_link_qual_perc wlan0}% ${wireless_link_bar 4 wlan0}
- ${color grey}${downspeedgraph wlan0 17,165}  ${upspeedgraph wlan0 17,165}
+ ${color grey}${downspeedgraph wlan0 17,190} ${upspeedgraph wlan0 17,190}
  ${font monospace:size=8}$color${downspeed wlan0} $alignr ${upspeed wlan0}
 $endif\
 ${font monospace:size=10}\
