@@ -18,8 +18,11 @@ SAVEHIST=1000000
 HISTSIZE=1000000
 HISTIGNORE='ls:[bf]g:exit:reset:clear:cd *'
 
+GIT_PS1_SHOWCOLORHINTS=1
+GIT_PS1_SHOWDIRTYSTATE=1
+
 PS1='%{$fg_bold[green]%} %# %{$reset_color%}'
-RPS1='%{$fg[white]%}%~$(__git_ps1 "[%%{$fg[yellow]%%}%s%%{$reset_color%%}]") %{$fg_bold[blue]%}%m%{$reset_color%}'
+RPS1='%{$fg[white]%}%~$(__git_ps1 "[%s]") %{$fg_bold[blue]%}%m%{$reset_color%}'
 
 eval $(dircolors -b)
 
