@@ -38,15 +38,15 @@ setopt correct
 setopt prompt_subst
 setopt auto_param_slash
 
-zshaddhistory() {
+zshaddhistory () {
 	print -r -- "${1%%$'\n'} ### ${PWD}" >> ~/.histstat || true
 }
 
 bindkey -e
 bindkey "\e[3~" delete-char
 bindkey "\e[2~" quoted-insert
-bindkey "\eOH" beginning-of-line
-bindkey "\eOF" end-of-line
+bindkey "\e[H" beginning-of-line
+bindkey "\e[F" end-of-line
 
 bindkey "\e[5~" history-beginning-search-backward
 bindkey "\e[6~" history-beginning-search-forward
@@ -70,18 +70,16 @@ hash -d pecan=~data/msn/msn-pecan
 
 source ~/.aliases
 
-case $TERM in
-xterm*)
-	precmd () { print -Pn "\e]0;${TITLE:-%2~}\a" }
-	;;
-esac
+precmd () {
+	print -Pn "\e]2;${TITLE:-%2~}\a"
+}
 
-function title() {
+title () {
 	TITLE=$*
 }
 
 compdef _git gk=gitk gkm=gitk
 
-_git_related() {
+_git_related () {
 	_git_log
 }
