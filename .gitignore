@@ -56,6 +56,8 @@ abs/
 .vim/.netrwhist
 .vim/plugin/notmuch*
 .vim/syntax/notmuch*
+.vim/bundle/
+.vim/autoload/
 
 .git-completion.sh
 .git-prompt.sh
