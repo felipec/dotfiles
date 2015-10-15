@@ -26,8 +26,49 @@ _make_find_basedir () {
   print -- $basedir
 }
 
-_make() {
+_make_parse_makefile () {
+  awk -v RS="\n\n" -v PFX="$1" -e '!match($1, "^" PFX) { next } match($1, /^([^#\t:%]+):/, a) { print a[1] }'
+}
 
+# Stupid zsh
+_make_path_files () {
+  local -a list files
+  local pfx="" cur="${words[CURRENT]}" file
+
+  files=(${(f)"$(_make_parse_makefile "$cur" < <(make -npq -C "$1" 2> /dev/null))"})
+
+  case "$cur" in
+    ?*/*)
+      pfx="${cur%/*}"
+      cur="${cur##*/}"
+      pfx="${pfx}/"
+      ;;
+  esac
+
+  for file in $files
+  do
+    case "$file" in
+      ${pfx}*)
+	file="${file##$pfx}"
+	;;
+      *)
+	continue
+	;;
+    esac
+    case "$file" in
+      ?*/*)
+	list+="${file%%/*}"
+	;;
+      *)
+	list+="${file}"
+	;;
+    esac
+  done
+
+  compadd -Q -p "${pfx-}" -f -a list
+}
+
+_make () {
   local prev="$words[CURRENT-1]"
   local ret=1
 
@@ -35,7 +76,7 @@ _make() {
   then
     _files -W ${(q)$(_make_find_basedir ${words[1,CURRENT-1]})} -/ && ret=0
   else
-    _files -W ${(q)$(_make_find_basedir $words)} && ret=0
+    _make_path_files "$(_make_find_basedir $words)" && ret=0
   fi
 
   return ret
