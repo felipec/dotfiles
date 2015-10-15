@@ -4,8 +4,11 @@ $versions = {}
 
 Dir.chdir("/boot")
 Dir.glob("*-*") do |fn|
-  if (fn =~ /(config|vmlinuz)-(.*)/)
+  if (fn =~ /(config|System.map|vmlinuz)-(.*)/)
     $versions[$2] = true
+  end
+  if (fn =~ /System-(.*).map/)
+    $versions[$1] = true
   end
   if (fn =~ /(initramfs)-(.*)\.img/)
     $versions[$2] = true
@@ -24,5 +27,5 @@ $versions.each_key do |v|
   next if v =~ /\.fc\d+\./ or v =~ /-ARCH$/ or v =~ /\.old$/
   print "#{v} [yN]: "
   next if not STDIN.gets =~ /^y/i
-  system "rm -rf /boot/{config,vmlinuz}-#{v} /boot/initramfs-#{v}.img /lib/modules/#{v}/"
+  system "rm -rf /boot/{config,System.map,vmlinuz}-#{v} /boot/System-#{v}.map /boot/initramfs-#{v}.img /lib/modules/#{v}/"
 end
