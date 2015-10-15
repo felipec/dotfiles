@@ -37,7 +37,11 @@ au! BufRead,BufNewFile *.vapi set ft=vala
 au! BufRead,BufNewFile *.json set ft=json
 au! BufRead,BufNewFile *.t set ft=sh
 
+let g:netrw_browsex_viewer = 'chromium'
+
 execute pathogen#infect()
+let g:syntastic_ruby_mri_args = '-W1 -c'
+let g:airline#extensions#whitespace#enabled = 0
 
 if has("cscope")
     set cscopetag cscopeverbose
