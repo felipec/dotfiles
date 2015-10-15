@@ -6,7 +6,6 @@ cacerts = /etc/ssl/certs/ca-certificates.crt
 
 [extensions]
 hgext.schemes =
-hgext.bookmarks =
 hgext.purge =
 hgk =
 mq =
