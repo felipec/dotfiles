@@ -40,10 +40,11 @@ TEXT
 ${font monospace:size=10}\
 $alignc$color $sysname $kernel
 $hr
-${color grey}CPU:$color $cpu% | ${freq_g} GHz | ${acpitemp}°C
+${color grey}CPU:$color $cpu% | ${freq_g} GHz | ${hwmon 0 temp 1}°C
 ${color 999}${cpugraph 17}
 ${voffset -8}
-${color grey}RAM:$color $memperc% ${membar}
+${color grey}RAM:$color $memperc% (${memfree}) ${membar}
+${color grey}Swap:$color $swapperc% (${swapfree}) ${swapbar}
 ${color grey}Batt:$color ${battery_percent}% ${battery_bar}
 $hr
 ${color 999}File systems:
