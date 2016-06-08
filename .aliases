@@ -19,6 +19,8 @@ alias gka="gk --all"
 gk() { gitk "$@" & }
 gkm() { gk ^master ${@:-HEAD} ; }
 gkb() { gkm --branches=$1 ; }
+gku() { gk ^@{upstream} ${@:-HEAD} ; }
+gkn() { gk $(git negate-upstreams ${@:-HEAD}) ; }
 
 gl() { git log --oneline --decorate --graph "$@" ; }
 glm() { gl ^master ${@:-HEAD} ; }

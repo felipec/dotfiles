@@ -81,7 +81,7 @@ title () {
 	TITLE=$*
 }
 
-compdef _git gk=gitk gkm=gitk
+compdef _git gk=gitk gkm=gitk gkn=gitk gku=gitk
 
 _git_related () {
 	_git_log
