@@ -51,6 +51,9 @@ bindkey "\e[2~" quoted-insert
 bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
 
+bindkey "\eOH" beginning-of-line
+bindkey "\eOF" end-of-line
+
 bindkey "\e[5~" history-beginning-search-backward
 bindkey "\e[6~" history-beginning-search-forward
 
