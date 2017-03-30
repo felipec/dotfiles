@@ -17,7 +17,6 @@
 .local/
 
 .config/Thunar/
-.config/chromium/
 .config/dconf/
 .config/enchant/
 .config/evince/
@@ -29,6 +28,11 @@
 .config/transmission/
 .config/viewnior/
 .config/vlc/
+
+.config/chromium
+.config/chromium-backup/
+
+.config/psd/.psd.conf
 
 .ICEauthority
 .Xauthority
@@ -78,3 +82,5 @@ abs/
 .config/git/patch-series/
 
 bin/arm-linux-*
+
+.config/systemd/user/default.target.wants/psd.service
