@@ -1,3 +1,3 @@
-export PS1='\h:\w\$ '
+PS1='\h:\w\$ '
 
 source ~/.aliases
