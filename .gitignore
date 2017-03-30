@@ -36,13 +36,18 @@
 .config/git/gitk
 .config/psd/.psd.conf
 
+.config/Trolltech.conf
+
 .ICEauthority
 .Xauthority
+.esd_auth
+
 .zcompdump
 .viminfo
 .gtk-bookmarks
 
 .pulse-cookie
+.gnupg/
 
 .bash_history
 .histfile
