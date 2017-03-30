@@ -31,9 +31,9 @@
       <property name="&lt;Super&gt;Return" type="string" value="xfce4-terminal"/>
       <property name="&lt;Super&gt;e" type="string" value="thunar"/>
       <property name="&lt;Super&gt;b" type="string" value="chromium"/>
-      <property name="XF86AudioLowerVolume" type="string" value="amixer set Master 5%-"/>
-      <property name="XF86AudioMute" type="string" value="amixer set Master toggle"/>
-      <property name="XF86AudioRaiseVolume" type="string" value="amixer set Master 5%+"/>
+      <property name="XF86AudioLowerVolume" type="string" value="pamixer --decrease 5"/>
+      <property name="XF86AudioMute" type="string" value="pamixer --toggle-mute"/>
+      <property name="XF86AudioRaiseVolume" type="string" value="pamixer --increase 5"/>
       <property name="&lt;Super&gt;space" type="string" value="xfce4-terminal --drop-down --hide-menubar"/>
       <property name="XF86AudioNext" type="string" value="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"/>
       <property name="XF86AudioPrev" type="string" value="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"/>
