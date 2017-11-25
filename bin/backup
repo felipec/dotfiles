@@ -8,18 +8,48 @@ $backup_dir = File.join(mount_dir, DIR)
 
 raise "Directory '#{$backup_dir}' doesn't exist" unless File.directory?($backup_dir)
 
-def rsync(src, dest = src)
+def rsync(src, dest=src, excludes: nil)
   puts "\n\e[1;34mBacking up '#{src}'\e[0m\n\n"
 
-  cmd = %w[sudo rsync --archive --delete --verbose]
+  cmd = %w[sudo rsync --archive --delete --verbose --exclude-from=- --delete-excluded]
   cmd << src + '/'
   cmd << $backup_dir + dest
 
-  system(*cmd)
+  IO.popen(cmd, 'w') do |pipe|
+    pipe.write(excludes) if excludes
+  end
 end
 
+home_excludes = <<EOL
+.cache/
+.local/share/Trash/
+.thumbnails/
+
+# Session
+.Xauthority
+.ICEauthority
+.pulse-cookie
+.esd_auth
+
+.xsession-errors
+.wayland-errors
+
+.gvfs
+.local/share/gvfs-metadata
+
+# Steam
+.steam/
+.steampath
+.steampid
+.local/share/Steam
+
+# Apps
+.adobe/
+.macromedia/
+EOL
+
 # backup home
-rsync(ENV['HOME'], '/home')
+rsync(ENV['HOME'], '/home', excludes: home_excludes)
 
 # backup root
 rsync('/root')
