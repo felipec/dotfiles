@@ -1,0 +1,35 @@
+[Added Associations]
+
+[Removed Associations]
+application/rtf=wine-extension-rtf.desktop
+application/vnd.ms-htmlhelp=wine-extension-chm.desktop
+application/xml=wine-extension-xml.desktop
+application/pdf=wine-extension-pdf.desktop
+image/gif=wine-extension-gif.desktop
+image/jpeg=wine-extension-jpe.desktop;wine-extension-jfif.desktop;
+image/png=wine-extension-png.desktop
+text/html=wine-extension-htm.desktop
+text/plain=wine-extension-txt.desktop
+
+[Default Applications]
+text/x-patch=gvim.desktop
+image/jpeg=viewnior.desktop
+image/png=viewnior.desktop
+image/bmp=viewnior.desktop
+image/gif=viewnior.desktop
+image/jpg=viewnior.desktop
+text/english=gvim.desktop
+text/plain=gvim.desktop
+text/x-makefile=gvim.desktop
+text/x-c++hdr=gvim.desktop
+text/x-c++src=gvim.desktop
+text/x-chdr=gvim.desktop
+text/x-csrc=gvim.desktop
+text/x-java=gvim.desktop
+text/x-moc=gvim.desktop
+text/x-pascal=gvim.desktop
+text/x-tcl=gvim.desktop
+text/x-tex=gvim.desktop
+application/x-shellscript=gvim.desktop
+text/x-c=gvim.desktop
+text/x-c++=gvim.desktop
