@@ -59,7 +59,7 @@ end
 File.popen(%w[du -s --files0-from=-], 'r+', :err => File::NULL) do |pipe|
   $inactive.values.each do |e|
     pipe.write(e.file + "\0")
-    size, file = pipe.readline.split("\t")
+    size, file = pipe.readline.encode('utf-8', invalid: :replace).split("\t")
     e.size = size.to_i * 1024
   end
 end
