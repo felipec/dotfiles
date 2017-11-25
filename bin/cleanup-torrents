@@ -64,6 +64,28 @@ File.popen(%w[du -s --files0-from=-], 'r+', :err => File::NULL) do |pipe|
   end
 end
 
+require 'fileutils'
+
 $inactive.values.sort.reverse.each do |e|
-  puts '%s "%s" (%s)' % [e.human_size, e.name, e.dir]
+  clean_lines = 3
+
+  puts "\e[1;33m%-10s\e[0m '\e[1m%s\e[0m' \e[34m(%s)\e[0m" % [e.human_size, e.name, e.dir]
+  if File.directory?(e.file)
+    Dir.entries(e.file).each do |e|
+      next if %w[. ..].include?(e)
+      puts "%12s \e[32m%s\e[0m" % ['*', e]
+      clean_lines += 1
+    end
+  end
+
+  puts "\nDelete? (y/n)"
+  response = gets()
+  clean_lines.times do
+    printf "\e[A\e[2K"
+  end
+
+  next unless response[0] == 'y'
+
+  FileUtils.rm_rf(e.file)
+  puts "%10s \e[1;31mDeleted '%s'\e[0m" % ['', e.file]
 end
