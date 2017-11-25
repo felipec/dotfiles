@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+LABEL = 'backup_data'
+DIR = '/backup/home'
+
+mount_dir = File.join('/run/media/', ENV['USER'], LABEL)
+$backup_dir = File.join(mount_dir, DIR)
+
+raise "Directory '#{$backup_dir}' doesn't exist" unless File.directory?($backup_dir)
+
+cmd = %w[rsync --archive --delete --verbose]
+cmd << ENV['HOME'] + '/'
+cmd << $backup_dir
+
+system(*cmd)
