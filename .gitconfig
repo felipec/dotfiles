@@ -54,4 +54,4 @@
 [notes]
 	rewriteref = refs/notes/*
 [tag]
-	sort = version:refname
+	sort = -version:refname
