@@ -7,13 +7,17 @@ filetype plugin indent on
 
 set incsearch
 set nobackup
-set guifont=Monospace\ 10
+set guifont=Monospace\ 12
 set guioptions=ai
 set hi=1000
 set diffopt=filler
 set clipboard=unnamedplus
 set laststatus=2
 set noswapfile
+
+set shiftwidth=2
+set tabstop=2
+set expandtab
 
 colorscheme felipec
 
