@@ -1,29 +1,44 @@
 #!/bin/bash
 
-readarray -t files < <(git ls-files)
+cmp_all () {
+  readarray -t files < <(git ls-files)
 
-for f in "${files[@]}"; do
-  [[ "$f" == tools/* ]] && continue
-  if [[ -e ~/"$f" ]]
-  then
-    cmp -s {.,~}/"$f" || vimdiff {.,~}/"$f"
-  else
-    mkdir -p $(dirname ~/"$f") &&
-    cp -av ./"$f" ~/"$f"
-  fi
-done
+  for f in "${files[@]}"; do
+    [[ "$f" == tools/* ]] && continue
+    if [[ -e ~/"$f" ]]
+    then
+      cmp -s {.,~}/"$f" || vimdiff {.,~}/"$f"
+    else
+      mkdir -p $(dirname ~/"$f") &&
+      cp -av ./"$f" ~/"$f"
+    fi
+  done
+}
 
 # extra
 
-xdg-user-dirs-update --force
+setup () {
+  xdg-user-dirs-update --force
+  sudo chsh -s /bin/zsh felipec
 
-mkdir -p ~/.vim/autoload/ ~/.vim/bundle/
-test -f ~/.vim/autoload/pathogen.vim || \
-	curl -o ~/.vim/autoload/pathogen.vim 'https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim'
+  url='https://raw.githubusercontent.com/tpope/vim-pathogen/master'
 
-test -f ~/.git-prompt.sh || \
-	curl -o ~/.git-prompt.sh 'https://git.kernel.org/pub/scm/git/git.git/plain/contrib/completion/git-prompt.sh'
+  mkdir -p ~/.vim/autoload/ ~/.vim/bundle/
+  test -f ~/.vim/autoload/pathogen.vim || curl -o ~/.vim/autoload/pathogen.vim "${url}/autoload/pathogen.vim"
 
-chmod go-rw ~/.msmtprc
+  # syntastic
+  # vim-airline
 
-bundle config BUNDLE_PATH $(ruby -e 'puts Gem.user_dir')
+  url='https://git.kernel.org/pub/scm/git/git.git/plain/contrib/completion'
+
+  test -f ~/.git-prompt.sh || curl -o ~/.git-prompt.sh "${url}/git-prompt.sh"
+  test -f ~/.git-completion.sh || curl -o ~/.git-completion.bash "${url}/git-completion.bash"
+  test -f ~/.zsh/_git || curl -o ~/.zsh/_git "${url}/git-completion.zsh"
+
+  chmod go-rw ~/.msmtprc
+
+  # ccache
+}
+
+cmp_all
+test -f ~/.config/dotfiles-setup || setup && touch ~/.config/dotfiles-setup
