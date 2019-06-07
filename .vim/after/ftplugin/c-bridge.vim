@@ -1,3 +1,4 @@
-set sw=8
 set noet
-set cino=t0,:0,g0
+set sw=8
+set ts=8
+set cino=:0,t0
