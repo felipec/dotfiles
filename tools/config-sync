@@ -32,7 +32,7 @@ setup () {
   url='https://git.kernel.org/pub/scm/git/git.git/plain/contrib/completion'
 
   test -f ~/.git-prompt.sh || curl -o ~/.git-prompt.sh "${url}/git-prompt.sh"
-  test -f ~/.git-completion.sh || curl -o ~/.git-completion.bash "${url}/git-completion.bash"
+  test -f ~/.git-completion.bash || curl -o ~/.git-completion.bash "${url}/git-completion.bash"
   test -f ~/.zsh/_git || curl -o ~/.zsh/_git "${url}/git-completion.zsh"
 
   chmod go-rw ~/.msmtprc

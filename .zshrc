@@ -7,7 +7,7 @@ autoload -U colors && colors
 
 source ~/.git-prompt.sh
 
-zstyle ':completion:*:*:git:*' script ~/.git-completion.sh
+zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 
 zstyle ':completion:*' menu yes=long select
 zstyle ':completion:*' use-cache yes
