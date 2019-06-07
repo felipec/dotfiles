@@ -1,3 +1,3 @@
-set sw=8
-set ts=8
-set noet
+set et
+set sw=2
+set ts=2

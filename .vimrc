@@ -15,9 +15,9 @@ set clipboard=unnamedplus
 set laststatus=2
 set noswapfile
 
+set expandtab
 set shiftwidth=2
 set tabstop=2
-set expandtab
 
 colorscheme felipec
 

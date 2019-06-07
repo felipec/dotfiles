@@ -1,1 +1,1 @@
-:set spell
+set spell
