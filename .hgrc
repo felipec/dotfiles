@@ -9,4 +9,3 @@ hgext.schemes =
 hgext.purge =
 hgk =
 mq =
-hggit =
