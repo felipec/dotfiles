@@ -1,5 +1,5 @@
 [Desktop Entry]
 Name=To-do list
-URL=file:///data/felipec/todo.txt
+Exec=/usr/bin/xdg-open file:///home/felipec/todo.txt
 Icon=text-editor
-Type=Link
+Type=Application

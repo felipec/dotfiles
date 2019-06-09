@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=GNOME Keyring
+Exec=/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh
+Type=Application
