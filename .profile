@@ -11,6 +11,8 @@ export LESS=FRSX
 export PYTHON_PATH=/usr/bin/python2
 export MAKEFLAGS='-j8'
 
+export SUDO_ASKPASS=$HOME/bin/sudo_askpass
+
 if test "$PS1" && test "$BASH" && test -r ~/.bashrc; then
 	. ~/.bashrc
 fi

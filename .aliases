@@ -2,6 +2,7 @@
 
 alias gp=~/bin/gst-player
 alias xo=xdg-open
+alias sudo="sudo -A"
 
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"

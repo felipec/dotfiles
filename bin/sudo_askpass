@@ -1,0 +1,3 @@
+#!/bin/sh
+
+secret-tool lookup user felipec
