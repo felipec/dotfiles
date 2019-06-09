@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+
+require 'inifile'
+
+config = ENV['XDG_CONFIG_HOME'] || "#{Dir.home}/.config"
+$list_file = IniFile.load("#{config}/mimeapps.list", comment: '#')
+$defaults = $list_file['Default Applications']
+
+# xdg-mime query default x-scheme-handler/magnet
+# update-mime-database ~/.local/share/mime
+
+$dirs = ENV['XDG_DATA_DIRS']&.split(':') || '/usr/local/share/:/usr/share/'
+
+apps = %w[gvim viewnior gimp vlc chromium]
+# Thunar-folder-handler
+
+apps = ARGV unless ARGV.empty?
+
+$types = Hash.new { |h,k| h[k] = Array.new }
+
+apps.each do |app|
+  $dirs.each do |dir|
+    file = "#{dir}/applications/#{app}.desktop"
+    next unless File.exist?(file)
+    File.open(file) do |f|
+      f.each do |l|
+        next unless l =~ /^MimeType=(.*)$/
+        mimetypes = $1.split(';').each
+        puts '%s: %d' % [app, mimetypes.count]
+        mimetypes.each do |type|
+          $types[type] << "#{app}.desktop"
+        end
+      end
+    end
+  end
+end
+
+$types.each do |type, apps|
+  $defaults[type] = apps.join(';')
+end
+
+File.write($list_file.filename, $list_file.to_s.gsub(' = ', '='))
