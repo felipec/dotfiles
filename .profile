@@ -5,7 +5,8 @@ export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
 export PATH="$HOME/.node_modules/bin:$PATH"
 
 export EMAIL=felipe.contreras@gmail.com
-export EDITOR="vim"
+export VIM_EDITOR=vim
+export VISUAL=$VIM_EDITOR
 export LESS=FRSX
 export PYTHON_PATH=/usr/bin/python2
 export MAKEFLAGS='-j8'
