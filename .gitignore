@@ -1,3 +1,14 @@
+Desktop/
+Downloads/
+Templates/
+Public/
+Documents/
+Music/
+Pictures/
+Videos/
+
+.config/dotfiles-setup
+
 .ccache/
 .cache/
 .adobe/
@@ -16,6 +27,9 @@
 .icons/
 .local/
 
+.config/chromium/
+.config/chromium-backup/
+
 .config/Thunar/
 .config/dconf/
 .config/enchant/
@@ -29,6 +43,12 @@
 .config/viewnior/
 .config/vlc/
 .config/pulse/
+.config/discord/
+.config/hexchat/
+.config/inkscape/
+.config/openrazer/
+.config/octave/
+.config/GIMP/
 
 .config/chromium
 .config/chromium-backup/
@@ -42,9 +62,14 @@
 .Xauthority
 .esd_auth
 
+.xsession-errors
+.xsession-errors.old
+.Xclients
+
 .zcompdump
 .viminfo
 .gtk-bookmarks
+.octave_hist
 
 .pulse-cookie
 .gnupg/
@@ -57,8 +82,6 @@
 .ssh/id_rsa*
 .ssh/known_hosts
 
-Desktop/
-Downloads/
 StarCraft II/
 abs/
 
@@ -68,7 +91,7 @@ abs/
 .vim/bundle/
 .vim/autoload/
 
-.git-completion.sh
+.git-completion.bash
 .git-prompt.sh
 .zsh/_git
 
@@ -82,6 +105,10 @@ abs/
 .themes/
 .notmuch/compose/
 .mutt/cache/
+.npm/
+.node_modules/
+.mozilla/
+R/
 
 .config/pavucontrol.ini
 .config/git/patch-series/
@@ -89,3 +116,4 @@ abs/
 bin/arm-linux-*
 
 .config/systemd/user/default.target.wants/psd.service
+.config/systemd/user/default.target.wants/spotblock.service
