@@ -14,13 +14,32 @@ alias vd="$VIM_EDITOR -d"
 alias mv="mv -i"
 alias ll="ls -l"
 
-alias gka="gk --all"
-
+# Shorthand for gitk
 gk() { gitk "$@" & }
-gkm() { gk ^master ${@:-HEAD} ; }
-gkb() { gkm --branches=$1 ; }
-gku() { gk ^@{upstream} ${@:-HEAD} ; }
-gkn() { gk $(git negate-upstreams ${@:-HEAD}) ; }
 
+# Shorthand for git log
 gl() { git log --oneline --decorate --graph "$@" ; }
-glm() { gl ^master ${@:-HEAD} ; }
+
+# List all
+gka() { gk $(git list all $@) ; }
+gla() { gl $(git list all $@) ; }
+
+# List of the branch from master
+gkm() { gk $(git list from-master $@) ; }
+glm() { gl $(git list from-master $@) ; }
+
+# List of the branch from origin/master
+gko() { gk $(git list from-origin-master $@) ; }
+glo() { gl $(git list from-origin-master $@) ; }
+
+# List of the branch from upstream
+gku() { gk $(git list from-upstream $@) ; }
+glu() { gl $(git list from-upstream $@) ; }
+
+# List of the branches with a prefix (e.g. fc-)
+gkb() { gk $(git list branches $@) ; }
+glb() { gl $(git list branches $@) ; }
+
+# List all the branches from their fork point
+gkn() { gk $(git list negate-upstreams $@) ; }
+gln() { gl $(git list negate-upstreams $@) ; }
