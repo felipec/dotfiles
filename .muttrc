@@ -6,9 +6,9 @@ set envelope_from = yes
 
 source ~/.mutt/profiles/gmail
 
-set header_cache = ~/.mutt/cache/headers
-set message_cachedir = ~/.mutt/cache/bodies
-set certificate_file = ~/.mutt/certificates
+set header_cache = ~/.cache/mutt/
+set message_cachedir = ~/.cache/mutt/
+set certificate_file = ~/.cache/mutt/certificates
 set ssl_verify_host = no
 
 set move = no
