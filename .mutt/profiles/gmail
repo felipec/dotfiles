@@ -1,13 +1,13 @@
 set from = "felipe.contreras@gmail.com"
 
-set imap_user = "felipe.contreras@gmail.com"
-set imap_pass = "password"
+set imap_user = "felipe.contreras"
+set imap_pass = `secret-tool lookup user felipe.contreras service imap host imap.gmail.com`
 
-set folder = "imaps://imap.gmail.com:993"
+set folder = "imaps://imap.gmail.com/"
 set spoolfile = "=INBOX"
 set postponed = "=[Gmail]/Drafts"
 set record = ""
 
-mailboxes =inbox =git
+mailboxes =INBOX =git
 
 # vim: set ft=muttrc:
