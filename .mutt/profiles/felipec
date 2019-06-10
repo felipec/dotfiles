@@ -1,7 +1,0 @@
-set from = "felipec@felipec.org"
-
-set tunnel = "ssh -q f 'MAIL=/home/felipec/mail/felipec.org/felipec /usr/libexec/dovecot/imap'"
-set folder = "imaps://localhost"
-set spoolfile = "=inbox"
-
-# vim: set ft=muttrc:

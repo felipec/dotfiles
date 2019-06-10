@@ -1,7 +1,0 @@
-set from = "felipec@infradead.org"
-
-set tunnel = "ssh -q bombadil.infradead.org '/usr/libexec/dovecot/imap'"
-set folder = "imaps://localhost"
-set spoolfile = "=inbox"
-
-# vim: set ft=muttrc:
