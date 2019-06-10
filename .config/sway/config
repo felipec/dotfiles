@@ -1,0 +1,124 @@
+# vi: ft=swayconfig
+
+set $mod Mod4
+set $term xfce4-terminal
+
+set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $touchpad 1267:12341:ELAN1301:00_04F3:3035_Touchpad
+# set $touchpad type:touchpad
+
+# Workspace hacks
+set $workspace_cur $(swaymsg -p -t get_workspaces | sed -n 's/Workspace \([0-9]\+\) (focused)/\1/p')
+set $workspace_left $(($workspace_cur - 1))
+set $workspace_right $(($workspace_cur + 1))
+set $focus_workspace_left exec swaymsg workspace $workspace_left
+set $focus_workspace_right exec swaymsg workspace $workspace_right
+set $move_to_workspace_left exec swaymsg move container to workspace $workspace_left && $focus_workspace_left
+set $move_to_workspace_right exec swaymsg move container to workspace $workspace_right && $focus_workspace_right
+
+bindsym $mod+return exec $term
+bindsym $mod+space exec $menu
+bindsym $mod+q kill
+
+bindsym $mod+b exec chromium
+bindsym $mod+e exec thunar
+
+bindsym $mod+shift+e exit
+bindsym $mod+shift+r reload
+
+# Move through workspaces
+bindsym $mod+left $focus_workspace_left
+bindsym $mod+right $focus_workspace_right
+bindsym $mod+ctrl+left $move_to_workspace_left
+bindsym $mod+ctrl+right $move_to_workspace_right
+bindsym $mod+up workspace prev
+bindsym $mod+down workspace next
+bindsym $mod+ctrl+up move container to workspace prev
+bindsym $mod+ctrl+down move container to workspace next
+
+# Fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle layouts
+bindsym $mod+t layout toggle all
+
+# Move focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Move focused window
+bindsym $mod+shift+$left move left
+bindsym $mod+shift+$down move down
+bindsym $mod+shift+$up move up
+bindsym $mod+shift+$right move right
+
+# Scratchpad
+bindsym $mod+shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# Floating
+bindsym $mod+shift+equal floating toggle
+bindsym $mod+equal focus mode_toggle
+
+floating_modifier $mod
+
+# Parent
+bindsym $mod+a focus parent
+
+# Move to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# Move container to workspace
+bindsym $mod+shift+1 move container to workspace 1
+bindsym $mod+shift+2 move container to workspace 2
+bindsym $mod+shift+3 move container to workspace 3
+bindsym $mod+shift+4 move container to workspace 4
+bindsym $mod+shift+5 move container to workspace 5
+bindsym $mod+shift+6 move container to workspace 6
+bindsym $mod+shift+7 move container to workspace 7
+bindsym $mod+shift+8 move container to workspace 8
+bindsym $mod+shift+9 move container to workspace 9
+bindsym $mod+shift+0 move container to workspace 10
+
+# Fancy
+font Monospace 10
+bar status_command i3status
+output * bg /usr/share/backgrounds/xfce/manjaro-cat.jpg stretch
+
+# Utility
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+bindsym $mod+semicolon exec swaylock -c "#000000"
+
+# bindsym $mod+tab focus right # TODO cycle focus
+
+# input * accel_profile flat
+
+input $touchpad {
+  natural_scroll enabled
+  tap enabled
+  dwt enabled
+}
+
+exec dex -a -e $DESKTOP_SESSION
+exec mako
+exec systemd-notify --ready
