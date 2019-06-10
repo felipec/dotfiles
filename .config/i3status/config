@@ -1,0 +1,38 @@
+general {
+  colors = true
+  interval = 5
+}
+
+order += "cpu_usage"
+order += "disk /"
+order += "battery all"
+order += "cpu_temperature 0"
+order += "load"
+order += "time"
+
+battery all {
+  format = "%status %percentage"
+  # low_threshold = 20
+  # threshold_type = "percentage"
+  format_down = "No battery"
+  status_chr = "⚡"
+  status_bat = "🔋 BAT"
+  status_unk = "?"
+  status_full = "☻"
+}
+
+time {
+  format = "%H:%M:%S"
+}
+
+load {
+  format = "%1min"
+}
+
+disk "/" {
+  format = "%avail"
+}
+
+cpu_temperature 0 {
+  format = "T: %degrees °C"
+}
