@@ -5,6 +5,8 @@ export VIM_EDITOR=gvim
 export XKB_DEFAULT_LAYOUT=us
 export XKB_DEFAULT_VARIANT=altgr-intl
 
+export GDK_BACKEND=x11
+
 # Manjaro
 export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
