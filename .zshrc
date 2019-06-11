@@ -31,6 +31,7 @@ PS1=' %(2L.%L.) %F{green}%#%f '
 RPS1='%F{white}%~%f$(__git_ps1 "[%s]") %F{blue}%B%m%b%f'
 
 eval $(dircolors -b)
+export LS_COLORS="$LS_COLORS:*.txt=00;36:*.patch=00;36:*.csv=00;36"
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
