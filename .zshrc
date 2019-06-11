@@ -17,10 +17,10 @@ zstyle ':completion:*' menu yes=long select
 zstyle ':completion:*' use-cache yes
 zstyle ':completion:*:functions' ignored-patterns '_*'
 
-HISTFILE=~/.histfile
-SAVEHIST=1000000
-HISTSIZE=1000000
-HISTIGNORE='ls:[bf]g:exit:reset:clear:cd *'
+HISTFILE=~/.history
+SAVEHIST=10000
+HISTSIZE=10000
+HISTORY_IGNORE='(ls|[bf]g|exit|reset|clear|cd *)'
 
 # Left
 # PS1='%F{blue}%B%m%b%f %F{white}%~%f$(__git_ps1 "[%s]") %F{green}%#%f '
@@ -35,21 +35,25 @@ export LS_COLORS="$LS_COLORS:*.txt=00;36:*.patch=00;36:*.csv=00;36"
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+setopt share_history
 setopt hist_ignore_space
-setopt hist_no_store
+setopt hist_save_no_dups
 setopt hist_reduce_blanks
-setopt hist_ignore_all_dups
+setopt hist_no_store
+
 setopt hist_verify
 setopt complete_in_word
-setopt inc_append_history
+setopt correct
 
 setopt auto_cd
-setopt correct
-setopt prompt_subst
 setopt auto_param_slash
 
+setopt prompt_subst
+
 zshaddhistory () {
-	print -r -- "${1%%$'\n'} ### ${PWD}" >> ~/.histstat || true
+	printf "%s\0" "$1" >> ~/.local/share/histstat/commands
+	printf "%s\0" "$PWD" >> ~/.local/share/histstat/dirs
+	true
 }
 
 bindkey -e

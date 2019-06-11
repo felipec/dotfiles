@@ -75,8 +75,7 @@ Videos/
 .gnupg/
 
 .bash_history
-.histfile
-.histstat
+.history
 .lesshst
 .sqlite_history
 .ssh/id_rsa*
