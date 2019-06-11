@@ -1,0 +1,56 @@
+#!/usr/bin/env ruby
+
+$cmds = Hash.new(0)
+$dirs = Hash.new(0)
+$aliases = {}
+$hash_dirs = {}
+
+%x[zsh -i -c 'alias'].each_line do |l|
+  id, cmd = l.chomp.split('=')
+  $aliases[id] = cmd
+end
+
+$hash_dirs[Dir.home] = '~'
+
+%x[zsh -i -c 'hash -d'].each_line do |l|
+  id, dir = l.chomp.split('=')
+  $hash_dirs[dir] = id
+end
+
+def bump_cmd(cmd)
+  cmd = cmd.split(' ')
+  return if cmd.empty?
+  cmd.each_with_index do |_, i|
+    e = cmd[0..i].join(' ')
+    $cmds[e] += 1
+  end
+end
+
+File.open("#{Dir.home}/.local/share/histstat/commands").each("\0") do |e|
+  cmd = e.chomp("\0").chomp('')
+  bump_cmd(cmd)
+end
+
+File.open("#{Dir.home}/.local/share/histstat/dirs").each("\0") do |e|
+  dir = e.chomp("\0")
+  $dirs[dir] += 1
+end
+
+def title(text)
+  puts [nil, text, '-' * text.size]
+end
+
+title 'Top commands'
+
+$cmds.sort_by(&:last).reverse.first(20).each do |e,c|
+  m = $aliases.has_key?(e) ? '*' : ' '
+  printf " %s %4d %s\n" % [m, c, e]
+end
+
+title 'Top directories'
+
+$dirs.sort_by(&:last).reverse.first(20).each do |e,c|
+  m = $hash_dirs.has_key?(e) ? '*' : ' '
+  e = e.sub(Dir.home, '~')
+  printf " %s %4d %s\n" % [m, c, e]
+end
