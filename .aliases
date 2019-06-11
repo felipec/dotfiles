@@ -1,6 +1,5 @@
 #!sh
 
-alias gp=~/bin/gst-player
 alias xo=xdg-open
 alias sudo="sudo -A"
 
@@ -8,9 +7,14 @@ alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 
 alias g="git"
-alias m="mv"
-alias v="$VIM_EDITOR"
 alias l="ls"
+alias v="$VIM_EDITOR"
+alias r='ruby'
+alias gd='g diff'
+alias gc='g commit'
+alias gs='g show'
+alias gco='g co'
+alias m="mv"
 alias vd="$VIM_EDITOR -d"
 alias mv="mv -i"
 alias ll="ls -l"
