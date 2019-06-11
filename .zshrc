@@ -22,8 +22,12 @@ SAVEHIST=1000000
 HISTSIZE=1000000
 HISTIGNORE='ls:[bf]g:exit:reset:clear:cd *'
 
+# Left
+# PS1='%F{blue}%B%m%b%f %F{white}%~%f$(__git_ps1 "[%s]") %F{green}%#%f '
+# PS1='%F{blue}%B%m%b%f %F{white}%~%f %F{green}%#%f '
 
-PS1=' %F{green}%#%f '
+# Right
+PS1=' %(2L.%L.) %F{green}%#%f '
 RPS1='%F{white}%~%f$(__git_ps1 "[%s]") %F{blue}%B%m%b%f'
 
 eval $(dircolors -b)
@@ -72,6 +76,8 @@ precmd () {
 	# Change the window title of X terminals
 	# http://tldp.org/HOWTO/Xterm-Title-3.html
 	print -Pn "\e]2;%2~\a"
+	# Try __git_ps1 in PROMPT_COMMAND mode
+	# __git_ps1 '%F{blue}%B%m%b%f %F{white}%~%f' ' %F{green}%#%f ' '[%s]'
 }
 
 compdef _git gk=gitk gkm=gitk gkn=gitk gku=gitk
