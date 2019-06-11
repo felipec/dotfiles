@@ -1,11 +1,15 @@
 fpath=(~/.zsh $fpath)
 
+source ~/.aliases
+source ~/.git-prompt.sh
+
+GIT_PS1_SHOWCOLORHINTS=1
+GIT_PS1_SHOWDIRTYSTATE=1
+
 export TERM=xterm-256color
 
 autoload -U compinit && compinit
 autoload -U colors && colors
-
-source ~/.git-prompt.sh
 
 zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 
@@ -18,8 +22,6 @@ SAVEHIST=1000000
 HISTSIZE=1000000
 HISTIGNORE='ls:[bf]g:exit:reset:clear:cd *'
 
-GIT_PS1_SHOWCOLORHINTS=1
-GIT_PS1_SHOWDIRTYSTATE=1
 
 PS1='%{$fg_bold[green]%} %# %{$reset_color%}'
 RPS1='%{$fg[white]%}%~$(__git_ps1 "[%s]") %{$fg_bold[blue]%}%m%{$reset_color%}'
@@ -57,31 +59,19 @@ bindkey "\eOF" end-of-line
 bindkey "\e[5~" history-beginning-search-backward
 bindkey "\e[6~" history-beginning-search-forward
 
+hash -d d=~/dev
+hash -d g=~d/git
+hash -d l=~d/linux
+
 hash -d mnt=/run/media/felipec
 hash -d shared=~mnt/shared
-hash -d download=~mnt/shared/download
 hash -d data=~mnt/data
-hash -d src=~data/src
-hash -d dev=~data/dev
-hash -d home=~data/felipec
-hash -d todo=~data/felipec/todo
-hash -d notes=~data/felipec/notes
 
-hash -d d=~/dev
-hash -d g=~/dev/git
-hash -d l=~/dev/linux
-
-hash -d gst-dsp=~data/omap/gst-dsp
-hash -d pecan=~data/msn/msn-pecan
-
-source ~/.aliases
 
 precmd () {
-	print -Pn "\e]2;${TITLE:-%2~}\a"
-}
-
-title () {
-	TITLE=$*
+	# Change the window title of X terminals
+	# http://tldp.org/HOWTO/Xterm-Title-3.html
+	print -Pn "\e]2;%2~\a"
 }
 
 compdef _git gk=gitk gkm=gitk gkn=gitk gku=gitk
