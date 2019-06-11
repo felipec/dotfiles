@@ -1,3 +1,5 @@
+# login shell
+
 export PATH="/usr/lib/ccache/bin/:$PATH"
 export PATH="/opt/git/bin:/opt/sb2/bin:/opt/notmuch/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
@@ -15,7 +17,3 @@ export SUDO_ASKPASS=$HOME/bin/sudo_askpass
 
 eval "$(gnome-keyring-daemon --start --components=ssh)"
 export SSH_AUTH_SOCK
-
-if test "$PS1" && test "$BASH" && test -r ~/.bashrc; then
-	. ~/.bashrc
-fi
