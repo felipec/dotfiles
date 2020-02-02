@@ -33,6 +33,7 @@ setup () {
 
   mkdir -p ~/.local/share/histstat
 
+  # vim zsh ruby git
   # xdg-user-dirs
   # chromium
   # ccache
