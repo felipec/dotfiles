@@ -50,9 +50,6 @@ Videos/
 .config/octave/
 .config/GIMP/
 
-.config/chromium
-.config/chromium-backup/
-
 .config/git/gitk
 .config/psd/.psd.conf
 
