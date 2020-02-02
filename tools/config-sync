@@ -16,7 +16,6 @@ cmp_all () {
 }
 
 setup () {
-  xdg-user-dirs-update --force
   xdg-settings set default-web-browser chromium.desktop
   sudo chsh -s /bin/zsh felipec
 
@@ -28,6 +27,11 @@ setup () {
 
   chmod go-rw ~/.msmtprc
 
+  # XDG user dirs
+  mkdir -p ~/{Desktop,Downloads,Templates,Public,Documents}
+  mkdir -p ~/Documents/{Music,Pictures,Videos}
+
+  # xdg-user-dirs
   # chromium
   # ccache
   # conky
