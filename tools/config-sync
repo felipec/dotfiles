@@ -31,6 +31,8 @@ setup () {
   mkdir -p ~/{Desktop,Downloads,Templates,Public,Documents}
   mkdir -p ~/Documents/{Music,Pictures,Videos}
 
+  mkdir -p ~/.local/share/histstat
+
   # xdg-user-dirs
   # chromium
   # ccache
