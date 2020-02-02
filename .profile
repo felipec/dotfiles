@@ -10,7 +10,6 @@ export EMAIL=felipe.contreras@gmail.com
 export VIM_EDITOR=vim
 export VISUAL=$VIM_EDITOR
 export LESS=FRSX
-export PYTHON_PATH=/usr/bin/python2
 export MAKEFLAGS='-j8'
 
 export SUDO_ASKPASS=$HOME/bin/sudo_askpass
