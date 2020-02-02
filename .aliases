@@ -1,5 +1,9 @@
 #!sh
 
+alias config='git --git-dir=$HOME/.config/dotfiles/.git/ --work-tree=$HOME'
+alias crb='git --git-dir=$HOME/.config/dotfiles/.git/ --work-tree=$HOME/.config/dotfiles/'
+alias c=config
+
 alias xo=xdg-open
 alias sudo="sudo -A"
 
