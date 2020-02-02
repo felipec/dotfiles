@@ -8,6 +8,7 @@ Pictures/
 Videos/
 
 .config/dotfiles-setup
+.config/dotfiles
 
 .ccache/
 .cache/
