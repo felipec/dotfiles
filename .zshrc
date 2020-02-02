@@ -76,7 +76,6 @@ hash -d mnt=/run/media/felipec
 hash -d shared=~mnt/shared
 hash -d data=~mnt/data
 
-
 precmd () {
 	# Change the window title of X terminals
 	# http://tldp.org/HOWTO/Xterm-Title-3.html
