@@ -2,7 +2,7 @@ source ~/.aliases
 source ~/.git-prompt.sh
 
 eval $(dircolors -b)
-export LS_COLORS="$LS_COLORS:*.txt=00;36:*.patch=00;36:*.csv=00;36"
+export LS_COLORS="$LS_COLORS:*.txt=00;36:*.patch=00;36:*.csv=00;36:*.json=00;36:*.yml=00;36"
 
 GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_SHOWDIRTYSTATE=1
