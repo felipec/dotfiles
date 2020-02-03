@@ -23,6 +23,11 @@ colorscheme felipec
 
 set fo=tcqn
 
+set showbreak=↪
+set fillchars+=vert:\ 
+set listchars=tab:»\ ,trail:∙,nbsp:␣
+set listchars+=eol:↲,extends:❯,precedes:❮
+
 if has("gui_running")
     :set lines=40 columns=120
 endif
