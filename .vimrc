@@ -51,6 +51,8 @@ let g:netrw_browsex_viewer = 'chromium'
 let g:syntastic_ruby_mri_args = '-W1 -c'
 let g:airline#extensions#whitespace#enabled = 0
 
+runtime syntax_groups.vim
+
 if has("cscope")
     set cscopetag cscopeverbose
 
