@@ -35,7 +35,8 @@ hi MatchParen guibg=#5566aa ctermbg=61
 hi ErrorMsg guifg=#000000 ctermfg=0 guibg=#ffcc88 ctermbg=222 gui=bold
 hi Folded guifg=#8888ff ctermfg=105 guibg=#333333 ctermbg=236 gui=bold
 hi FoldColumn guifg=#8888ff ctermfg=105 guibg=#333333 ctermbg=236 gui=bold
-hi NonText guifg=#888888 ctermfg=102 guibg=#333333 ctermbg=236 gui=none
+hi NonText guifg=#666600 ctermfg=58 guibg=#222222 ctermbg=235 gui=none
+hi SpecialKey guifg=#ff8800 ctermfg=208 gui=none
 hi Search guifg=#6600aa ctermfg=55 guibg=#ddbbee ctermbg=183 gui=underline
 hi SpellBad guisp=#bb5555
 hi SpellCap guisp=#5555bb
