@@ -1,0 +1,99 @@
+#!/usr/bin/env ruby
+
+require 'dbus'
+require 'yaml'
+
+$xfconf = DBus.session_bus['org.xfce.Xfconf']['/org/xfce/Xfconf']['org.xfce.Xfconf']
+$data = YAML.load(File.read('xfce4-config.yml'))
+$updates = Hash.new { |h,k| h[k] = {} }
+
+# General settings
+if settings = $data['settings']
+  settings.each do |channel,list|
+    list.each do |key, value|
+      current_value = $xfconf.PropertyExists(channel, key) ? $xfconf.GetProperty(channel, key) : nil
+      $updates[channel][key] = value unless current_value == value
+    end
+  end
+end
+
+# Command keyboard shortcuts
+if settings = $data['command_keyboard_shortcuts']
+  channel = 'xfce4-keyboard-shortcuts'
+  base = '/commands/custom'
+
+  current = $xfconf.GetAllProperties(channel, base)
+  settings.each do |shortcut,command|
+    key = base + '/' + shortcut
+    next if command == current[key]
+    $updates[channel][key] = command
+  end
+end
+
+# WM keyboard shortcuts
+if settings = $data['wm_keyboard_shortcuts']
+  channel = 'xfce4-keyboard-shortcuts'
+  base = '/xfwm4/custom'
+
+  updates = settings.map { |action,shortcut| [ base + '/' + shortcut, action + '_key' ] }.to_h
+
+  current = $xfconf.GetAllProperties(channel, base)
+  clear = current.map { |k,v| [ k, updates.has_value?(v) ? '' : nil ] }.to_h
+  updates.merge!(clear) { nil }
+
+  $updates[channel].merge!(updates.compact)
+end
+
+# Apply the updates
+$updates.each do |channel,list|
+  list.each do |key,value|
+    if value == ''
+      puts "delete key #{channel}:#{key}"
+      $xfconf.ResetProperty(channel, key, false)
+    else
+      puts "set key #{channel}:#{key} = #{value}"
+      $xfconf.SetProperty(channel, key, value)
+    end
+  end
+end
+
+# Panels
+if settings = $data['panels']
+  channel = 'xfce4-panel'
+  base = '/panels'
+
+  begin
+    $xfconf.ResetProperty(channel, '/panels', true)
+    $xfconf.ResetProperty(channel, '/plugins', true)
+  rescue DBus::Error
+  end
+
+  settings.each_with_index do |panel,panel_id|
+    plugins = panel.delete('plugins')
+    plugins.each_with_index do |(name,params),plugin_id|
+      plugin_base = "/plugins/plugin-#{plugin_id + 1}"
+
+      puts "set key #{channel}:#{plugin_base} = #{name}"
+      $xfconf.SetProperty(channel, plugin_base, name)
+      next unless params
+
+      params.each do |param, value|
+        puts "set key #{channel}:#{plugin_base}/#{param} = #{value}"
+        $xfconf.SetProperty(channel, plugin_base + '/' + param, value)
+      end
+    end
+    panel_base = "/panels/panel-#{panel_id + 1}"
+
+    panel['plugin-ids'] = (1..plugins.length).to_a
+    panel.each do |key, value|
+      puts "set key #{channel}:#{panel_base}/#{key} = #{value}"
+      $xfconf.SetProperty(channel, panel_base + '/' + key, value)
+    end
+  end
+
+  value = (1..settings.length).to_a
+  puts "set key #{channel}:#{base} = #{value}"
+  $xfconf.SetProperty(channel, base, value)
+
+  system('xfce4-panel --restart')
+end
