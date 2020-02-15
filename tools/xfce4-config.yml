@@ -1,0 +1,59 @@
+command_keyboard_shortcuts:
+  "<Super>Return": xfce4-terminal
+  "<Super>b": chromium
+  "<Super>e": thunar
+  "<Super>space": xfce4-terminal --drop-down --hide-menubar
+  "XF86AudioLowerVolume": "pamixer --decrease 5"
+  "XF86AudioRaiseVolume": "pamixer --increase 5"
+  "XF86AudioMute": "pamixer --toggle-mute"
+  "XF86AudioNext": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+  "XF86AudioPlay": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+  "XF86AudioPrev": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+  "XF86AudioStop": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+
+wm_keyboard_shortcuts:
+  workspace_1: "<Super>1"
+  workspace_2: "<Super>2"
+  workspace_3: "<Super>3"
+  workspace_4: "<Super>4"
+  workspace_5: "<Super>5"
+  workspace_6: "<Super>6"
+  workspace_7: "<Super>7"
+  workspace_8: "<Super>8"
+  workspace_9: "<Super>9"
+  workspace_10: "<Super>0"
+
+settings:
+  xfwm4:
+    "/general/workspace_count": 8
+    "/general/workspace_names": ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight"]
+    "/general/sync_to_vblank": true
+
+panels:
+- size: 30
+  length: 100
+  position: "p=8;x=960;y=1064"
+  position-locked: true
+  plugins:
+  - - applicationsmenu
+    - show-button-title: false
+  - - separator
+    - style: 1
+  - - directorymenu
+    - base-directory: "/home/felipec"
+  - - windowmenu
+    - style: 0
+  - - tasklist
+    - flat-buttons: true
+      grouping: 1
+  - - separator
+    - expand: true
+      style: 0
+  - - pager
+    - rows: 2
+      workspace-scrolling: false
+  - - clock
+    - mode: 2
+      timezone: "America/Monterrey"
+  - - systray
+  - - power-manager-plugin
