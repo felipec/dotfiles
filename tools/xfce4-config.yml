@@ -22,38 +22,83 @@ wm_keyboard_shortcuts:
   workspace_8: "<Super>8"
   workspace_9: "<Super>9"
   workspace_10: "<Super>0"
+  left_workspace: "<Super>Left"
+  right_workspace: "<Super>Right"
+  up_workspace: "<Super>Up"
+  down_workspace: "<Super>Down"
+  show_desktop: "<Super>d"
+  move_window_left_workspace: "<Primary><Super>Left"
+  move_window_right_workspace: "<Primary><Super>Right"
+  move_window_up_workspace: "<Primary><Super>Up"
+  move_window_down_workspace: "<Primary><Super>Down"
+  move_window_workspace_1: "<Primary><Super>1"
+  move_window_workspace_2: "<Primary><Super>2"
+  move_window_workspace_3: "<Primary><Super>3"
+  move_window_workspace_4: "<Primary><Super>4"
+  move_window_workspace_5: "<Primary><Super>5"
+  move_window_workspace_6: "<Primary><Super>6"
+  move_window_workspace_7: "<Primary><Super>7"
+  move_window_workspace_8: "<Primary><Super>8"
+  move_window_workspace_9: "<Primary><Super>9"
+  move_window_workspace_10: "<Primary><Super>0"
 
 settings:
   xfwm4:
     "/general/workspace_count": 8
-    "/general/workspace_names": ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight"]
-    "/general/sync_to_vblank": true
+    "/general/cycle_tabwin_mode": 1
+    "/general/placement_ratio": 60
+    "/general/restore_on_move": true
+    "/general/title_font": "Sans Bold 10"
+    "/general/cycle_raise": false
 
 panels:
 - size: 30
   length: 100
   position: "p=8;x=960;y=1064"
   position-locked: true
+  autohide-behavior: 0
+  background-style: 0
+  disable-struts: false
+  icon-size: 16
+  length-adjust: false
+  mode: 0
+  role: "xfce4-panel-12965750720"
   plugins:
-  - - applicationsmenu
-    - show-button-title: false
+  - - whiskermenu
   - - separator
-    - style: 1
-  - - directorymenu
-    - base-directory: "/home/felipec"
+    - style: 2
   - - windowmenu
     - style: 0
+      workspace-names: false
+      urgency-notification: true
+      all-workspaces: true
   - - tasklist
     - flat-buttons: true
-      grouping: 1
+      grouping: 0
+      show-labels: true
+      show-handle: false
+      sort-order: 0
+      show-wireframes: false
+      switch-workspace-on-unminimize: true
   - - separator
     - expand: true
       style: 0
   - - pager
     - rows: 2
       workspace-scrolling: false
+      miniature-view: true
+  - - systray
+    - names-visible: []
+      show-frame: false
+      size-max: 24
+      names-ordered: ["pamac-tray", "xfce4-power-manager", "networkmanager applet", "discord", "steam", "thunar", "vlc", "blueman-applet"]
+      square-icons: true
+      names-hidden: ["steam"]
+  - - pulseaudio
+    - enable-keyboard-shortcuts: true
+      mpris-players: "spotify;vlc"
+  - - xfce4-sensors-plugin
+  - - battery
+  - - notification-plugin
   - - clock
     - mode: 2
-      timezone: "America/Monterrey"
-  - - systray
-  - - power-manager-plugin
