@@ -3,6 +3,8 @@ command_keyboard_shortcuts:
   "<Super>b": chromium
   "<Super>e": thunar
   "<Super>space": xfce4-terminal --drop-down --hide-menubar
+  "<Super>l": light-locker-command --lock
+  "Print": xfce4-screenshooter
   "XF86AudioLowerVolume": "pamixer --decrease 5"
   "XF86AudioRaiseVolume": "pamixer --increase 5"
   "XF86AudioMute": "pamixer --toggle-mute"
@@ -45,33 +47,62 @@ wm_keyboard_shortcuts:
 settings:
   xfwm4:
     "/general/workspace_count": 8
+    "/general/easy_click": "Super"
     "/general/cycle_tabwin_mode": 1
     "/general/placement_ratio": 60
-    "/general/restore_on_move": true
     "/general/title_font": "Sans Bold 10"
     "/general/cycle_raise": false
+    "/general/cycle_hidden": false
+    "/general/scroll_workspaces": false
+    "/general/titleless_maximize": true
+  keyboards:
+    "/Default/KeyRepeat/Delay": 200
+    "/Default/KeyRepeat/Rate": 50
+  keyboard-layout:
+    "/Default/XkbDisable": false
+    "/Default/XkbLayout": "us"
+    "/Default/XkbVariant": "altgr-intl"
+  pointers:
+    "/ELAN130100_04F33035_Touchpad/ReverseScrolling": true
+    "/ELAN130100_04F33035_Touchpad/Properties/libinput_Tapping_Enabled": 1
+  xfce4-desktop:
+    "/desktop-icons/style": 0
+  xfce4-session:
+    "/general/SaveOnExit": false
+    "/general/LockCommand": "light-locker-command --lock"
+    "/compat/LaunchGNOME": true
+  xfce4-power-manager:
+    "/xfce4-power-manager/lid-action-on-ac": 1
+    "/xfce4-power-manager/lid-action-on-battery": 1
+    "/xfce4-power-manager/logind-handle-lid-switch": true
+    "/xfce4-power-manager/sleep-button-action": 1
+    "/xfce4-power-manager/power-button-action": 4
+    "/xfce4-power-manager/general-notification": false
+    "/xfce4-power-manager/inactivity-on-ac": 15
+    "/xfce4-power-manager/inactivity-on-battery": 15
+    "/xfce4-power-manager/show-panel-label": 1
+  xfce4-notifyd:
+    "/expire-timeout": 4
+    "/primary-monitor": 1
+    "/do-slideout": true
+    "/notification-log": true
 
 panels:
 - size: 30
   length: 100
+  length-adjust: false
   position: "p=8;x=960;y=1064"
   position-locked: true
-  autohide-behavior: 0
-  background-style: 0
-  disable-struts: false
   icon-size: 16
-  length-adjust: false
-  mode: 0
-  role: "xfce4-panel-12965750720"
   plugins:
   - - whiskermenu
   - - separator
     - style: 2
   - - windowmenu
-    - style: 0
-      workspace-names: false
-      urgency-notification: true
+    - style: 1
       all-workspaces: true
+      workspace-names: true
+      urgency-notification: false
   - - tasklist
     - flat-buttons: true
       grouping: 0
@@ -85,20 +116,25 @@ panels:
       style: 0
   - - pager
     - rows: 2
-      workspace-scrolling: false
       miniature-view: true
+      workspace-scrolling: false
   - - systray
-    - names-visible: []
-      show-frame: false
-      size-max: 24
-      names-ordered: ["pamac-tray", "xfce4-power-manager", "networkmanager applet", "discord", "steam", "thunar", "vlc", "blueman-applet"]
-      square-icons: true
-      names-hidden: ["steam"]
+    - square-icons: true
+      size-max: 16
+      names-hidden: [ "steam" ]
+      names-visible: []
+      names-ordered:
+      - xfce terminal
+      - discord
+      - vlc
+  - - statusnotifier
+    - square-icons: true
+      symbolic-icons: true
+  - - power-manager-plugin
+  - - notification-plugin
   - - pulseaudio
     - enable-keyboard-shortcuts: true
       mpris-players: "spotify;vlc"
   - - xfce4-sensors-plugin
-  - - battery
-  - - notification-plugin
   - - clock
-    - mode: 2
+    - digital-format: "%R"
