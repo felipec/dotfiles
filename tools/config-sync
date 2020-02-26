@@ -40,9 +40,9 @@ setup () {
   # conky
   # light
 
-  git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
-  git clone https://github.com/vim-syntastic/syntastic ~/.vim/pack/dist/start/syntastic
-  git clone https://github.com/tpope/vim-commentary ~/.vim/pack/dist/start/vim-commentary
+  git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/start/lightline
+  git clone https://github.com/vim-syntastic/syntastic ~/.vim/pack/plugin/start/syntastic
+  git clone https://github.com/tpope/vim-commentary ~/.vim/pack/plugin/start/commentary
 }
 
 cmp_all
