@@ -1,4 +1,4 @@
-syntax on
+syntax enable
 set hlsearch
 set bs=2
 set ruler
@@ -29,7 +29,7 @@ set listchars=tab:»\ ,trail:∙,nbsp:␣
 set listchars+=eol:↲,extends:❯,precedes:❮
 
 if has("gui_running")
-    :set lines=40 columns=120
+  set lines=40 columns=120
 endif
 
 au! BufRead,BufNewFile *git/Documentation/*.txt set ft=asciidoc
@@ -49,7 +49,6 @@ au! BufRead,BufNewFile *userspace-dspbridge/*.[ch] source ~/.vim/after/ftplugin/
 let g:netrw_browsex_viewer = 'chromium'
 
 let g:syntastic_ruby_mri_args = '-W1 -c'
-let g:airline#extensions#whitespace#enabled = 0
 
 runtime syntax_groups.vim
 
