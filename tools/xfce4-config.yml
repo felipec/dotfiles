@@ -5,13 +5,6 @@ command_keyboard_shortcuts:
   "<Super>space": xfce4-terminal --drop-down --hide-menubar
   "<Super>l": light-locker-command --lock
   "Print": xfce4-screenshooter
-  "XF86AudioLowerVolume": "pamixer --decrease 5"
-  "XF86AudioRaiseVolume": "pamixer --increase 5"
-  "XF86AudioMute": "pamixer --toggle-mute"
-  "XF86AudioNext": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
-  "XF86AudioPlay": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-  "XF86AudioPrev": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-  "XF86AudioStop": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
 
 wm_keyboard_shortcuts:
   workspace_1: "<Super>1"
@@ -118,23 +111,16 @@ panels:
     - rows: 2
       miniature-view: true
       workspace-scrolling: false
+  - - statusnotifier
+    - square-icons: true
+      icon-size: 16
+      symbolic-icons: true
   - - systray
     - square-icons: true
       size-max: 16
-      names-hidden: [ "steam" ]
-      names-visible: []
-      names-ordered:
-      - xfce terminal
-      - discord
-      - vlc
-  - - statusnotifier
-    - square-icons: true
-      symbolic-icons: true
   - - power-manager-plugin
   - - notification-plugin
   - - pulseaudio
     - enable-keyboard-shortcuts: true
-      mpris-players: "spotify;vlc"
-  - - xfce4-sensors-plugin
   - - clock
     - digital-format: "%R"
