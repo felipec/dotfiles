@@ -32,19 +32,11 @@ if has("gui_running")
   set lines=40 columns=120
 endif
 
+au! BufRead,BufNewFile *linux*/*.[ch] source ~/.vim/after/ftplugin/c-linux.vim
 au! BufRead,BufNewFile *git/Documentation/*.txt set ft=asciidoc
-au! BufRead,BufNewFile *.vala set ft=vala
-au! BufRead,BufNewFile *.vapi set ft=vala
-au! BufRead,BufNewFile *.json set ft=json
 au! BufRead,BufNewFile *.t set ft=sharness
 
-au! BufRead,BufNewFile ~/.mutt/* set ft=muttrc
-au! BufRead,BufNewFile *msn-pecan/*.[ch] source ~/.vim/after/ftplugin/c-old.vim
-au! BufRead,BufNewFile *notmuch/*.[ch] source ~/.vim/after/ftplugin/c-nmm.vim
-au! BufRead,BufNewFile *linux*/*.[ch] source ~/.vim/after/ftplugin/c-linux.vim
-au! BufRead,BufNewFile *lastfm*/*.[ch] source ~/.vim/after/ftplugin/c-gnome.vim
-au! BufRead,BufNewFile *audio_test*/*.[ch] source ~/.vim/after/ftplugin/c-linux.vim
-au! BufRead,BufNewFile *userspace-dspbridge/*.[ch] source ~/.vim/after/ftplugin/c-bridge.vim
+au! BufRead,BufNewFile *notmuch/*.[ch] source ~/.vim/after/ftplugin/c-notmuch.vim
 
 let g:netrw_browsex_viewer = 'chromium'
 

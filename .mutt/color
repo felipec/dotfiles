@@ -1,5 +1,3 @@
-# vim: set filetype=muttrc :
-
 color normal white black
 color tree cyan black
 
@@ -34,3 +32,5 @@ color index brightyellow black ~N # new
 color index brightmagenta black ~F # flagged
 color index blue black ~T # tagged
 color index red black ~D # deleted
+
+# vim: set ft=muttrc:
