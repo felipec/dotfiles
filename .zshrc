@@ -1,7 +1,7 @@
-fpath=(~/.zsh $fpath)
+fpath=(~/.zsh ~/.local/share/git-completion/zsh $fpath)
 
 source ~/.aliases
-source ~/.git-prompt.sh
+source ~/.local/share/git-completion/prompt.sh
 
 GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_SHOWDIRTYSTATE=1
@@ -10,8 +10,6 @@ export TERM=xterm-256color
 
 autoload -U compinit && compinit
 autoload -U colors && colors
-
-zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 
 zstyle ':completion:*' menu yes=long select
 zstyle ':completion:*' use-cache yes

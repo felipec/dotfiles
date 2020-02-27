@@ -19,11 +19,14 @@ setup () {
   xdg-settings set default-web-browser chromium.desktop
   sudo chsh -s /bin/zsh felipec
 
-  url='https://git.kernel.org/pub/scm/git/git.git/plain/contrib/completion'
+  url='https://raw.githubusercontent.com/felipec/git-completion/master/'
 
-  curl -o ~/.git-prompt.sh "${url}/git-prompt.sh"
-  curl -o ~/.git-completion.bash "${url}/git-completion.bash"
-  curl -o ~/.zsh/_git "${url}/git-completion.zsh"
+  mkdir -p ~/.local/share/git-completion
+  curl -o ~/.local/share/git-completion/git-prompt.sh "${url}/git-prompt.sh"
+  mkdir -p ~/.local/share/bash-completion/completions
+  curl -o ~/.local/share/bash-completion/completions/git-completion.bash "${url}/git-completion.bash"
+  mkdir -p ~/.local/share/git-completion/zsh
+  curl -o ~/.local/share/git-completion/zsh/_git "${url}/git-completion.zsh"
 
   chmod go-rw ~/.msmtprc
 

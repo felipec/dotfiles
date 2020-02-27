@@ -1,5 +1,6 @@
 source ~/.aliases
-source ~/.git-prompt.sh
+source ~/.local/share/bash-completion/completions/git
+source ~/.local/share/git-completion/prompt.sh
 
 eval $(dircolors -b)
 export LS_COLORS="$LS_COLORS:*.txt=00;36:*.patch=00;36:*.csv=00;36:*.json=00;36:*.yml=00;36"
