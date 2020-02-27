@@ -37,6 +37,7 @@ au! BufRead,BufNewFile *git/Documentation/*.txt set ft=asciidoc
 au! BufRead,BufNewFile *.t set ft=sharness
 
 au! BufRead,BufNewFile *notmuch/*.[ch] source ~/.vim/after/ftplugin/c-notmuch.vim
+au! BufRead,BufNewFile *git-remote-hg/*.t source ~/.vim/after/ftplugin/t-git-remote-hg.vim
 
 let g:netrw_browsex_viewer = 'chromium'
 
