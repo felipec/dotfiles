@@ -28,6 +28,12 @@ setup () {
   mkdir -p ~/.local/share/git-completion/zsh
   curl -o ~/.local/share/git-completion/zsh/_git "${url}/git-completion.zsh"
 
+  url='https://raw.githubusercontent.com/felipec/git-smartlist/master/'
+
+  mkdir -p ~/bin
+  curl -o ~/bin/git-smartlist "${url}/git-smartlist"
+  chmod +x ~/bin/git-smartlist
+
   chmod go-rw ~/.msmtprc
 
   # XDG user dirs

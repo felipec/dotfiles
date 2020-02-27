@@ -27,28 +27,13 @@ alias ll="ls -l"
 gk() { gitk "$@" & }
 
 # Shorthand for git log
-gl() { git log --oneline --decorate --graph "$@" ; }
+gl() { git log --oneline --decorate --graph --boundary "$@" ; }
 
-# List all
-gka() { gk $(git list all $@) ; }
-gla() { gl $(git list all $@) ; }
+gks() { gk $(git smartlist $@) ; }
+gls() { gl $(git smartlist $@) ; }
 
-# List of the branch from master
-gkm() { gk $(git list from-master $@) ; }
-glm() { gl $(git list from-master $@) ; }
-
-# List of the branch from origin/master
-gko() { gk $(git list from-origin-master $@) ; }
-glo() { gl $(git list from-origin-master $@) ; }
-
-# List of the branch from upstream
-gku() { gk $(git list from-upstream $@) ; }
-glu() { gl $(git list from-upstream $@) ; }
-
-# List of the branches with a prefix (e.g. fc-)
-gkb() { gk $(git list branches $@) ; }
-glb() { gl $(git list branches $@) ; }
-
-# List all the branches from their fork point
-gkn() { gk $(git list negate-upstreams $@) ; }
-gln() { gl $(git list negate-upstreams $@) ; }
+alias gka='gks all' gla='gls all'
+alias gkb='gks branches' glb='gls branches'
+alias gkm='gks from' glm='gls from'
+alias gku='gks from-upstream' glu='gls from-upstream'
+alias gkn='gks negate-upstreams' gln='gls negate-upstreams'
