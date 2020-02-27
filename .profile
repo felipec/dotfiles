@@ -13,6 +13,3 @@ export LESS=FRSX
 export MAKEFLAGS='-j8'
 
 export SUDO_ASKPASS=$HOME/bin/sudo_askpass
-
-eval "$(gnome-keyring-daemon --start --components=ssh)"
-export SSH_AUTH_SOCK
