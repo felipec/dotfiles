@@ -36,7 +36,7 @@ au! BufRead,BufNewFile *git/Documentation/*.txt set ft=asciidoc
 au! BufRead,BufNewFile *.vala set ft=vala
 au! BufRead,BufNewFile *.vapi set ft=vala
 au! BufRead,BufNewFile *.json set ft=json
-au! BufRead,BufNewFile *.t set ft=sh
+au! BufRead,BufNewFile *.t set ft=sharness
 
 au! BufRead,BufNewFile ~/.mutt/* set ft=muttrc
 au! BufRead,BufNewFile *msn-pecan/*.[ch] source ~/.vim/after/ftplugin/c-old.vim
