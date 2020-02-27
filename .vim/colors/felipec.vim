@@ -9,11 +9,11 @@ set background=dark
 
 hi clear
 
-if exists("syntax_on")
+if exists('syntax_on')
   syntax reset
 endif
 
-let g:colors_name = "felipec"
+let g:colors_name='felipec'
 
 " General colors
 hi Normal guifg=#eeeeee ctermfg=7 guibg=#111111 ctermbg=233 gui=none
