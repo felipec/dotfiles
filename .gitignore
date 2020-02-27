@@ -1,11 +1,11 @@
+backup/
+dev/
+
 Desktop/
 Downloads/
 Templates/
 Public/
 Documents/
-Music/
-Pictures/
-Videos/
 
 .config/dotfiles-setup
 .config/dotfiles
@@ -114,3 +114,6 @@ bin/arm-linux-*
 
 .config/systemd/user/default.target.wants/psd.service
 .config/systemd/user/default.target.wants/spotblock.service
+
+.irb_history
+.mysql_history
