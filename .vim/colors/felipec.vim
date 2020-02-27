@@ -15,17 +15,6 @@ endif
 
 let g:colors_name = "felipec"
 
-if exists("b:current_syntax")
-  if b:current_syntax == "diff"
-    syn match diffFileId "^diff.*"
-    syn match diffFile "^index .*"
-    syn match diffOldFile "^--- .*"
-    syn match diffNewFile "^+++ .*"
-  elseif b:current_syntax == "vim"
-    syn match vimHiGuiRgb contained "#\x\{3\}\>"
-  endif
-endif
-
 " General colors
 hi Normal guifg=#eeeeee ctermfg=7 guibg=#111111 ctermbg=233 gui=none
 hi Cursor guifg=NONE guibg=#bbddee ctermbg=153 gui=none
