@@ -38,3 +38,13 @@ alias gkb='gks branches' glb='gls branches'
 alias gkm='gks from' glm='gls from'
 alias gku='gks from-upstream' glu='gls from-upstream'
 alias gkn='gks negate-upstreams' gln='gls negate-upstreams'
+
+man() {
+  LESS_TERMCAP_md=$'\e[1;31m' \
+  LESS_TERMCAP_me=$'\e[0m' \
+  LESS_TERMCAP_so=$'\e[1;35m' \
+  LESS_TERMCAP_se=$'\e[0m' \
+  LESS_TERMCAP_us=$'\e[1;32m' \
+  LESS_TERMCAP_ue=$'\e[0m' \
+  command man "$@"
+}
