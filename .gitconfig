@@ -56,3 +56,6 @@
 	rewriteref = refs/notes/*
 [tag]
 	sort = -version:refname
+[smartlist]
+	friendly = true
+	merge-base = false
