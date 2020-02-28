@@ -18,6 +18,7 @@ x-scheme-handler/https=chromium.desktop
 x-scheme-handler/ftp=chromium.desktop
 x-scheme-handler/about=chromium.desktop
 x-scheme-handler/unknown=chromium.desktop
+x-scheme-handler/mailto=chromium.desktop
 text/x-patch=gvim.desktop
 image/jpeg=viewnior.desktop;gimp.desktop
 image/png=viewnior.desktop;gimp.desktop
