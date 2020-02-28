@@ -6,8 +6,6 @@ source ~/.local/share/git-completion/prompt.sh
 GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_SHOWDIRTYSTATE=1
 
-export TERM=xterm-256color
-
 autoload -U compinit && compinit
 autoload -U colors && colors
 
