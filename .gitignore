@@ -1,5 +1,15 @@
 backup/
 dev/
+contrib/
+tmp/
+to-do.txt
+
+.ssh/id_rsa*
+.gnupg/
+
+.icons/
+.local/
+.themes/
 
 Desktop/
 Downloads/
@@ -15,18 +25,13 @@ Documents/
 .adobe/
 .bazaar/
 .gem/
-.gnome2/
-.gstreamer-0.10/
 .wine/
-.xchat2/
 .thumbnails/
 .subversion/
-.tilda/
 .purple/
-.macromedia/
 .pki/
-.icons/
-.local/
+.steam/
+.mozilla/
 
 .config/chromium/
 .config/chromium-backup/
@@ -53,67 +58,39 @@ Documents/
 
 .config/git/gitk
 .config/psd/.psd.conf
-
 .config/Trolltech.conf
+.config/pavucontrol.ini
+
+.config/systemd/user/default.target.wants/psd.service
+.config/systemd/user/default.target.wants/spotblock.service
 
 .ICEauthority
 .Xauthority
-.esd_auth
-
 .xsession-errors
 .xsession-errors.old
-.Xclients
+.pulse-cookie
+.rnd
 
+.ssh/known_hosts
 .zcompdump
 .viminfo
-.gtk-bookmarks
-.octave_hist
-
-.pulse-cookie
-.gnupg/
 
 .bash_history
 .history
 .lesshst
 .sqlite_history
-.ssh/id_rsa*
-.ssh/known_hosts
+.irb_history
+.mysql_history
+.octave_hist
 
 StarCraft II/
-abs/
 
-.vim/.netrwhist
-.vim/plugin/notmuch*
-.vim/syntax/notmuch*
-.vim/bundle/
-.vim/autoload/
-
-.git-completion.bash
-.git-prompt.sh
-.zsh/_git
-
-.netrc
-
-.bash_logout
-.rnd
-.steam/
 .steampath
 .steampid
-.themes/
 .notmuch/compose/
 .mutt/cache/
 .npm/
 .node_modules/
-.mozilla/
 R/
 
-.config/pavucontrol.ini
-.config/git/patch-series/
-
 bin/arm-linux-*
-
-.config/systemd/user/default.target.wants/psd.service
-.config/systemd/user/default.target.wants/spotblock.service
-
-.irb_history
-.mysql_history
