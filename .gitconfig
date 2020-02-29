@@ -33,7 +33,6 @@
 [core]
 	excludesfile = ~/.config/git/ignore
 	mode = progress
-	editor = vim
 [sendemail]
 	aliasesfile = ~/.mutt/aliases
 	aliasfiletype = mutt
