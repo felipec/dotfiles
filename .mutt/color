@@ -33,4 +33,4 @@ color index brightmagenta black ~F # flagged
 color index blue black ~T # tagged
 color index red black ~D # deleted
 
-# vim: set ft=muttrc:
+# vim: ft=muttrc
