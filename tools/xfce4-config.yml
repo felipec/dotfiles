@@ -81,6 +81,13 @@ settings:
     "/primary-monitor": 1
     "/do-slideout": true
     "/notification-log": true
+  xsettings:
+    "/Gtk/FontName": "Sans 10"
+    "/Gtk/MonospaceFontName": "Monospace 10"
+    "/Net/CursorBlinkTime": 500
+    "/Xft/HintStyle": "hintslight"
+    "/Xft/RGBA": "rgb"
+    "/Xft/Hinting": 1
 
 panels:
 - size: 30
