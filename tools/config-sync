@@ -4,7 +4,6 @@ cmp_all () {
   readarray -t files < <(git ls-files)
 
   for f in "${files[@]}"; do
-    [[ "$f" == tools/* ]] && continue
     if [[ -e ~/"$f" ]]
     then
       cmp -s {.,~}/"$f" || vimdiff {.,~}/"$f"
