@@ -50,6 +50,7 @@ settings:
     "/general/cycle_hidden": false
     "/general/scroll_workspaces": false
     "/general/titleless_maximize": true
+    "/general/theme": "Matcha-aliz"
   keyboards:
     "/Default/KeyRepeat/Delay": 200
     "/Default/KeyRepeat/Rate": 50
@@ -84,7 +85,10 @@ settings:
   xsettings:
     "/Gtk/FontName": "Sans 12"
     "/Gtk/MonospaceFontName": "Monospace 12"
+    "/Gtk/CursorThemeName": "Vanilla-DMZ"
     "/Net/CursorBlinkTime": 500
+    "/Net/ThemeName": "Matcha-aliz"
+    "/Net/IconThemeName": "Papirus"
     "/Xft/DPI": 120
     "/Xft/HintStyle": "hintslight"
     "/Xft/RGBA": "rgb"
