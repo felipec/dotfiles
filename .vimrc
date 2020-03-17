@@ -29,7 +29,7 @@ set listchars=tab:»\ ,trail:∙,nbsp:␣
 set listchars+=eol:↲,extends:❯,precedes:❮
 
 if has("gui_running")
-  set lines=40 columns=120
+  set lines=30 columns=100
 endif
 
 au! BufRead,BufNewFile *linux*/*.[ch] source ~/.vim/after/ftplugin/c-linux.vim

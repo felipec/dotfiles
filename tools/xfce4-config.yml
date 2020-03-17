@@ -82,9 +82,10 @@ settings:
     "/do-slideout": true
     "/notification-log": true
   xsettings:
-    "/Gtk/FontName": "Sans 10"
-    "/Gtk/MonospaceFontName": "Monospace 10"
+    "/Gtk/FontName": "Sans 12"
+    "/Gtk/MonospaceFontName": "Monospace 12"
     "/Net/CursorBlinkTime": 500
+    "/Xft/DPI": 120
     "/Xft/HintStyle": "hintslight"
     "/Xft/RGBA": "rgb"
     "/Xft/Hinting": 1
