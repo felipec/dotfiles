@@ -75,6 +75,8 @@ hash -d data=~mnt/data
 
 hash -d dotfiles=~/.config/dotfiles
 
+source /usr/share/fzf/key-bindings.zsh
+
 precmd () {
 	# Change the window title of X terminals
 	# http://tldp.org/HOWTO/Xterm-Title-3.html
