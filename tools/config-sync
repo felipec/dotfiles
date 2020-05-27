@@ -27,11 +27,13 @@ setup () {
   mkdir -p ~/.local/share/git-completion/zsh
   curl -o ~/.local/share/git-completion/zsh/_git "${url}/git-completion.zsh"
 
-  url='https://raw.githubusercontent.com/felipec/git-smartlist/master/'
-
-  mkdir -p ~/bin
-  curl -o ~/bin/git-smartlist "${url}/git-smartlist"
-  chmod +x ~/bin/git-smartlist
+  # Useful binaries
+  mkdir -p /tmp/bin
+  curl -o /tmp/bin/git-smartlist "https://raw.githubusercontent.com/felipec/git-smartlist/master/git-smartlist"
+  curl -o /tmp/bin/git-reintegrate "https://raw.githubusercontent.com/felipec/git-reintegrate/master/git-reintegrate"
+  curl -o /tmp/bin/git-related "https://raw.githubusercontent.com/felipec/git-related/master/git-related"
+  curl -o /tmp/bin/git-send-series "https://raw.githubusercontent.com/felipec/git-send-series/master/git-send-series"
+  install -D -m 755 -t ~/bin -v /tmp/bin/*
 
   chmod go-rw ~/.msmtprc
 
