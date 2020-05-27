@@ -92,5 +92,3 @@ StarCraft II/
 .npm/
 .node_modules/
 R/
-
-bin/arm-linux-*
