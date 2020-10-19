@@ -6,6 +6,7 @@ alias c=config
 
 alias xo=xdg-open
 alias sudo='sudo -A'
+alias R='R --no-save'
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
