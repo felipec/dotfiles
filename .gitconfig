@@ -18,9 +18,8 @@
 	pi = cherry-pick
 	mt = mergetool
 	h = help
-	l = log --oneline --decorate
+	l = log --oneline --decorate --graph
 	lc = log ORIG_HEAD.. --stat --no-merges
-	lg = log --oneline --decorate --graph
 	bg = bisect good
 	bb = bisect bad
 	bs = bisect skip
