@@ -14,6 +14,7 @@ set diffopt=filler
 set clipboard=unnamedplus
 set laststatus=2
 set noswapfile
+set nofixeol
 
 set expandtab
 set shiftwidth=2
