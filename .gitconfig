@@ -57,3 +57,5 @@
 [smartlist]
 	friendly = true
 	merge-base = false
+[integration]
+	autocontinue = true
