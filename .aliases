@@ -5,24 +5,24 @@ alias crb='git --git-dir=$HOME/.config/dotfiles/.git/ --work-tree=$HOME/.config/
 alias c=config
 
 alias xo=xdg-open
-alias sudo="sudo -A"
+alias sudo='sudo -A'
 
-alias ls="ls --color=auto"
-alias grep="grep --color=auto"
-alias diff="diff --color=auto"
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias diff='diff --color=auto'
 
-alias g="git"
-alias l="ls"
+alias g='git'
+alias l='ls'
 alias v="$VIM_EDITOR"
 alias r='ruby'
 alias gd='g diff'
 alias gc='g commit'
 alias gs='g show'
 alias gco='g co'
-alias m="mv"
+alias m='mv'
 alias vd="$VIM_EDITOR -d"
-alias mv="mv -i"
-alias ll="ls -l"
+alias mv='mv -i'
+alias ll='ls -l'
 
 # Shorthand for gitk
 gk() { gitk "$@" & }
