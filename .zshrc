@@ -31,8 +31,7 @@ export LS_COLORS="$LS_COLORS:*.txt=00;36:*.patch=00;36:*.csv=00;36:*.json=00;36:
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-setopt share_history
-setopt extended_history
+setopt inc_append_history
 setopt hist_ignore_space
 setopt hist_save_no_dups
 setopt hist_reduce_blanks
