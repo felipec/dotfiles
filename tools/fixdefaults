@@ -32,6 +32,7 @@ apps.each do |app|
         end
       end
     end
+    break
   end
 end
 
