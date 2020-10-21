@@ -4,7 +4,7 @@ export PATH="/usr/lib/ccache/bin/:$PATH"
 export PATH="/opt/git/bin:/opt/notmuch/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
-export PATH="$HOME/.node_modules/bin:$PATH"
+export PATH="$HOME/.npm-packages/bin:$PATH"
 
 export EMAIL=felipe.contreras@gmail.com
 export VIM_EDITOR=vim

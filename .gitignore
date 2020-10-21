@@ -92,6 +92,6 @@ StarCraft II/
 .notmuch/compose/
 .mutt/cache/
 .npm/
-.node_modules/
+.npm-packages/
 .cargo/
 R/
