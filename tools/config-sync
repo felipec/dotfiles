@@ -51,6 +51,7 @@ setup () {
   # conky
   # light
 
+  git clone https://github.com/felipec/vim-felipec.vim ~/.vim/pack/colors/start/felipec
   git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/start/lightline
   git clone https://github.com/vim-syntastic/syntastic ~/.vim/pack/plugin/start/syntastic
   git clone https://github.com/tpope/vim-commentary ~/.vim/pack/plugin/start/commentary
