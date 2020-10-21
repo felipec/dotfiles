@@ -33,7 +33,7 @@ Documents/
 .steam/
 .mozilla/
 
-.config/chromium/
+.config/chromium
 .config/chromium-backup/
 
 .config/Thunar/
@@ -85,6 +85,7 @@ Documents/
 .python_history
 
 StarCraft II/
+.config/unity3d/
 
 .steampath
 .steampid
@@ -92,4 +93,5 @@ StarCraft II/
 .mutt/cache/
 .npm/
 .node_modules/
+.cargo/
 R/
