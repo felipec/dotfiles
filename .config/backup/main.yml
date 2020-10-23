@@ -1,11 +1,16 @@
 dest:
-  device: data
-  dir: /backup_diana_pc
+  device: backup
+  dir: /main
 paths:
 - src: /home/felipec
   dest: /home
   excludes: |
+    /tmp/
+
     /.cache/
+    /.ccache/
+    /.cargo/
+
     /.local/share/Trash/
     /.thumbnails/
 
@@ -33,21 +38,17 @@ paths:
 
     # Extra
     /.config/chromium/
+    /.config/chromium-backup/
     /.gem/
-    /.node_modules/
     /.npm/
+    /.npm-packages/
+    /.cargo/
+    /.bundle/cache/
     /R/
+
+    /.config/chromium-backup-crashrecovery-*/
+    /.config/spotify/
+    /.config/discord/
 - src: /root
 - src: /etc
 - src: /srv
-- src: /run/media/felipec/OS/Users/felip
-  dest: /windows
-  excludes: |
-    /OneDrive/
-    /AppData/Local/Google/Chrome/
-    /AppData/Local/Microsoft/OneDrive/
-    /AppData/Local/PopcornTime/
-    /AppData/Local/Spotify/
-    /AppData/Local/Steam/
-    /AppData/Local/Temp/
-    /AppData/Roaming/discord/
