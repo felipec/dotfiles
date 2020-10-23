@@ -1,6 +1,6 @@
 dest:
-  device: backup_data
-  dir: /backup
+  device: data
+  dir: /backup_diana_pc
 paths:
 - src: /home/felipec
   dest: /home
@@ -30,6 +30,24 @@ paths:
     # Apps
     .adobe/
     .macromedia/
+
+    # Extra
+    .config/chromium/
+    .gem/
+    .node_modules/
+    .npm/
+    R/
 - src: /root
 - src: /etc
 - src: /srv
+- src: /run/media/felipec/OS/Users/felip
+  dest: /windows
+  excludes: |
+    OneDrive/
+    AppData/Local/Google/Chrome/
+    AppData/Local/Microsoft/OneDrive/
+    AppData/Local/PopcornTime/
+    AppData/Local/Spotify/
+    AppData/Local/Steam/
+    AppData/Local/Temp/
+    AppData/Roaming/discord/
