@@ -5,49 +5,49 @@ paths:
 - src: /home/felipec
   dest: /home
   excludes: |
-    .cache/
-    .local/share/Trash/
-    .thumbnails/
+    /.cache/
+    /.local/share/Trash/
+    /.thumbnails/
 
     # Session
-    .Xauthority
-    .ICEauthority
-    .pulse-cookie
-    .esd_auth
+    /.Xauthority
+    /.ICEauthority
+    /.pulse-cookie
+    /.esd_auth
 
-    .xsession-errors
-    .wayland-errors
+    /.xsession-errors
+    /.wayland-errors
 
-    .gvfs
-    .local/share/gvfs-metadata
+    /.gvfs
+    /.local/share/gvfs-metadata
 
     # Steam
-    .steam/
-    .steampath
-    .steampid
-    .local/share/Steam
+    /.steam/
+    /.steampath
+    /.steampid
+    /.local/share/Steam
 
     # Apps
-    .adobe/
-    .macromedia/
+    /.adobe/
+    /.macromedia/
 
     # Extra
-    .config/chromium/
-    .gem/
-    .node_modules/
-    .npm/
-    R/
+    /.config/chromium/
+    /.gem/
+    /.node_modules/
+    /.npm/
+    /R/
 - src: /root
 - src: /etc
 - src: /srv
 - src: /run/media/felipec/OS/Users/felip
   dest: /windows
   excludes: |
-    OneDrive/
-    AppData/Local/Google/Chrome/
-    AppData/Local/Microsoft/OneDrive/
-    AppData/Local/PopcornTime/
-    AppData/Local/Spotify/
-    AppData/Local/Steam/
-    AppData/Local/Temp/
-    AppData/Roaming/discord/
+    /OneDrive/
+    /AppData/Local/Google/Chrome/
+    /AppData/Local/Microsoft/OneDrive/
+    /AppData/Local/PopcornTime/
+    /AppData/Local/Spotify/
+    /AppData/Local/Steam/
+    /AppData/Local/Temp/
+    /AppData/Roaming/discord/
