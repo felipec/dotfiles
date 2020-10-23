@@ -1,0 +1,35 @@
+dest:
+  device: backup_data
+  dir: /backup
+paths:
+- src: /home/felipec
+  dest: /home
+  excludes: |
+    .cache/
+    .local/share/Trash/
+    .thumbnails/
+
+    # Session
+    .Xauthority
+    .ICEauthority
+    .pulse-cookie
+    .esd_auth
+
+    .xsession-errors
+    .wayland-errors
+
+    .gvfs
+    .local/share/gvfs-metadata
+
+    # Steam
+    .steam/
+    .steampath
+    .steampid
+    .local/share/Steam
+
+    # Apps
+    .adobe/
+    .macromedia/
+- src: /root
+- src: /etc
+- src: /srv

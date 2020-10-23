@@ -1,61 +1,64 @@
 #!/usr/bin/env ruby
 
-LABEL = 'backup_data'
-DIR = '/backup'
+require 'yaml'
+require 'fileutils'
 
-mount_dir = File.join('/run/media/', ENV['USER'], LABEL)
-$backup_dir = File.join(mount_dir, DIR)
+$ops = { 'send' => '>', 'recv' => '<', 'del.' => '-' }
 
-raise "Directory '#{$backup_dir}' doesn't exist" unless File.directory?($backup_dir)
-
-def rsync(src, dest=src, excludes: nil)
-  puts "\n\e[1;34mBacking up '#{src}'\e[0m\n\n"
-
-  cmd = %w[sudo rsync --archive --delete --verbose --exclude-from=- --delete-excluded]
+def rsync(src, dest, excludes: nil, sudo: false)
+  cmd = %w[rsync --archive --delete --exclude-from=- --delete-excluded]
+  cmd.prepend('sudo') if sudo
+  cmd << "--out-format=%n\t%o"
   cmd << src + '/'
-  cmd << $backup_dir + dest
+  cmd << dest
 
-  IO.popen(cmd, 'w') do |pipe|
+  IO.popen(cmd, 'w+') do |pipe|
     pipe.write(excludes) if excludes
+    pipe.close_write
+    print "\e[s" if $stdout.isatty
+    pipe.each do |e|
+      file, op = e.chomp.split("\t")
+      next if file.end_with?('/')
+      if $stdout.isatty
+        print "\e[2K\e[u"
+        print "%s %s\e[K\r" % [$ops[op], file]
+      else
+        puts "%s %s" % [$ops[op], file]
+      end
+    end
   end
 end
 
-home_excludes = <<EOL
-.cache/
-.local/share/Trash/
-.thumbnails/
+def backup(src:, dest: src, excludes: nil)
+  if $stdout.isatty
+    puts "\e[1;34mBacking up '#{src}'\e[0m\033[K\n"
+  else
+    puts "Backing up '#{src}'"
+  end
 
-# Session
-.Xauthority
-.ICEauthority
-.pulse-cookie
-.esd_auth
+  rsync(src, $dest_path + dest, excludes: excludes, sudo: true)
+end
 
-.xsession-errors
-.wayland-errors
+def load_dest(dir:, device: nil)
+  if device
+    dev_path = File.join('/run/media/', ENV['USER'], device)
+    path = File.join(dev_path, dir)
 
-.gvfs
-.local/share/gvfs-metadata
+    system(*%w[udisksctl mount -b], '/dev/disk/by-label/' + device, exception: true) unless File.exists?(dev_path)
+    raise unless File.exists?(dev_path)
+  else
+    path = dir
+  end
 
-# Steam
-.steam/
-.steampath
-.steampid
-.local/share/Steam
+  FileUtils.mkdir_p(path) unless File.directory?(path)
+  path
+end
 
-# Apps
-.adobe/
-.macromedia/
-EOL
+profile = ARGV.first || 'main'
+config = File.join(ENV['HOME'], '.config', 'backup', profile + '.yml')
 
-# backup home
-rsync(ENV['HOME'], '/home', excludes: home_excludes)
-
-# backup root
-rsync('/root')
-
-# backup etc
-rsync('/etc')
-
-# backup srv
-rsync('/srv')
+$data = YAML.load(File.read(config), symbolize_names: true)
+$dest_path = load_dest($data[:dest])
+$data[:paths].each do |path|
+  backup(path)
+end
