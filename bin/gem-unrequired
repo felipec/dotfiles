@@ -3,7 +3,7 @@
 require 'rubygems'
 
 # get system gems
-$system = Gem::Specification.filter { |e| e.base_dir == Gem.dir }.map { |e| e.name }.uniq
+$system = Gem::Specification.filter { |e| e.base_dir == Gem.default_dir }.map(&:name).uniq
 
 $gems = []
 $required_by = Hash.new { |h,k| h[k] = [] }
@@ -12,7 +12,6 @@ Gem::Specification.each do |e|
   next if $system.include?(e.name)
   e.dependencies.each do |dep|
     next if dep.type == :development
-    next if $system.include?(dep.name)
     $required_by[dep.name] << e.name
   end
   $gems << e
