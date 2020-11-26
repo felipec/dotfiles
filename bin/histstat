@@ -6,8 +6,11 @@ $aliases = {}
 $hash_dirs = {}
 
 %x[zsh -i -c 'alias'].each_line do |l|
-  id, cmd = l.chomp.split('=')
-  $aliases[id] = cmd
+  if l =~ /^(\w+)='?(.+?)'?$/
+    first = $2.split.first
+    next if first == $1
+    $aliases[$1] = $2
+  end
 end
 
 $hash_dirs[Dir.home] = '~'
@@ -42,15 +45,19 @@ end
 
 title 'Top commands'
 
+cmds_max = $cmds.values.max
+
 $cmds.sort_by(&:last).reverse.first(20).each do |e,c|
   m = $aliases.has_key?(e) ? '*' : ' '
-  printf " %s %4d %s\n" % [m, c, e]
+  puts " %s %3d%% %s\n" % [m, 100 * c / cmds_max, e]
 end
 
 title 'Top directories'
 
+dirs_max = $dirs.values.max
+
 $dirs.sort_by(&:last).reverse.first(20).each do |e,c|
   m = $hash_dirs.has_key?(e) ? '*' : ' '
   e = e.sub(Dir.home, '~')
-  printf " %s %4d %s\n" % [m, c, e]
+  puts " %s %3d%% %s\n" % [m, 100 * c / dirs_max, e]
 end
