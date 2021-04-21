@@ -5,7 +5,7 @@ set hlsearch
 set incsearch
 set nobackup
 set guifont=Monospace\ 10
-set guioptions=ai
+set guioptions=a
 set history=1000
 set diffopt=filler
 set clipboard=unnamedplus
