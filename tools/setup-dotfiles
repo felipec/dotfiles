@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Checkout missing files
+(
+	export GIT_DIR=$HOME/.config/dotfiles/.git
+	export GIT_WORK_TREE=$HOME
+
+	git ls-files --deleted | xargs git checkout
+)
+
+mkdir -p ~/{downloads,documents/{,pictures}}
+mkdir -p ~/.local/share/histstat
+chmod go-rw ~/.msmtprc
+
+git clone https://github.com/felipec/vim-felipec.git ~/.vim/pack/colors/start/felipec
+git clone https://github.com/itchyny/lightline.vim.git ~/.vim/pack/plugins/start/lightline
+git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/pack/plugins/start/syntastic
+git clone https://github.com/tpope/vim-commentary ~/.vim/pack/plugins/start/commentary
