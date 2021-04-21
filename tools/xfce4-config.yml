@@ -44,11 +44,12 @@ settings:
     "/general/cycle_tabwin_mode": 1
     "/general/placement_ratio": 60
     "/general/title_font": "Sans Bold 10"
-    "/general/cycle_raise": false
     "/general/cycle_hidden": false
     "/general/scroll_workspaces": false
     "/general/titleless_maximize": true
-    "/general/theme": "Matcha-aliz"
+    "/general/theme": "Matcha-sea"
+    "/general/show_dock_shadow": false
+    "/general/show_frame_shadow": false
   keyboards:
     "/Default/KeyRepeat/Delay": 200
     "/Default/KeyRepeat/Rate": 50
@@ -77,7 +78,7 @@ settings:
     "/xfce4-power-manager/show-panel-label": 1
   xfce4-notifyd:
     "/expire-timeout": 4
-    "/primary-monitor": 1
+    "/primary-monitor": 0
     "/do-slideout": true
     "/notification-log": true
   xsettings:
@@ -85,9 +86,9 @@ settings:
     "/Gtk/MonospaceFontName": "Monospace 12"
     "/Gtk/CursorThemeName": "Vanilla-DMZ"
     "/Net/CursorBlinkTime": 500
-    "/Net/ThemeName": "Matcha-aliz"
+    "/Net/ThemeName": "Matcha-sea"
     "/Net/IconThemeName": "Papirus"
-    "/Xft/DPI": 120
+    "/Xft/DPI": 128
     "/Xft/HintStyle": "hintslight"
     "/Xft/RGBA": "rgb"
     "/Xft/Hinting": 1
