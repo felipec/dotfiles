@@ -1,15 +1,12 @@
 syntax enable
-set hlsearch
-set bs=2
-set ruler
-
 filetype plugin indent on
 
+set hlsearch
 set incsearch
 set nobackup
 set guifont=Monospace\ 12
 set guioptions=ai
-set hi=1000
+set history=1000
 set diffopt=filler
 set clipboard=unnamedplus
 set laststatus=2
@@ -22,7 +19,7 @@ set tabstop=2
 
 colorscheme felipec
 
-set fo=tcqn
+set formatoptions+=n
 
 set showbreak=↪
 set fillchars+=vert:\ 
