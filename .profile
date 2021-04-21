@@ -1,7 +1,7 @@
 # login shell
 
 export PATH="/usr/lib/ccache/bin/:$PATH"
-export PATH="/opt/git/bin:/opt/notmuch/bin:$PATH"
+export PATH="/opt/git/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.npm-packages/bin:$PATH"
 
