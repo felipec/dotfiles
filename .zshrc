@@ -69,7 +69,7 @@ hash -d d=~/dev
 hash -d g=~d/git
 hash -d l=~d/linux
 
-hash -d mnt=/run/media/felipec
+hash -d mnt=/run/media/$USER
 hash -d shared=~mnt/shared
 hash -d data=~mnt/data
 
