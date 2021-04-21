@@ -4,7 +4,7 @@ filetype plugin indent on
 set hlsearch
 set incsearch
 set nobackup
-set guifont=Monospace\ 12
+set guifont=Monospace\ 10
 set guioptions=ai
 set history=1000
 set diffopt=filler
