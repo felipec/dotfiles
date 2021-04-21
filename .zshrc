@@ -5,6 +5,7 @@ source /usr/share/git-completion/prompt.sh
 
 GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUPSTREAM=auto
 
 autoload -U compinit && compinit
 autoload -U colors && colors
