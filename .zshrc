@@ -1,7 +1,7 @@
-fpath=(~/.zsh ~/.local/share/git-completion/zsh $fpath)
+fpath=(~/.zsh $fpath)
 
 source ~/.aliases
-source ~/.local/share/git-completion/prompt.sh
+source /usr/share/git-completion/prompt.sh
 
 GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_SHOWDIRTYSTATE=1
