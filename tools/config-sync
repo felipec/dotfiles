@@ -14,48 +14,4 @@ cmp_all () {
   done
 }
 
-setup () {
-  xdg-settings set default-web-browser chromium.desktop
-  sudo chsh -s /bin/zsh felipec
-
-  url='https://raw.githubusercontent.com/felipec/git-completion/master/'
-
-  mkdir -p ~/.local/share/git-completion
-  curl -o ~/.local/share/git-completion/prompt.sh "${url}/git-prompt.sh"
-  mkdir -p ~/.local/share/bash-completion/completions
-  curl -o ~/.local/share/bash-completion/completions/git "${url}/git-completion.bash"
-  mkdir -p ~/.local/share/git-completion/zsh
-  curl -o ~/.local/share/git-completion/zsh/_git "${url}/git-completion.zsh"
-
-  # Useful binaries
-  mkdir -p /tmp/bin
-  curl -o /tmp/bin/git-smartlist "https://raw.githubusercontent.com/felipec/git-smartlist/master/git-smartlist"
-  curl -o /tmp/bin/git-reintegrate "https://raw.githubusercontent.com/felipec/git-reintegrate/master/git-reintegrate"
-  curl -o /tmp/bin/git-related "https://raw.githubusercontent.com/felipec/git-related/master/git-related"
-  curl -o /tmp/bin/git-send-series "https://raw.githubusercontent.com/felipec/git-send-series/master/git-send-series"
-  install -D -m 755 -t ~/bin -v /tmp/bin/*
-
-  chmod go-rw ~/.msmtprc
-
-  # XDG user dirs
-  mkdir -p ~/{Desktop,Downloads,Templates,Public,Documents}
-  mkdir -p ~/Documents/{Music,Pictures,Videos}
-
-  mkdir -p ~/.local/share/histstat
-
-  # vim zsh ruby git
-  # xdg-user-dirs
-  # chromium
-  # fzf
-  # ccache
-  # conky
-  # light
-
-  git clone https://github.com/felipec/vim-felipec.vim ~/.vim/pack/colors/start/felipec
-  git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/start/lightline
-  git clone https://github.com/vim-syntastic/syntastic ~/.vim/pack/plugin/start/syntastic
-  git clone https://github.com/tpope/vim-commentary ~/.vim/pack/plugin/start/commentary
-}
-
 cmp_all
-test -f ~/.config/dotfiles-setup || setup && touch ~/.config/dotfiles-setup
