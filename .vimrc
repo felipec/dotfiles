@@ -16,6 +16,7 @@ set nofixeol
 set expandtab
 set tabstop=2
 set shiftwidth=0
+set textwidth=100
 
 colorscheme felipec
 
