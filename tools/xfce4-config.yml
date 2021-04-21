@@ -1,12 +1,10 @@
 command_keyboard_shortcuts:
   "<Super>Return": xfce4-terminal
   "<Super>b": chromium
-  "<Super>e": thunar
   "<Super>space": xfce4-terminal --drop-down --hide-menubar
   "<Super>l": light-locker-command --lock
   "<Super>w": xfce4-popup-whiskermenu
   "<Super>r": rlaunch
-  "Print": xfce4-screenshooter
 
 wm_keyboard_shortcuts:
   workspace_1: "<Super>1"

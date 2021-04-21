@@ -1,5 +1,5 @@
 WebBrowser=chromium
-FileManager=Thunar
+FileManager=thunar
 TerminalEmulator=xfce4-terminal
-MailReader=Gmail
+MailReader=gmail
 

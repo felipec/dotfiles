@@ -1,9 +1,9 @@
 [Added Associations]
-x-scheme-handler/http=exo-web-browser.desktop;
-x-scheme-handler/https=exo-web-browser.desktop;
-inode/directory=exo-file-manager.desktop;
-x-scheme-handler/trash=exo-file-manager.desktop;
-x-scheme-handler/mailto=exo-mail-reader.desktop;
+x-scheme-handler/http=xfce4-web-browser.desktop;
+x-scheme-handler/https=xfce4-web-browser.desktop;
+x-scheme-handler/mailto=xfce4-mail-reader.desktop;
+inode/directory=xfce4-file-manager.desktop;
+x-scheme-handler/trash=xfce4-file-manager.desktop;
 
 [Removed Associations]
 application/rtf=wine-extension-rtf.desktop
@@ -17,13 +17,15 @@ text/html=wine-extension-htm.desktop
 text/plain=wine-extension-txt.desktop
 
 [Default Applications]
+x-scheme-handler/http=xfce4-web-browser.desktop
+x-scheme-handler/https=xfce4-web-browser.desktop
+x-scheme-handler/mailto=xfce4-mail-reader.desktop
+inode/directory=xfce4-file-manager.desktop
+x-scheme-handler/trash=xfce4-file-manager.desktop
 text/html=chromium.desktop
-x-scheme-handler/http=chromium.desktop
-x-scheme-handler/https=chromium.desktop
 x-scheme-handler/ftp=chromium.desktop
 x-scheme-handler/about=chromium.desktop
 x-scheme-handler/unknown=chromium.desktop
-x-scheme-handler/mailto=chromium.desktop
 image/jpeg=viewnior.desktop;gimp.desktop;chromium.desktop
 image/png=viewnior.desktop;gimp.desktop;chromium.desktop
 image/bmp=viewnior.desktop;gimp.desktop
