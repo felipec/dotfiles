@@ -11,11 +11,8 @@
 /.local/
 /.themes/
 
-/Desktop/
-/Downloads/
-/Templates/
-/Public/
-/Documents/
+/downloads/
+/documents/
 
 /.config/dotfiles-setup
 /.config/dotfiles
