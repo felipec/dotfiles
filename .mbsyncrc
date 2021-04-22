@@ -1,22 +1,19 @@
-Expunge None
-Create Both
 SyncState *
+Create Near
 
 MaildirStore local
-Path ~/mail/gmail/
-Trash Trash
-Inbox ~/mail/gmail/INBOX
+Path ~/mail/
+SubFolders Verbatim
 
 IMAPStore gmail
 Host imap.gmail.com
 User felipe.contreras@gmail.com
-Pass password
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-UseIMAPS yes
+PassCmd "secret-tool lookup service imap"
+SSLType IMAPS
+PipelineDepth 25
 
 Channel gmail
-Master :gmail:
-Slave :local:
-Pattern INBOX gst-dsp msn-pecan libscrobbler family git notmuch to-do
-Expunge Both
-Sync PullNew Push
+Far :gmail:
+Near :local:
+Pattern git
+Sync PullNew
