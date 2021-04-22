@@ -33,8 +33,8 @@ DropdownAlwaysShowTabs=FALSE
 ShortcutsNoMnemonics=TRUE
 ShortcutsNoMenukey=TRUE
 ShortcutsNoHelpkey=TRUE
-ColorForeground=White
-ColorBackground=#323232323232
-ColorPalette=#323232;#cc0000;#4e9a06;#c4a000;#3465a4;#75507b;#06989a;#d3d7cf;#555753;#ef2929;#8ae234;#fce94f;#729fcf;#ad7fa8;#34e2e2;#eeeeec
+ColorForeground=#efefef
+ColorBackground=#101010
+ColorPalette=#333333;#ff3333;#99ff33;#ffff33;#3333ff;#9933ff;#33ffff;#bfbfbf;#808080;#ff8080;#bfff80;#ffff80;#8080ff;#bf80ff;#80ffff;#efefef
 FontUseSystem=TRUE
 
