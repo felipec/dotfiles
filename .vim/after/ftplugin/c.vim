@@ -1,4 +1,10 @@
-set noet
-set sw=8
-set ts=8
-set cino=(s,:0,l1,t0
+setl noet ts=8
+setl cino=(s,:0,l1
+
+if expand('%:p') =~# '/notmuch/'
+  setl ts=4
+  setl cino+=(0
+elseif expand('%:p') =~# '/.*xfce.*/'
+  setl et ts=2
+  setl cino+=(0
+end

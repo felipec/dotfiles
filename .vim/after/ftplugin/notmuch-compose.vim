@@ -1,3 +1,1 @@
-set et
-set sw=2
-set tw=72
+setl tw=72

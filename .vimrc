@@ -31,15 +31,6 @@ if has("gui_running")
   set lines=30 columns=100
 endif
 
-au! BufRead,BufNewFile *linux*/*.[ch] source ~/.vim/after/ftplugin/c-linux.vim
-au! BufRead,BufNewFile *git/Documentation/*.txt set ft=asciidoc
-au! BufRead,BufNewFile *.t set ft=sharness
-
-au! BufRead,BufNewFile *notmuch/*.[ch] source ~/.vim/after/ftplugin/c-notmuch.vim
-au! BufRead,BufNewFile *git-remote-hg/*.t source ~/.vim/after/ftplugin/t-git-remote-hg.vim
-au! BufRead,BufNewFile *xfce*/*.[ch] source ~/.vim/after/ftplugin/c-xfce.vim
-au! BufRead,BufNewFile *git-completion/*.(bash\|sh\|zsh) source ~/.vim/after/ftplugin/sh-git.vim
-
 let g:netrw_browsex_viewer = 'chromium'
 
 let g:syntastic_ruby_mri_args = '-W1 -c'

@@ -1,1 +1,1 @@
-set spell
+setl spell
