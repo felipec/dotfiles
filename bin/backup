@@ -58,7 +58,7 @@ profile = ARGV.first || 'main'
 config = File.join(ENV['HOME'], '.config', 'backup', profile + '.yml')
 
 $data = YAML.load(File.read(config), symbolize_names: true)
-$dest_path = load_dest($data[:dest])
+$dest_path = load_dest(**$data[:dest])
 $data[:paths].each do |path|
-  backup(path)
+  backup(**path)
 end
