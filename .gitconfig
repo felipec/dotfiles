@@ -29,6 +29,7 @@
 	bs = bisect skip
 	bv = branch -v --list
 	short = show --quiet --format=reference
+	v = "!f() { gitk \"$@\" & }; f"
 [merge]
 	tool = gvimdiff3
 	conflictstyle = diff3
