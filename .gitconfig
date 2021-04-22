@@ -52,10 +52,6 @@
 	coverletter = auto
 [receive]
 	denyCurrentBranch = warn
-[url "git@github.com:"]
-	insteadOf = gh:
-[url "/mnt/personal/"]
-	insteadOf = data:
 [rerere]
 	enabled = true
 [notes]
