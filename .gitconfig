@@ -2,6 +2,10 @@
 	name = Felipe Contreras
 	email = felipe.contreras@gmail.com
 [alias]
+	advance = merge --ff-only
+	undo = reset --hard @{1}
+	sw = switch
+	c = commit -v
 	co = checkout
 	ci = commit
 	rb = rebase
@@ -9,7 +13,6 @@
 	d = diff
 	s = stage
 	o = show -C
-	c = commit -v
 	p = push
 	r = reset
 	b = branch
@@ -18,13 +21,14 @@
 	pi = cherry-pick
 	mt = mergetool
 	h = help
-	l = log --oneline --decorate --graph
-	lc = log ORIG_HEAD.. --stat --no-merges
+	l = log --oneline --decorate --boundary
+	lg = l --graph
+	lo = log ORIG_HEAD.. --stat --no-merges
 	bg = bisect good
 	bb = bisect bad
 	bs = bisect skip
 	bv = branch -v --list
-	short = show --quiet --format='%C(auto)%h (%s)%C(reset)'
+	short = show --quiet --format=reference
 [merge]
 	tool = gvimdiff3
 	conflictstyle = diff3
