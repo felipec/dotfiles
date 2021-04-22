@@ -12,6 +12,9 @@ set clipboard=unnamedplus
 set laststatus=2
 set noswapfile
 set nofixeol
+set wildmenu
+set display=truncate
+set scrolloff=5
 
 set expandtab
 set tabstop=2
