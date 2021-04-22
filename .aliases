@@ -25,21 +25,6 @@ alias vd="$VIM_EDITOR -d"
 alias mv='mv -i'
 alias ll='ls -l'
 
-# Shorthand for gitk
-gk() { gitk "$@" & }
-
-# Shorthand for git log
-gl() { git log --oneline --decorate --graph --boundary "$@" ; }
-
-gks() { gk $(git smartlist $@) ; }
-gls() { gl $(git smartlist $@) ; }
-
-alias gka='gks all' gla='gls all'
-alias gkb='gks branches' glb='gls branches'
-alias gkm='gks from' glm='gls from'
-alias gku='gks from-upstream' glu='gls from-upstream'
-alias gkn='gks negate-upstreams' gln='gls negate-upstreams'
-
 man() {
   LESS_TERMCAP_md=$'\e[1;31m' \
   LESS_TERMCAP_me=$'\e[0m' \
