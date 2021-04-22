@@ -12,7 +12,7 @@ $ignore = %w[x-scheme-handler/http x-scheme-handler/https]
 
 $dirs = ENV['XDG_DATA_DIRS']&.split(':') || '/usr/local/share/:/usr/share/'
 
-apps = %w[gvim viewnior org.gnome.Evince gimp vlc chromium]
+apps = %w[gvim viewnior org.gnome.Evince gimp vlc brave]
 # Thunar-folder-handler
 
 apps = ARGV unless ARGV.empty?

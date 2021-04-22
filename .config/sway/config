@@ -26,7 +26,7 @@ bindsym $mod+return exec $term
 bindsym $mod+space exec $menu
 bindsym $mod+q kill
 
-bindsym $mod+b exec chromium
+bindsym $mod+b exec brave
 bindsym $mod+e exec thunar
 
 bindsym $mod+shift+e exit

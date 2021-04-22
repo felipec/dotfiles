@@ -1,9 +1,9 @@
 [Desktop Entry]
 Version=1.0
 Name=Gmail
-Icon=chromium
+Icon=brave
 Type=X-XFCE-Helper
-X-XFCE-Binaries=chromium
+X-XFCE-Binaries=brave
 X-XFCE-Category=MailReader
 X-XFCE-Commands=%B "https://mail.google.com/"
 X-XFCE-CommandsWithParameter=%B "mailto:%s"

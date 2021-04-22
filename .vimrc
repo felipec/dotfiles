@@ -47,7 +47,7 @@ let g:lightline = {
   \   'tabline': { 'left': [ [ 'tabs' ] ], 'right': [ ] },
   \ }
 
-let g:netrw_browsex_viewer = 'chromium'
+let g:netrw_browsex_viewer = 'brave'
 
 let g:syntastic_ruby_mri_args = '-W1 -c'
 
