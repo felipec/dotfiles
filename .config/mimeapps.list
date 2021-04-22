@@ -1,21 +1,3 @@
-[Added Associations]
-x-scheme-handler/http=xfce4-web-browser.desktop;
-x-scheme-handler/https=xfce4-web-browser.desktop;
-x-scheme-handler/mailto=xfce4-mail-reader.desktop;
-inode/directory=xfce4-file-manager.desktop;
-x-scheme-handler/trash=xfce4-file-manager.desktop;
-
-[Removed Associations]
-application/rtf=wine-extension-rtf.desktop
-application/vnd.ms-htmlhelp=wine-extension-chm.desktop
-application/xml=wine-extension-xml.desktop
-application/pdf=wine-extension-pdf.desktop
-image/gif=wine-extension-gif.desktop
-image/jpeg=wine-extension-jpe.desktop;wine-extension-jfif.desktop
-image/png=wine-extension-png.desktop
-text/html=wine-extension-htm.desktop
-text/plain=wine-extension-txt.desktop
-
 [Default Applications]
 x-scheme-handler/http=xfce4-web-browser.desktop
 x-scheme-handler/https=xfce4-web-browser.desktop
