@@ -30,6 +30,8 @@
 	bv = branch -v --list
 	short = show --quiet --format=reference
 	v = "!f() { gitk \"$@\" & }; f"
+[rebase]
+	autosquash = true
 [merge]
 	tool = gvimdiff3
 	conflictstyle = diff3
