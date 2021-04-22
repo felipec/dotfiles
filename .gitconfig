@@ -54,6 +54,7 @@
 	denyCurrentBranch = warn
 [rerere]
 	enabled = true
+	autoupdate = true
 [notes]
 	rewriteref = refs/notes/*
 [tag]
