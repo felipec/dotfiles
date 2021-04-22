@@ -68,6 +68,7 @@ bindkey "\e[6~" history-beginning-search-forward
 hash -d d=~/dev
 hash -d g=~d/git
 hash -d l=~d/linux
+hash -d c=~/contrib
 
 hash -d mnt=/run/media/$USER
 hash -d shared=~mnt/shared
