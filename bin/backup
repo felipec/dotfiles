@@ -21,7 +21,7 @@ def rsync(src, dest, excludes: nil, sudo: false)
       next if file.end_with?('/')
       if $stdout.isatty
         print "\e[2K\e[u"
-        print "%s %s\e[K\r" % [$ops[op], file]
+        print "%s %.100s\e[K\r" % [$ops[op], file]
       else
         puts "%s %s" % [$ops[op], file]
       end
