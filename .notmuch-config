@@ -6,8 +6,13 @@ name=Felipe Contreras
 primary_email=felipe.contreras@gmail.com
 
 [new]
-tags=unread;new;
-ignore=.mbsyncstate;.uidvalidity;
+tags=new;inbox;
+ignore=.mbsyncstate;.uidvalidity;.gitignore;
 
 [search]
 exclude_tags=deleted;spam;
+
+[maildir]
+synchronize_flags=true
+
+# vim: ft=ini
