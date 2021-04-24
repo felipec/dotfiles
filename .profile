@@ -10,6 +10,7 @@ export VIM_EDITOR=vim
 export VISUAL=$VIM_EDITOR
 export LESS=FRSX
 export MAKEFLAGS='-j8'
+export PS_FORMAT='pid,cmd'
 
 export SUDO_ASKPASS=$HOME/bin/sudo_askpass
 
