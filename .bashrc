@@ -1,4 +1,5 @@
 source ~/.aliases
+source /usr/local/share/bash-completion/completions/git
 source /usr/share/git-completion/prompt.sh
 
 __git_complete g git
