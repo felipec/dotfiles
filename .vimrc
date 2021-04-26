@@ -34,22 +34,10 @@ if has("gui_running")
   set lines=30 columns=100
 endif
 
-let g:lightline = {
-  \   'colorscheme': 'felipec',
-  \   'active': {
-  \     'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ],
-  \     'right': [ [ 'percent' ], [ 'lineinfo' ], [ 'filetype' ] ],
-  \   },
-  \   'inactive': {
-  \     'left': [ [ 'relativepath' ] ],
-  \     'right': [ [ 'percent' ], [ 'lineinfo' ] ],
-  \   },
-  \   'tabline': { 'left': [ [ 'tabs' ] ], 'right': [ ] },
-  \ }
-
 let g:netrw_browsex_viewer = 'brave'
 
 let g:syntastic_ruby_mri_args = '-W1 -c'
 
+runtime lightline_config.vim
 runtime syntax_groups.vim
 runtime load_cscope.vim
