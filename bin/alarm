@@ -1,0 +1,9 @@
+#!/bin/env ruby
+
+$delay = ARGV[0].to_f
+$message = ARGV[1] || 'Bing!'
+
+fork do
+  sleep($delay * 60)
+  system(*%w[notify-send -u critical -i alarm] << $message)
+end
