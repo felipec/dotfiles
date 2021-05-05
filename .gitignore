@@ -16,9 +16,6 @@
 
 /.timewarrior/
 
-/.config/dotfiles-setup
-/.config/dotfiles
-
 /.ccache/
 /.cache/
 /.adobe/
