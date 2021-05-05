@@ -1,5 +1,5 @@
 setl noet ts=8
-setl cino=(s,:0,l1
+setl cino=(s,:0,l1,t0
 
 if expand('%:p') =~# '/notmuch/'
   setl noet sw=4 sts=-1
