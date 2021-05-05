@@ -30,6 +30,8 @@
 	bv = branch -v --list
 	short = show --quiet --format=reference
 	v = "!f() { gitk \"$@\" & }; f"
+[init]
+	defaultbranch = master
 [rebase]
 	autosquash = true
 [merge]
