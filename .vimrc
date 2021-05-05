@@ -30,9 +30,7 @@ set fillchars+=vert:\
 set listchars=tab:»\ ,trail:∙,nbsp:␣
 set listchars+=eol:↲,extends:❯,precedes:❮
 
-if has("gui_running")
-  set lines=30 columns=100
-endif
+set lines=40 columns=120
 
 let g:netrw_browsex_viewer = 'brave'
 
