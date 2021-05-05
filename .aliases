@@ -1,7 +1,6 @@
 #!/bin/sh
 
 alias config='git --git-dir=$HOME/.local/share/dotfiles/.git/ --work-tree=$HOME'
-alias crb='git --git-dir=$HOME/.local/share/dotfiles/.git/ --work-tree=$HOME/.local/share/dotfiles/ rb'
 alias c=config
 
 alias xo='xdg-open'
