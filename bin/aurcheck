@@ -4,16 +4,12 @@
 
 require 'net/http'
 require 'json'
-require 'cgi'
 
 $packages = {}
-$verbose = false
 $all = false
 
 ARGV.delete_if do |arg|
   case arg
-  when '-v', '--verbose'
-    $verbose = true
   when '-a', '--all'
     $all = true
   end
@@ -21,31 +17,26 @@ end
 
 IO.popen(%w[pacman -Qm]).each do |l|
   name, version = l.chomp.split
-  $packages[name] = [version, nil, nil]
+  $packages[name] = [version, nil]
 end
 
 exit if $packages.empty?
 
-http = Net::HTTP.new('aur.archlinux.org', 443)
-http.use_ssl = true
-packages_query = $packages.keys.map {|e| "arg[]=#{CGI::escape(e)}"}.join('&')
-request = Net::HTTP::Get.new('/rpc/?v=5&type=info&%s' % packages_query)
-response = http.request(request)
+uri = URI('https://aur.archlinux.org/rpc/')
+uri.query = URI.encode_www_form(v: 5, type: 'info', 'arg[]' => $packages.keys)
 
-data = JSON.parse(response.body)
-data['results'].each do |r|
-  name = r['Name']
-  $packages[name][1] = r['Version']
-  $packages[name][2] = r['URLPath']
+data = JSON.parse(Net::HTTP.get(uri), symbolize_names: true)
+
+data[:results].each do |e|
+  name = e[:Name]
+  $packages[name][1] = e[:Version]
 end
 
-$packages.each do |package, (local, remote, path)|
+$packages.each do |package, (local, remote)|
   if local == remote
     puts "\e[1;37m%s\e[0m: \e[1;32m%s\e[0m (\e[1;34mup to date\e[0m)" % [package, local] if $all
   elsif not remote
     puts "\e[1;37m%s\e[0m: \e[1;32m%s\e[0m (\e[1;31mmissing\e[0m)" % [package, local]
-  elsif $verbose
-    puts "\e[1;37m%s\e[0m: \e[1;32m%s\e[0m (aur: %s) [\e[0;34mhttps://aur.archlinux.org/%s\e[0m]" % [package, local, remote, path]
   else
     puts "\e[1;37m%s\e[0m: \e[1;32m%s\e[0m (aur: %s)" % [package, local, remote]
   end
