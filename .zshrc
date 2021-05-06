@@ -86,7 +86,9 @@ precmd () {
 	# __git_ps1 '%F{blue}%B%m%b%f %F{white}%~%f' ' %F{green}%#%f ' '[%s]'
 }
 
-compdef _git gk=gitk gks=gitk gl=git_log gls=git_log
+_git_smartlist () {
+	__git_log
+}
 
 _git_related () {
 	_git_log
