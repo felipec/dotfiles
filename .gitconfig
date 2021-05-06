@@ -42,7 +42,6 @@
 	keepbackup = false
 	automerge = true
 [core]
-	excludesfile = ~/.config/git/ignore
 	mode = progress
 [sendemail]
 	aliasesfile = ~/.mutt/aliases
