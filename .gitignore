@@ -46,6 +46,7 @@
 /.config/viewnior/
 /.config/vlc/
 /.config/pulse/
+/.config/pipewire/
 /.config/discord/
 /.config/hexchat/
 /.config/inkscape/
