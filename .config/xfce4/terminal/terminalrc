@@ -35,6 +35,7 @@ ShortcutsNoMenukey=TRUE
 ShortcutsNoHelpkey=TRUE
 ColorForeground=#efefef
 ColorBackground=#101010
-ColorPalette=#333333;#ff3333;#99ff33;#ffff33;#3333ff;#9933ff;#33ffff;#bfbfbf;#808080;#ff8080;#bfff80;#ffff80;#8080ff;#bf80ff;#80ffff;#efefef
+ColorPalette=#000000;#ff8080;#80ff80;#ffff80;#8080ff;#ff80ff;#80ffff;#bfbfbf;#808080;#ff8080;#80ff80;#ffff80;#8080ff;#ff80ff;#80ffff;#efefef
 FontUseSystem=TRUE
+TabActivityColor=#8080ff
 
