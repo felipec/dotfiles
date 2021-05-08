@@ -3,9 +3,10 @@
 $tdir = '~/.config/transmission/torrents'
 
 $dirs = []
-$dirs << '~/Downloads'
-$dirs << '/run/media/felipec/shared/download'
-$dirs << '/run/media/felipec/data/download'
+$dirs << '~/downloads/torrents/series'
+$dirs << '/run/media/felipec/shared/torrents/series'
+$dirs << '/run/media/felipec/shared/torrents/movies'
+$dirs << '/run/media/felipec/shared/torrents/other'
 
 $inactive = {}
 
@@ -67,7 +68,7 @@ end
 require 'fileutils'
 
 $inactive.values.sort.reverse.each do |e|
-  clean_lines = 3
+  clean_lines = 2
 
   puts "\e[1;33m%-10s\e[0m '\e[1m%s\e[0m' \e[34m(%s)\e[0m" % [e.human_size, e.name, e.dir]
   if File.directory?(e.file)
@@ -78,7 +79,7 @@ $inactive.values.sort.reverse.each do |e|
     end
   end
 
-  puts "\nDelete? (y/n)"
+  print "\nDelete? (y/n) "
   response = gets()
   clean_lines.times do
     printf "\e[A\e[2K"
