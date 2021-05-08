@@ -87,7 +87,7 @@ precmd () {
 }
 
 _git_smartlist () {
-	__git_log
+	_git_log
 }
 
 _git_related () {
