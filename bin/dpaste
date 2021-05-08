@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+require 'net/http'
+require 'uri'
+
+def create(content, language: nil)
+  params = {
+    'content' => content.to_s,
+    'syntax' => language,
+  }
+  resp = Net::HTTP.post_form(URI.parse("https://dpaste.com/api/v2/"), params)
+  return resp.body
+end
+
+$language = nil
+
+ARGV.delete_if do |cur|
+  next false if cur[0] != '-'
+  case cur
+  when /^-l(.+)$/, /^--lang=(.+)$/
+    $language = $1
+    true
+end
+
+ARGV.each do |f|
+  puts create(File.read(f), language: $language)
+end
