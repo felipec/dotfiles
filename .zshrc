@@ -94,6 +94,10 @@ _git_related () {
 	_git_log
 }
 
+_git_v () {
+	_git_gitk
+}
+
 _git_reintegrate () {
 	case "$cur" in
 	--add=*)
