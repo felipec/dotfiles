@@ -9,7 +9,6 @@ paths:
 
     /.cache/
     /.ccache/
-    /.cargo/
 
     /.local/share/Trash/
     /.thumbnails/
@@ -18,12 +17,11 @@ paths:
     /.Xauthority
     /.ICEauthority
     /.pulse-cookie
-    /.esd_auth
 
-    /.xsession-errors
+    /.xsession-errors*
     /.wayland-errors
 
-    /.gvfs
+    /.zcompdump
     /.local/share/gvfs-metadata
 
     # Steam
@@ -33,22 +31,31 @@ paths:
     /.local/share/Steam
 
     # Apps
-    /.adobe/
-    /.macromedia/
+    /.config/Thunar/
+    /.config/libreoffice/
+    /.config/spotify/
+    /.config/viewnior/
+    /.config/vlc/
+    /.config/pipewire/
+    /.config/discord/
+    /.config/hexchat/
+    /.config/inkscape/
+    /.config/octave/
+    /.config/GIMP/
+    /.config/calibre/
+    /.wine/
 
     # Extra
+    /.config/BraveSoftware/
     /.config/chromium/
     /.config/chromium-backup/
-    /.gem/
+    /.local/share/gem/
     /.npm/
     /.npm-packages/
     /.cargo/
     /.bundle/cache/
     /R/
 
-    /.config/chromium-backup-crashrecovery-*/
-    /.config/spotify/
-    /.config/discord/
 - src: /root
 - src: /etc
 - src: /srv
