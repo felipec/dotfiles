@@ -18,54 +18,41 @@
 
 /.ccache/
 /.cache/
-/.adobe/
-/.bazaar/
-/.gem/
-/.wine/
 /.thumbnails/
-/.subversion/
-/.purple/
 /.pki/
-/.steam/
-/.mozilla/
 
+/.config/BraveSoftware/
 /.config/chromium
 /.config/chromium-backup/
-/.config/BraveSoftware/
 
 /.config/Thunar/
 /.config/dconf/
 /.config/enchant/
-/.config/evince/
-/.config/gajim/
-/.config/gtk-*/
 /.config/htop/
 /.config/libreoffice/
 /.config/spotify/
 /.config/transmission/
 /.config/viewnior/
 /.config/vlc/
-/.config/pulse/
 /.config/pipewire/
 /.config/discord/
 /.config/hexchat/
 /.config/inkscape/
-/.config/openrazer/
 /.config/octave/
 /.config/GIMP/
+/.config/calibre/
+/.wine/
 
 /.config/git/gitk
 /.config/psd/.psd.conf
 /.config/Trolltech.conf
-/.config/pavucontrol.ini
 
 /.config/systemd/user/default.target.wants/psd.service
 /.config/systemd/user/default.target.wants/spotblock.service
 
 /.ICEauthority
 /.Xauthority
-/.xsession-errors
-/.xsession-errors.old
+/.xsession-errors*
 /.pulse-cookie
 /.rnd
 
@@ -82,14 +69,18 @@
 /.octave_hist
 /.python_history
 
-/StarCraft II/
-/.config/unity3d/
-
-/.steampath
-/.steampid
 /.notmuch/compose/
-/.mutt/cache/
 /.npm/
 /.npm-packages/
 /.cargo/
+/.bundle/
 /R/
+
+/.steam/
+/.steampath
+/.steampid
+
+/StarCraft II/
+/.config/unity3d/
+
+/.config/menus/applications-merged/xdg-desktop-menu-dummy.menu
