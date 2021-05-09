@@ -1,0 +1,3 @@
+disable=SC2016 # sharness
+
+# vim: ft=config
