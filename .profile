@@ -11,6 +11,7 @@ export VISUAL=$VIM_EDITOR
 export LESS=FRSX
 export MAKEFLAGS='-j8'
 export PS_FORMAT='pid,cmd'
+export DOTFILES="$HOME/.local/share/dotfiles"
 
 export SUDO_ASKPASS=$HOME/bin/sudo_askpass
 
