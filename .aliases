@@ -26,6 +26,7 @@ alias mv='mv -i'
 alias ll='ls -l'
 
 man() {
+  # shellcheck disable=SC3003
   LESS_TERMCAP_md=$'\e[1;31m' \
   LESS_TERMCAP_me=$'\e[0m' \
   LESS_TERMCAP_so=$'\e[1;35m' \
