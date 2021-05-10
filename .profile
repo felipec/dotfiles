@@ -13,7 +13,7 @@ export MAKEFLAGS='-j8'
 export PS_FORMAT='pid,cmd'
 export DOTFILES="$HOME/.local/share/dotfiles"
 
-export SUDO_ASKPASS=$HOME/bin/sudo_askpass
+export SUDO_ASKPASS=$HOME/bin/user_password
 
 # Bundler doesn't know where to install gems otherwise
 export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
