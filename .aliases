@@ -1,7 +1,6 @@
 #!/bin/sh
 
-alias config='git --git-dir=$HOME/.local/share/dotfiles/.git/ --work-tree=$HOME'
-alias c=config
+alias c='git --git-dir=$HOME/.local/share/dotfiles/.git/ --work-tree=$HOME'
 
 alias xo='xdg-open'
 alias sudo='sudo -A'
