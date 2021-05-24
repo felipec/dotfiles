@@ -5,8 +5,8 @@ require 'uri'
 
 def create(content, language: nil)
   params = {
-    'content' => content.to_s,
-    'syntax' => language,
+    content: content.to_s,
+    syntax: language,
   }
   resp = Net::HTTP.post_form(URI.parse("https://dpaste.com/api/v2/"), params)
   return resp.body
@@ -20,6 +20,7 @@ ARGV.delete_if do |cur|
   when /^-l(.+)$/, /^--lang=(.+)$/
     $language = $1
     true
+  end
 end
 
 ARGV.each do |f|
