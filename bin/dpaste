@@ -3,10 +3,14 @@
 require 'net/http'
 require 'uri'
 
+$languages = {
+  ruby: 'rb',
+}
+
 def create(content, language: nil)
   params = {
     content: content.to_s,
-    syntax: language,
+    syntax: $languages.fetch(language, language),
   }
   resp = Net::HTTP.post_form(URI.parse("https://dpaste.com/api/v2/"), params)
   return resp.body
@@ -18,7 +22,7 @@ ARGV.delete_if do |cur|
   next false if cur[0] != '-'
   case cur
   when /^-l(.+)$/, /^--lang=(.+)$/
-    $language = $1
+    $language = $1.to_sym
     true
   end
 end
