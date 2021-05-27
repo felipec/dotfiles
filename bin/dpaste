@@ -5,6 +5,7 @@ require 'uri'
 
 $languages = {
   ruby: 'rb',
+  sh: 'bash',
 }
 
 def create(content, language: nil)
