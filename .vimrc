@@ -30,8 +30,6 @@ set fillchars+=vert:\
 set listchars=tab:»\ ,trail:∙,nbsp:␣
 set listchars+=eol:↲,extends:❯,precedes:❮
 
-set lines=40 columns=120
-
 let g:netrw_browsex_viewer = 'brave'
 let g:syntastic_ruby_mri_args = '-W1 -c'
 
