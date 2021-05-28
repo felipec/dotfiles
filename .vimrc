@@ -30,9 +30,6 @@ set fillchars+=vert:\
 set listchars=tab:»\ ,trail:∙,nbsp:␣
 set listchars+=eol:↲,extends:❯,precedes:❮
 
-let g:netrw_browsex_viewer = 'brave'
-let g:syntastic_ruby_mri_args = '-W1 -c'
-
 runtime lightline_config.vim
 runtime syntax_groups.vim
 runtime load_cscope.vim
