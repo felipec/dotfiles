@@ -8,10 +8,14 @@ export PATH="$HOME/.npm-packages/bin:$PATH"
 export EMAIL=felipe.contreras@gmail.com
 export VIM_EDITOR=vim
 export VISUAL=$VIM_EDITOR
-export LESS=FRSX
+export LESS='-RXFS --use-color -Dd+r$Du+b'
 export MAKEFLAGS='-j8'
 export PS_FORMAT='pid,cmd'
 export DOTFILES="$HOME/.local/share/dotfiles"
+
+# Colorize man
+export MANPAGER='less -RX --use-color -Dd+r -Du+b'
+export MANROFFOPT='-c'
 
 export SUDO_ASKPASS=$HOME/bin/user_password
 
