@@ -2,7 +2,8 @@ let g:notmuch_sendmail = 'msmtp'
 let g:notmuch_folders_count_threads = 1
 
 let g:notmuch_folders = [
-	\ [ 'new', 'tag:inbox and tag:unread date:today' ],
+	\ [ 'to-me', 'tag:inbox and tag:unread date:1-day-ago.. to:felipe.contreras' ],
+	\ [ 'new', 'tag:inbox and tag:unread date:1-day-ago..' ],
 	\ [ 'to-do', 'tag:to-do' ],
 	\ ]
 
