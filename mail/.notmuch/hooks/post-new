@@ -5,7 +5,7 @@ notmuch tag --batch <<EOF
 +sent -unread from:felipe.contreras and tag:new
 
 +notmuch to:notmuch@notmuchmail.org and tag:new
-+git to:git@vger.kernel.org and tag:new
++git List:git.vger.kernel.org and tag:new
 
 -new tag:new
 EOF
