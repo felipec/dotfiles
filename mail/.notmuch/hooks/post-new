@@ -1,10 +1,8 @@
 #!/bin/sh
 
 notmuch tag --batch <<EOF
-+to-me to:felipe.contreras and tag:new
 +sent -inbox -unread from:felipe.contreras and tag:new
 
-+notmuch to:notmuch@notmuchmail.org and tag:new
 +git List:git.vger.kernel.org and tag:new
 
 -new tag:new
