@@ -3,6 +3,7 @@ Create Near
 
 MaildirStore local
 Path ~/mail/
+Inbox ~/mail/inbox
 SubFolders Verbatim
 
 IMAPStore gmail
@@ -15,5 +16,5 @@ PipelineDepth 25
 Channel gmail
 Far :gmail:
 Near :local:
-Pattern git
+Pattern INBOX git
 Sync PullNew
