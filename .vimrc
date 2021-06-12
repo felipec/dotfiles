@@ -15,6 +15,8 @@ set wildmenu
 set display=truncate
 set scrolloff=5
 
+set noshelltemp " why does vim do this?
+
 set expandtab
 set tabstop=2
 set shiftwidth=0
