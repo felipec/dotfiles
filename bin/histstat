@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+$base_cmd = ARGV[0]
+
 $cmds = Hash.new(0)
 $dirs = Hash.new(0)
 $aliases = {}
@@ -23,6 +25,7 @@ end
 def bump_cmd(cmd)
   cmd = cmd.split(' ')
   return if cmd.empty?
+  return unless cmd.first == $base_cmd if $base_cmd
   cmd.each_with_index do |_, i|
     e = cmd[0..i].join(' ')
     $cmds[e] += 1
