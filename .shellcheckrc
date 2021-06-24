@@ -1,3 +1,4 @@
-disable=SC2016 # sharness
+disable=SC2034
+disable=SC2016,SC1091 # sharness
 
 # vim: ft=config
