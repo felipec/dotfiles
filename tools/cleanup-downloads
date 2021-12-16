@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
+require 'bencode'
+require 'fileutils'
+
 $tdir = '~/.config/transmission/torrents'
 
 $dirs = []
@@ -43,18 +46,19 @@ end
 
 $dirs.each do |d|
   d = File.expand_path(d)
-  Dir.entries(d).each do |e|
-    next if e[0] == '.'
+  next unless File.exists?(d)
+  Dir.children(d).each do |e|
     $inactive[e] = TFile.new(e, d)
   end
 end
 
+$tdir = File.expand_path($tdir)
+
 # Torrents still active
-Dir.foreach(File.expand_path($tdir)) do |f|
+Dir.foreach($tdir) do |f|
   next unless f.end_with?('.torrent')
-  if f =~ /(.*)\.\h{16}\.torrent/
-    $inactive.delete($1)
-  end
+  name = BEncode.load_file($tdir + '/' + f)['info']['name']
+  $inactive.delete(name)
 end
 
 File.popen(%w[du -s --files0-from=-], 'r+', :err => File::NULL) do |pipe|
@@ -64,8 +68,6 @@ File.popen(%w[du -s --files0-from=-], 'r+', :err => File::NULL) do |pipe|
     e.size = size.to_i * 1024
   end
 end
-
-require 'fileutils'
 
 $inactive.values.sort.reverse.each do |e|
   clean_lines = 2
