@@ -1,5 +1,5 @@
 [Desktop Entry]
 Name=To-do list
 Exec=/usr/bin/xdg-open file:///home/felipec/to-do.txt
-Icon=accessories-text-editor
+Icon=gnome-todo
 Type=Application
