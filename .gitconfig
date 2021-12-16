@@ -12,8 +12,9 @@
 	rs = reset
 	sw = switch
 
-	short = show --quiet --format=reference
-	advance = merge --ff-only
+	short = show --quiet --format=%h
+	ref = show --quiet --format=reference
+	fast-forward = merge --ff-only
 	undo = reset --hard @{1}
 
 	d = diff
