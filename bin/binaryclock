@@ -1,0 +1,94 @@
+#!/usr/bin/env ruby
+
+$simple = false
+
+$total_seconds = 24 * 60 * 60
+$total_ticks = 2 ** 16
+
+def title(text)
+  puts [nil, text, '-' * text.size]
+end
+
+def seconds_to_ticks(v)
+  (v.to_f * $total_ticks) / $total_seconds
+  # (v.to_f * 512) / 675
+end
+
+def ticks_to_seconds(v)
+  (v.to_f * $total_seconds) / $total_ticks
+end
+
+def parse(clock)
+  ticks = clock.to_i(2)
+  seconds = ticks_to_seconds(ticks)
+  Time.at(seconds).utc.strftime('%H:%M:%S')
+end
+
+t = Time.now
+seconds = (t.hour * 60 + t.min) * 60 + t.sec
+$ticks = seconds_to_ticks(seconds.to_f)
+$clock = '%016b' % $ticks
+
+=begin
+title 'help'
+
+# (0..15).each do |e|
+#   sig = '%04b' % e
+#   clock = sig + ('0' * (16 - sig.length))
+#   puts '%s: %s' % [sig, parse(clock)]
+# end
+
+(0..7).each do |e|
+  sig = '%03b' % e
+  clock = sig + ('0' * (16 - sig.length))
+  puts '%s: %s' % [sig, parse(clock)]
+end
+
+title 'value'
+
+puts $clock
+
+title 'clock'
+=end
+
+if $simple
+  $clock.scan(/.{4}/).each { |e| puts e.gsub('0', '   ').gsub('1', ' * ') }
+else
+
+  def human(time)
+    if time < (2 * 60)
+      '%02is' % [time]
+    elsif time < (2 * 60 * 60)
+      '%02im' % [time / 60]
+    else
+      '%02ih' % [time / (60 * 60)]
+    end
+  end
+
+  (0..15).reverse_each do |e|
+    cur = 1 << e
+    text = human(ticks_to_seconds(cur))
+
+    if ($ticks.to_i & cur > 0)
+      print "\e[32m%s\e[m " % text
+    else
+      print "%s " % text
+    end
+
+    print "\n" if (e % 4) == 0
+  end
+
+end
+
+=begin
+title 'parse'
+
+# $clock = '1000' '0010' '1111' '1010'
+# $clock = '1010010000100000'
+# $clock = '0000' '000000000000'
+$clock = '0100' '000000000000'
+
+ticks = $clock.to_i(2)
+seconds = ticks_to_seconds(ticks)
+puts Time.at(seconds).utc.strftime('%H:%M:%S')
+=end
