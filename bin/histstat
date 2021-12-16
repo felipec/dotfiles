@@ -1,10 +1,18 @@
 #!/usr/bin/env ruby
 
+require 'json'
+
 $base_cmd = ARGV[0]
 $base_dir = Dir.home + '/.local/share/histstat'
+$historical = Dir.home + '/.local/share/histstat/historical.json'
 
 $cmds = Hash.new(0)
 $dirs = Hash.new(0)
+
+if $historical and File.exists?($historical)
+  $cmds.merge!(JSON.parse(File.read($historical)))
+  $cmds.keep_if { |k, v| k.start_with?("#{$base_cmd} ") } if $base_cmd
+end
 
 def bump_cmd(cmd)
   cmd = cmd.split(' ')
