@@ -11,6 +11,7 @@ def bump_cmd(cmd)
   return if cmd.empty?
   return unless cmd.first == $base_cmd if $base_cmd
   cmd.each_with_index do |_, i|
+    next if $base_cmd and i == 0
     e = cmd[0..i].join(' ')
     $cmds[e] += 1
   end
@@ -54,6 +55,8 @@ $cmds.sort_by(&:last).reverse.first(20).each do |e, c|
   m = $aliases.has_key?(e) ? '*' : ' '
   puts " %s %3d%% %s\n" % [m, 100 * c / cmds_max, e]
 end
+
+exit if $base_cmd
 
 title 'Top directories'
 
