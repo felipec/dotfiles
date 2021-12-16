@@ -2,19 +2,17 @@
 	name = Felipe Contreras
 	email = felipe.contreras@gmail.com
 [alias]
-	ci = commit
+	co = commit -s
 	pi = cherry-pick
 	rb = rebase
 	mt = mergetool
 	st = status -s -b
 	sw = switch
-	co = checkout
 
 	short = show --quiet --format=reference
 	advance = merge --ff-only
 	undo = reset --hard @{1}
 
-	c = commit -v
 	d = diff
 	o = show -C
 	p = push
@@ -49,6 +47,8 @@
 [rerere]
 	enabled = true
 	autoupdate = true
+[commit]
+	verbose = true
 [tag]
 	sort = -version:refname
 [sendemail]
