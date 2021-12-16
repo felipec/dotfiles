@@ -2,65 +2,71 @@
 	name = Felipe Contreras
 	email = felipe.contreras@gmail.com
 [alias]
+	ci = commit
+	pi = cherry-pick
+	rb = rebase
+	mt = mergetool
+	st = status -s -b
+	sw = switch
+	co = checkout
+
+	short = show --quiet --format=reference
 	advance = merge --ff-only
 	undo = reset --hard @{1}
-	sw = switch
+
 	c = commit -v
-	co = checkout
-	ci = commit
-	rb = rebase
-	st = status -s -b
 	d = diff
-	s = stage
 	o = show -C
 	p = push
 	r = reset
 	b = branch
-	rbi = rebase --interactive
-	rbc = rebase --continue
-	pi = cherry-pick
-	mt = mergetool
+	s = stage
 	h = help
 	l = log --oneline --decorate --boundary
+
 	lg = l --graph
 	lo = log ORIG_HEAD.. --stat --no-merges
+
+	rbi = rebase --interactive
+	rbc = rebase --continue
 	bg = bisect good
 	bb = bisect bad
 	bs = bisect skip
+
 	bv = branch -v --list
-	short = show --quiet --format=reference
+
 [init]
 	defaultbranch = master
+[merge]
+	conflictstyle = diff3
+	tool = gvimdiff3
+	log = true
 [rebase]
 	autosquash = true
-[merge]
-	tool = gvimdiff3
-	conflictstyle = diff3
-	log = true
 [mergetool]
 	keepbackup = false
 	automerge = true
-[core]
-	mode = progress
+[rerere]
+	enabled = true
+	autoupdate = true
+[tag]
+	sort = -version:refname
 [sendemail]
-	aliasesfile = ~/.mutt/aliases
-	aliasfiletype = mutt
-	confirm = never
 	smtpserver = /usr/bin/msmtp
+	assume8bitEncoding = utf-8
+	confirm = never
 	envelopesender = auto
 	annotate = true
-	assume8bitEncoding = utf-8
+	aliasesfile = ~/.mutt/aliases
+	aliasfiletype = mutt
+[core]
+	mode = progress
 [format]
 	coverletter = auto
 [receive]
 	denyCurrentBranch = warn
-[rerere]
-	enabled = true
-	autoupdate = true
 [notes]
 	rewriteref = refs/notes/*
-[tag]
-	sort = -version:refname
 [include]
 	path = ~/.config/git/smartlist.config
 [integration]
