@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Conky
-Exec=conky --quiet --daemonize --pause=5
-Type=Application
-StartupNotify=false
-Terminal=false
-Hidden=true
