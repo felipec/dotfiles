@@ -3,10 +3,13 @@
 	email = felipe.contreras@gmail.com
 [alias]
 	co = commit -s
+	br = branch
 	pi = cherry-pick
 	rb = rebase
 	mt = mergetool
 	st = status -s -b
+	sg = stage
+	rs = reset
 	sw = switch
 
 	short = show --quiet --format=reference
@@ -16,10 +19,8 @@
 	d = diff
 	o = show -C
 	p = push
-	r = reset
 	b = branch
 	s = stage
-	h = help
 	l = log --oneline --decorate --boundary
 
 	lg = l --graph
