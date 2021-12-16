@@ -57,8 +57,6 @@
 	confirm = never
 	envelopesender = auto
 	annotate = true
-	aliasesfile = ~/.mutt/aliases
-	aliasfiletype = mutt
 [core]
 	mode = progress
 [format]
