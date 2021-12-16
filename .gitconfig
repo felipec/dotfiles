@@ -2,15 +2,16 @@
 	name = Felipe Contreras
 	email = felipe.contreras@gmail.com
 [alias]
+	bl = branch-list
 	co = commit -s
 	br = branch
+	ff = fast-forward
 	pi = cherry-pick
 	rb = rebase
 	mt = mergetool
 	st = status -s -b
 	sg = stage
 	rs = reset
-	sw = switch
 
 	short = show --quiet --format=%h
 	ref = show --quiet --format=reference
@@ -32,11 +33,8 @@
 	bg = bisect good
 	bb = bisect bad
 	bs = bisect skip
-
-	bv = branch -v --list
-
 [init]
-	defaultbranch = master
+	defaultbranch = master # silence bullshit message
 [merge]
 	conflictstyle = diff3
 	tool = gvimdiff3
