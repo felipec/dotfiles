@@ -3,12 +3,15 @@
 require 'yaml'
 require 'fileutils'
 
+$dry_run = false
+
 $ops = { 'send' => '>', 'recv' => '<', 'del.' => '-' }
 
 def rsync(src, dest, excludes: nil, sudo: false)
   cmd = %w[rsync --archive --delete --exclude-from=- --delete-excluded]
   cmd.prepend('sudo') if sudo
   cmd << "--out-format=%n\t%o"
+  cmd << '--dry-run' if $dry_run
   cmd << src + '/'
   cmd << dest
 
