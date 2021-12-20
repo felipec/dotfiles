@@ -1,6 +1,6 @@
 general {
-  colors = true
-  interval = 5
+        colors = true
+        interval = 5
 }
 
 order += "cpu_usage"
@@ -8,31 +8,24 @@ order += "disk /"
 order += "battery all"
 order += "cpu_temperature 0"
 order += "load"
-order += "time"
+order += "tztime local"
 
 battery all {
-  format = "%status %percentage"
-  # low_threshold = 20
-  # threshold_type = "percentage"
-  format_down = "No battery"
-  status_chr = "⚡"
-  status_bat = "🔋 BAT"
-  status_unk = "?"
-  status_full = "☻"
-}
-
-time {
-  format = "%H:%M:%S"
-}
-
-load {
-  format = "%1min"
+        format = "%status %percentage"
 }
 
 disk "/" {
-  format = "%avail"
+        format = "%avail"
+}
+
+load {
+        format = "%1min"
+}
+
+tztime local {
+        format = "%H:%M:%S"
 }
 
 cpu_temperature 0 {
-  format = "T: %degrees °C"
+        format = "T: %degrees °C"
 }
