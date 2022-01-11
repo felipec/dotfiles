@@ -12,6 +12,7 @@
 	st = status -s -b
 	sg = stage
 	rs = reset
+	sw = switch
 
 	short = show --quiet --format=%h
 	ref = show --quiet --format=reference
