@@ -255,4 +255,5 @@ application/xml=chromium.desktop
 text/html=chromium.desktop
 text/xml=chromium.desktop
 x-scheme-handler/ftp=chromium.desktop
+image/x-sun-raster=gimp.desktop
 ; vim: ft=ini
