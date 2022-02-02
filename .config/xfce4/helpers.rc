@@ -1,4 +1,4 @@
-WebBrowser=brave
+WebBrowser=chromium
 FileManager=thunar
 TerminalEmulator=xfce4-terminal
 MailReader=gmail
