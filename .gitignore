@@ -15,6 +15,7 @@
 /documents/
 
 /.timewarrior/
+/.password-store/
 
 /.ccache/
 /.cache/
@@ -57,7 +58,7 @@
 /.rnd
 
 /.ssh/known_hosts
-/.zcompdump
+/.zcompdump*
 /.viminfo
 
 /.bash_history
@@ -68,6 +69,7 @@
 /.mysql_history
 /.octave_hist
 /.python_history
+/.node_repl_history
 
 /.notmuch/compose/
 /.npm/
@@ -80,6 +82,7 @@
 /.steampath
 /.steampid
 
+/.factorio/
 /StarCraft II/
 /.config/unity3d/
 
