@@ -17,7 +17,7 @@ export EMAIL=felipe.contreras@gmail.com
 export VIM_EDITOR=vim
 export VISUAL=$VIM_EDITOR
 export LESS='-RXFS --use-color -Dd+r$Du+b'
-export MAKEFLAGS='-j8'
+export MAKEFLAGS='-j24'
 export PS_FORMAT='pid,cmd'
 export DOTFILES="$HOME/.local/share/dotfiles"
 
