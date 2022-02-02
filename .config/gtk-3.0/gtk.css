@@ -1,0 +1,2 @@
+/* proper color in xfce4 workspace selector */
+wnck-pager:selected { background-color: @selected_bg_color; }
