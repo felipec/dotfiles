@@ -2,7 +2,7 @@
 
 alias c='git --git-dir=$DOTFILES/.git/ --work-tree=$HOME'
 
-alias xo='xdg-open'
+alias o='xdg-open'
 alias sudo='sudo -A'
 alias R='R --no-save'
 
