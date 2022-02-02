@@ -1,6 +1,6 @@
 command_keyboard_shortcuts:
   "<Super>Return": xfce4-terminal
-  "<Super>b": brave
+  "<Super>b": browser
   "<Super>space": xfce4-terminal --drop-down --hide-menubar
   "<Super>l": light-locker-command --lock
   "<Super>w": xfce4-popup-whiskermenu
