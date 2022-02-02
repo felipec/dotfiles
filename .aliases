@@ -6,10 +6,8 @@ alias xo='xdg-open'
 alias sudo='sudo -A'
 alias R='R --no-save'
 
-alias ls='ls --color=auto -hv'
-alias grep='grep --color=auto'
-alias diff='diff --color=auto'
-alias ip='ip -color=auto'
+alias ls='ls -hv'
+alias ip='ip -c=auto'
 
 alias g='noglob git'
 alias l='ls'
