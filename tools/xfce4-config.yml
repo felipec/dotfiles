@@ -1,12 +1,16 @@
 command_keyboard_shortcuts:
   "<Super>Return": xfce4-terminal
   "<Super>b": browser
-  "<Super>space": xfce4-terminal --drop-down --hide-menubar
+  "<Super>r": rlaunch
+  "<Super>r/startup-notify": false
   "<Super>l": light-locker-command --lock
   "<Super>w": xfce4-popup-whiskermenu
-  "<Super>r": rlaunch
 
 wm_keyboard_shortcuts:
+  left_workspace: "<Super>Left"
+  right_workspace: "<Super>Right"
+  up_workspace: "<Super>Up"
+  down_workspace: "<Super>Down"
   workspace_1: "<Super>1"
   workspace_2: "<Super>2"
   workspace_3: "<Super>3"
@@ -15,12 +19,6 @@ wm_keyboard_shortcuts:
   workspace_6: "<Super>6"
   workspace_7: "<Super>7"
   workspace_8: "<Super>8"
-  workspace_9: "<Super>9"
-  workspace_10: "<Super>0"
-  left_workspace: "<Super>Left"
-  right_workspace: "<Super>Right"
-  up_workspace: "<Super>Up"
-  down_workspace: "<Super>Down"
   show_desktop: "<Super>d"
   move_window_left_workspace: "<Primary><Super>Left"
   move_window_right_workspace: "<Primary><Super>Right"
@@ -34,38 +32,40 @@ wm_keyboard_shortcuts:
   move_window_workspace_6: "<Primary><Super>6"
   move_window_workspace_7: "<Primary><Super>7"
   move_window_workspace_8: "<Primary><Super>8"
-  move_window_workspace_9: "<Primary><Super>9"
-  move_window_workspace_10: "<Primary><Super>0"
 
 settings:
   xfwm4:
     "/general/workspace_count": 8
     "/general/easy_click": "Super"
     "/general/cycle_tabwin_mode": 1
+    "/general/theme": "Matcha-sea"
     "/general/placement_ratio": 60
     "/general/title_font": "Sans Bold 10"
     "/general/cycle_hidden": false
     "/general/scroll_workspaces": false
     "/general/titleless_maximize": true
-    "/general/theme": "Matcha-sea"
     "/general/show_dock_shadow": false
     "/general/show_frame_shadow": false
   keyboards:
     "/Default/KeyRepeat/Delay": 200
     "/Default/KeyRepeat/Rate": 50
-  keyboard-layout:
-    "/Default/XkbDisable": false
-    "/Default/XkbLayout": "us"
-    "/Default/XkbVariant": "altgr-intl"
-  pointers:
-    "/ELAN130100_04F33035_Touchpad/ReverseScrolling": true
-    "/ELAN130100_04F33035_Touchpad/Properties/libinput_Tapping_Enabled": 1
   xfce4-desktop:
     "/desktop-icons/style": 0
   xfce4-session:
     "/general/SaveOnExit": false
-    "/general/LockCommand": "light-locker-command --lock"
     "/compat/LaunchGNOME": true
+    "/general/LockCommand": "light-locker-command --lock"
+  xsettings:
+    "/Net/ThemeName": "Matcha-sea"
+    "/Net/IconThemeName": "Papirus"
+    "/Xft/DPI": 128
+    "/Gtk/FontName": "Sans 12"
+    "/Gtk/MonospaceFontName": "Monospace 12"
+    "/Gtk/CursorThemeName": "Vanilla-DMZ"
+    "/Net/CursorBlinkTime": 500
+    "/Xft/HintStyle": "hintslight"
+    "/Xft/RGBA": "rgb"
+    "/Xft/Hinting": 1
   xfce4-power-manager:
     "/xfce4-power-manager/lid-action-on-ac": 1
     "/xfce4-power-manager/lid-action-on-battery": 1
@@ -81,17 +81,6 @@ settings:
     "/primary-monitor": 0
     "/do-slideout": true
     "/notification-log": true
-  xsettings:
-    "/Gtk/FontName": "Sans 12"
-    "/Gtk/MonospaceFontName": "Monospace 12"
-    "/Gtk/CursorThemeName": "Vanilla-DMZ"
-    "/Net/CursorBlinkTime": 500
-    "/Net/ThemeName": "Matcha-sea"
-    "/Net/IconThemeName": "Papirus"
-    "/Xft/DPI": 128
-    "/Xft/HintStyle": "hintslight"
-    "/Xft/RGBA": "rgb"
-    "/Xft/Hinting": 1
 
 panels:
 - size: 30
