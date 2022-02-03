@@ -58,9 +58,7 @@ settings:
   xsettings:
     "/Net/ThemeName": "Matcha-sea"
     "/Net/IconThemeName": "Papirus"
-    "/Xft/DPI": 128
-    "/Gtk/FontName": "Sans 12"
-    "/Gtk/MonospaceFontName": "Monospace 12"
+    "/Xft/DPI": 108
     "/Gtk/CursorThemeName": "Vanilla-DMZ"
     "/Net/CursorBlinkTime": 500
     "/Xft/HintStyle": "hintslight"
