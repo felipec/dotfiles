@@ -38,11 +38,14 @@ settings:
     "/general/easy_click": Super
     "/general/cycle_tabwin_mode": 1
     "/general/workspace_count": 8
-    "/general/theme": Matcha-sea
+    "/general/theme": Arc-Darker
     "/general/titleless_maximize": true
     "/general/scroll_workspaces": false
     "/general/show_dock_shadow": false
     "/general/show_frame_shadow": false
+    "/general/move_opacity": 50
+    "/general/popup_opacity": 90
+    "/general/resize_opacity": 75
     "/general/placement_ratio": 60
     "/general/title_font": Sans Bold 10
     "/general/cycle_hidden": false
@@ -50,14 +53,16 @@ settings:
     "/compat/LaunchGNOME": true
     "/general/SaveOnExit": false
     "/general/LockCommand": light-locker-command --lock
+  xfce4-panel:
+    "/panels/dark-mode": true
   keyboards:
     "/Default/KeyRepeat/Delay": 200
     "/Default/KeyRepeat/Rate": 50
   xfce4-desktop:
     "/desktop-icons/style": 0
   xsettings:
-    "/Net/ThemeName": Matcha-sea
-    "/Net/IconThemeName": Papirus
+    "/Net/ThemeName": Arc-Darker
+    "/Net/IconThemeName": Arc-X-D
     "/Xft/DPI": 108
     "/Gtk/CursorThemeName": Vanilla-DMZ
     "/Net/CursorBlinkTime": 500
@@ -68,10 +73,14 @@ settings:
     "/xfce4-power-manager/show-panel-label": 1
     "/xfce4-power-manager/sleep-button-action": !uint 1
     "/xfce4-power-manager/power-button-action": !uint 4
+    "/xfce4-power-manager/battery-button-action": !uint 3
+    "/xfce4-power-manager/hibernate-button-action": !uint 1
     "/xfce4-power-manager/inactivity-on-ac": !uint 15
     "/xfce4-power-manager/inactivity-on-battery": !uint 15
+    "/xfce4-power-manager/inactivity-sleep-mode-on-battery": !uint 1
     "/xfce4-power-manager/lid-action-on-ac": !uint 1
     "/xfce4-power-manager/lid-action-on-battery": !uint 1
+    "/xfce4-power-manager/dpms-enabled": false
     "/xfce4-power-manager/general-notification": false
     "/xfce4-power-manager/logind-handle-lid-switch": true
   xfce4-notifyd:
@@ -97,16 +106,14 @@ panels:
     - style: 0
   - - pager
     - rows: 2
-      workspace-scrolling: false
   - - separator
     - style: 0
   - - systray
     - icon-size: 16
+      square-icons: true
   - - mailwatch
   - - pulseaudio
   - - power-manager-plugin
   - - notification-plugin
-  - - separator
-    - style: 0
   - - clock
     - digital-format: "%R"
