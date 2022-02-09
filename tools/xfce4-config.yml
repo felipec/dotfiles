@@ -1,90 +1,89 @@
-command_keyboard_shortcuts:
-  "<Super>Return": xfce4-terminal
-  "<Super>b": browser
-  "<Super>r": rlaunch
-  "<Super>r/startup-notify": false
-  "<Super>l": light-locker-command --lock
-  "<Super>w": xfce4-popup-whiskermenu
-
-wm_keyboard_shortcuts:
-  left_workspace: "<Super>Left"
-  right_workspace: "<Super>Right"
-  up_workspace: "<Super>Up"
-  down_workspace: "<Super>Down"
-  workspace_1: "<Super>1"
-  workspace_2: "<Super>2"
-  workspace_3: "<Super>3"
-  workspace_4: "<Super>4"
-  workspace_5: "<Super>5"
-  workspace_6: "<Super>6"
-  workspace_7: "<Super>7"
-  workspace_8: "<Super>8"
-  show_desktop: "<Super>d"
-  move_window_left_workspace: "<Primary><Super>Left"
-  move_window_right_workspace: "<Primary><Super>Right"
-  move_window_up_workspace: "<Primary><Super>Up"
-  move_window_down_workspace: "<Primary><Super>Down"
-  move_window_workspace_1: "<Primary><Super>1"
-  move_window_workspace_2: "<Primary><Super>2"
-  move_window_workspace_3: "<Primary><Super>3"
-  move_window_workspace_4: "<Primary><Super>4"
-  move_window_workspace_5: "<Primary><Super>5"
-  move_window_workspace_6: "<Primary><Super>6"
-  move_window_workspace_7: "<Primary><Super>7"
-  move_window_workspace_8: "<Primary><Super>8"
-
+---
+shortcuts:
+  commands:
+    "<Super>Return": xfce4-terminal
+    "<Super>b": browser
+    "<Super>r": rlaunch
+    "<Super>r/startup-notify": false
+    "<Super>w": xfce4-popup-whiskermenu
+    "<Super>l": light-locker-command --lock
+  wm:
+    left_workspace: "<Super>Left"
+    right_workspace: "<Super>Right"
+    up_workspace: "<Super>Up"
+    down_workspace: "<Super>Down"
+    workspace_1: "<Super>1"
+    workspace_2: "<Super>2"
+    workspace_3: "<Super>3"
+    workspace_4: "<Super>4"
+    workspace_5: "<Super>5"
+    workspace_6: "<Super>6"
+    workspace_7: "<Super>7"
+    workspace_8: "<Super>8"
+    show_desktop: "<Super>d"
+    move_window_left_workspace: "<Primary><Super>Left"
+    move_window_right_workspace: "<Primary><Super>Right"
+    move_window_up_workspace: "<Primary><Super>Up"
+    move_window_down_workspace: "<Primary><Super>Down"
+    move_window_workspace_1: "<Primary><Super>1"
+    move_window_workspace_2: "<Primary><Super>2"
+    move_window_workspace_3: "<Primary><Super>3"
+    move_window_workspace_4: "<Primary><Super>4"
+    move_window_workspace_5: "<Primary><Super>5"
+    move_window_workspace_6: "<Primary><Super>6"
+    move_window_workspace_7: "<Primary><Super>7"
+    move_window_workspace_8: "<Primary><Super>8"
 settings:
   xfwm4:
-    "/general/workspace_count": 8
-    "/general/easy_click": "Super"
+    "/general/easy_click": Super
     "/general/cycle_tabwin_mode": 1
-    "/general/theme": "Matcha-sea"
-    "/general/placement_ratio": 60
-    "/general/title_font": "Sans Bold 10"
-    "/general/cycle_hidden": false
-    "/general/scroll_workspaces": false
+    "/general/workspace_count": 8
+    "/general/theme": Matcha-sea
     "/general/titleless_maximize": true
+    "/general/scroll_workspaces": false
     "/general/show_dock_shadow": false
     "/general/show_frame_shadow": false
+    "/general/placement_ratio": 60
+    "/general/title_font": Sans Bold 10
+    "/general/cycle_hidden": false
+  xfce4-session:
+    "/compat/LaunchGNOME": true
+    "/general/SaveOnExit": false
+    "/general/LockCommand": light-locker-command --lock
   keyboards:
     "/Default/KeyRepeat/Delay": 200
     "/Default/KeyRepeat/Rate": 50
   xfce4-desktop:
     "/desktop-icons/style": 0
-  xfce4-session:
-    "/general/SaveOnExit": false
-    "/compat/LaunchGNOME": true
-    "/general/LockCommand": "light-locker-command --lock"
   xsettings:
-    "/Net/ThemeName": "Matcha-sea"
-    "/Net/IconThemeName": "Papirus"
+    "/Net/ThemeName": Matcha-sea
+    "/Net/IconThemeName": Papirus
     "/Xft/DPI": 108
-    "/Gtk/CursorThemeName": "Vanilla-DMZ"
+    "/Gtk/CursorThemeName": Vanilla-DMZ
     "/Net/CursorBlinkTime": 500
-    "/Xft/HintStyle": "hintslight"
-    "/Xft/RGBA": "rgb"
+    "/Xft/HintStyle": hintslight
     "/Xft/Hinting": 1
+    "/Xft/RGBA": rgb
   xfce4-power-manager:
-    "/xfce4-power-manager/lid-action-on-ac": 1
-    "/xfce4-power-manager/lid-action-on-battery": 1
-    "/xfce4-power-manager/logind-handle-lid-switch": true
-    "/xfce4-power-manager/sleep-button-action": 1
-    "/xfce4-power-manager/power-button-action": 4
-    "/xfce4-power-manager/general-notification": false
-    "/xfce4-power-manager/inactivity-on-ac": 15
-    "/xfce4-power-manager/inactivity-on-battery": 15
     "/xfce4-power-manager/show-panel-label": 1
+    "/xfce4-power-manager/sleep-button-action": !uint 1
+    "/xfce4-power-manager/power-button-action": !uint 4
+    "/xfce4-power-manager/inactivity-on-ac": !uint 15
+    "/xfce4-power-manager/inactivity-on-battery": !uint 15
+    "/xfce4-power-manager/lid-action-on-ac": !uint 1
+    "/xfce4-power-manager/lid-action-on-battery": !uint 1
+    "/xfce4-power-manager/general-notification": false
+    "/xfce4-power-manager/logind-handle-lid-switch": true
   xfce4-notifyd:
     "/expire-timeout": 4
     "/primary-monitor": 0
     "/do-slideout": true
     "/notification-log": true
-
 panels:
 - size: 30
   length: 100
   length-adjust: false
-  position: "p=8;x=960;y=1064"
+  position: p=10;x=0;y=0
   position-locked: true
   icon-size: 16
   plugins:
