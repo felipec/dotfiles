@@ -16,3 +16,5 @@ git clone https://github.com/felipec/vim-felipec.git ~/.vim/pack/colors/start/fe
 git clone https://github.com/itchyny/lightline.vim.git ~/.vim/pack/plugins/start/lightline
 git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/pack/plugins/start/syntastic
 git clone https://github.com/tpope/vim-commentary ~/.vim/pack/plugins/start/commentary
+
+xfconf-load ~/.config/xfconf-helper/config.yml
