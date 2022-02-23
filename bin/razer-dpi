@@ -5,6 +5,7 @@ $dpi = ARGV.first&.to_i || 3000
 
 Dir.children($dir).each do |e|
   dir = File.join($dir, e)
+  next unless File.exists?("#{dir}/driver")
   next if File.basename(File.readlink("#{dir}/driver")) != 'razermouse'
   next unless File.exists?("#{dir}/dpi")
   current = File.read("#{dir}/dpi").chomp
