@@ -1,1 +1,1 @@
-export VIM_EDITOR=gvim
+export GVIM_OPTIONS='-g'

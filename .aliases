@@ -1,5 +1,6 @@
 alias c='dot-config'
-alias v='$VIM_EDITOR'
+alias v='$VISUAL'
+alias e='$EDITOR'
 alias o='xdg-open'
 alias g='noglob git'
 

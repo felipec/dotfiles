@@ -10,8 +10,9 @@ UPATH="$UPATH:$GEM_HOME/bin"
 
 export PATH="$UPATH:$PATH"
 
-export VIM_EDITOR=vim
-export VISUAL=$VIM_EDITOR
+export EDITOR='vim'
+export VISUAL='gvim'
+export GIT_EDITOR="$EDITOR"
 
 export LESS='-RXFS --use-color -Dd+r$Du+b'
 export MAKEFLAGS='-j24'
