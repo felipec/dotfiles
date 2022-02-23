@@ -1,26 +1,21 @@
-/backup/
+/tmp/
 /dev/
 /contrib/
-/tmp/
+/backup/
 /to-do.txt
 
-/.ssh/id_rsa*
-/.gnupg/
-
-/.icons/
+/.cache/
 /.local/
+/.ccache/
+/.icons/
 /.themes/
+/.thumbnails/
 
 /downloads/
 /documents/
 
 /.timewarrior/
 /.password-store/
-
-/.ccache/
-/.cache/
-/.thumbnails/
-/.pki/
 
 /.config/BraveSoftware/
 /.config/chromium
@@ -57,23 +52,27 @@
 /.pulse-cookie
 /.rnd
 
-/.ssh/known_hosts
-/.zcompdump*
-/.viminfo
-
 /.bash_history
 /.history
 /.lesshst
-/.sqlite_history
+/.node_repl_history
 /.irb_history
+/.python_history
+/.sqlite_history
 /.mysql_history
 /.octave_hist
-/.python_history
-/.node_repl_history
 
 /.notmuch/compose/
+
+/.zcompdump
+/.viminfo
+
+/.ssh/known_hosts
+/.ssh/*_rsa*
+/.pki/
+/.gnupg/
+
 /.npm/
-/.npm-packages/
 /.cargo/
 /.bundle/
 /R/
