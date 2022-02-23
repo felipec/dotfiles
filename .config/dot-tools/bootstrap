@@ -1,12 +1,6 @@
 #!/bin/bash
 
-# Checkout missing files
-(
-	export GIT_DIR=$HOME/.local/share/dotfiles/.git
-	export GIT_WORK_TREE=$HOME
-
-	git ls-files --deleted | xargs git checkout
-)
+dot-checkout
 
 mkdir -p ~/{downloads,documents/{,pictures}}
 mkdir -p ~/.local/share/histstat
