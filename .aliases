@@ -1,29 +1,25 @@
-#!/bin/sh
-
-alias c='git --git-dir=$DOTFILES/.git/ --work-tree=$HOME'
-
+alias c='dot-config'
+alias v='$VIM_EDITOR'
 alias o='xdg-open'
-alias sudo='sudo -A'
-alias R='R --no-save'
+alias g='noglob git'
 
+# color
 alias ls='ls --color=auto -hv'
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip -color=auto'
 
-alias g='noglob git'
 alias l='ls'
-alias v='$VIM_EDITOR'
-alias r='ruby'
-alias gd='g diff'
-alias gv='g vs'
-alias gl='g ls'
-alias gc='g c'
-alias gs='g show'
-alias gco='g co'
-alias m='mv'
-alias vd='$VIM_EDITOR -d'
-alias mv='mv -i'
 alias ll='ls -l'
 alias la='ls -lA'
 alias l1='ls -1'
+
+alias vd='v -d'
+
+alias m='mv'
+alias mv='mv -i'
+
+alias sudo='sudo -A'
+alias R='R --no-save'
+
+# vim: ft=sh
