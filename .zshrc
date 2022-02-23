@@ -74,7 +74,7 @@ hash -d mnt=/run/media/$USER
 hash -d shared=~mnt/shared
 hash -d data=~mnt/data
 
-hash -d dotfiles=~/.local/share/dotfiles
+hash -d dot=~/.local/share/dot-files
 
 source /usr/share/fzf/key-bindings.zsh
 
