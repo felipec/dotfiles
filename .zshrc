@@ -62,8 +62,8 @@ bindkey "\e[F" end-of-line
 bindkey "\eOH" beginning-of-line
 bindkey "\eOF" end-of-line
 
-bindkey "\e[5~" history-beginning-search-backward
-bindkey "\e[6~" history-beginning-search-forward
+bindkey "\e[A" history-beginning-search-backward
+bindkey "\e[B" history-beginning-search-forward
 
 hash -d d=~/dev
 hash -d g=~d/git
