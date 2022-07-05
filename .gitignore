@@ -17,34 +17,7 @@
 /.timewarrior/
 /.password-store/
 
-/.config/BraveSoftware/
-/.config/chromium
-/.config/chromium-backup/
-
-/.config/Thunar/
-/.config/dconf/
-/.config/enchant/
-/.config/htop/
-/.config/libreoffice/
-/.config/spotify/
-/.config/transmission/
-/.config/viewnior/
-/.config/vlc/
-/.config/pipewire/
-/.config/discord/
-/.config/hexchat/
-/.config/inkscape/
-/.config/octave/
-/.config/GIMP/
-/.config/calibre/
 /.wine/
-
-/.config/git/gitk
-/.config/psd/.psd.conf
-/.config/Trolltech.conf
-
-/.config/systemd/user/default.target.wants/psd.service
-/.config/systemd/user/default.target.wants/spotblock.service
 
 /.ICEauthority
 /.Xauthority
@@ -83,6 +56,3 @@
 
 /.factorio/
 /StarCraft II/
-/.config/unity3d/
-
-/.config/menus/applications-merged/xdg-desktop-menu-dummy.menu
