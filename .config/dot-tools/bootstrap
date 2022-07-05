@@ -12,3 +12,8 @@ git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/pack/plugins/sta
 git clone https://github.com/tpope/vim-commentary ~/.vim/pack/plugins/start/commentary
 
 xfconf-load ~/.config/xfconf-helper/config.yml
+
+cat <<EOF > ~/.config/gtk-3.0/bookmarks
+file:///home/$USER/documents
+file:///home/$USER/downloads
+EOF
