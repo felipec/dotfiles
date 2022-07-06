@@ -1,5 +1,5 @@
 prompt_felipec_setup () {
-  PS1=' %(2L.%L.) %F{green}%#%f '
+  PS1=' %(2L.%L .)%F{green}%#%f '
 
   if (( $+functions[__git_ps1] )); then
     RPS1='%~$(__git_ps1 "[%s]") %F{blue}%B%m%b%f'
