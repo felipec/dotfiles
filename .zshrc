@@ -12,7 +12,7 @@ export LS_COLORS="$LS_COLORS:*.txt=00;36:*.patch=00;36:*.csv=00;36:*.json=00;36:
 
 HISTFILE=~/.history
 HISTSIZE=10000
-SAVEHIST=10000
+SAVEHIST=50000
 
 autoload -U compinit && compinit
 autoload -U colors && colors
