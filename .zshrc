@@ -16,17 +16,11 @@ SAVEHIST=10000
 
 autoload -U compinit && compinit
 autoload -U colors && colors
+autoload -U promptinit && promptinit
 
-# Left
-# PS1='%F{blue}%B%m%b%f %~$(__git_ps1 "[%s]") %F{green}%#%f '
-# PS1='%F{blue}%B%m%b%f %~ %F{green}%#%f '
-
-# Right
-PS1=' %(2L.%L.) %F{green}%#%f '
-RPS1='%~$(__git_ps1 "[%s]") %F{blue}%B%m%b%f'
+prompt felipec
 
 setopt auto_cd
-setopt prompt_subst
 setopt inc_append_history
 
 setopt auto_param_slash
