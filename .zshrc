@@ -33,16 +33,15 @@ zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 bindkey -e
-bindkey "\e[3~" delete-char
-bindkey "\e[2~" quoted-insert
 bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
-
-bindkey "\eOH" beginning-of-line
-bindkey "\eOF" end-of-line
-
 bindkey "\e[A" history-beginning-search-backward
 bindkey "\e[B" history-beginning-search-forward
+bindkey "\e[3~" delete-char
+bindkey "\e[5~" beginning-of-history
+bindkey "\e[6~" end-of-history
+bindkey "\e[1;5C" forward-word
+bindkey "\e[1;5D" backward-word
 
 hash -d d=~/dev
 hash -d c=~/contrib
