@@ -4,7 +4,6 @@ filetype plugin indent on
 set hlsearch
 set incsearch
 set nobackup
-set guioptions=a
 set history=1000
 set diffopt=filler
 set clipboard=unnamedplus
