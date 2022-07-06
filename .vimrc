@@ -1,18 +1,19 @@
-syntax enable
+syntax on
 filetype plugin indent on
 
 set hlsearch
-set incsearch
-set nobackup
-set history=1000
-set diffopt=filler
-set clipboard=unnamedplus
+set clipboard^=unnamedplus
 set laststatus=2
-set noswapfile
+set incsearch
+set scrolloff=5
+set history=1000
 set nofixeol
 set wildmenu
 set display=truncate
-set scrolloff=5
+
+set formatoptions+=n
+
+colorscheme felipec
 
 set noshelltemp " why does vim do this?
 
@@ -20,10 +21,6 @@ set expandtab
 set tabstop=2
 set shiftwidth=0
 set textwidth=100
-
-colorscheme felipec
-
-set formatoptions+=n
 
 set showbreak=↪
 set fillchars+=vert:\ 
