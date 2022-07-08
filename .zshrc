@@ -7,7 +7,6 @@ HISTSIZE=10000
 SAVEHIST=50000
 
 autoload -U compinit && compinit
-autoload -U colors && colors
 autoload -U promptinit && promptinit
 
 prompt felipec
@@ -20,8 +19,6 @@ setopt hist_ignore_space
 setopt hist_verify
 setopt correct
 
-zstyle ':completion:*' menu yes=long select
-zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 bindkey -e
