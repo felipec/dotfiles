@@ -1,11 +1,13 @@
+# Barebones version of __git_ps1
+(( $+functions[__git_ps1] )) ||
+__git_ps1 () {
+  local b="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
+  [[ -n "$b" ]] && printf "$1" "$b"
+}
+
 prompt_felipec_setup () {
   PS1=' %(2L.%L .)%F{green}%#%f '
-
-  if (( $+functions[__git_ps1] )); then
-    RPS1='%~$(__git_ps1 "[%s]") %F{blue}%B%m%b%f'
-  else
-    RPS1='%~ %F{blue}%B%m%b%f'
-  fi
+  RPS1='%~$(__git_ps1 "[%s]") %F{blue}%B%m%b%f'
 
   prompt_opts=( cr percent subst )
 }
