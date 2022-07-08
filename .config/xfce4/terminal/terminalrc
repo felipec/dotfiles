@@ -26,7 +26,6 @@ MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=FALSE
-ScrollingOnOutput=FALSE
 TitleMode=TERMINAL_TITLE_REPLACE
 FontUseSystem=TRUE
 DropdownHeight=25
