@@ -2,31 +2,18 @@
 	name = Felipe Contreras
 	email = felipe.contreras@gmail.com
 [alias]
-	bl = branch-list
 	co = commit -s
-	br = branch
-	ff = fast-forward
-	pi = cherry-pick
-	rb = rebase
-	mt = mergetool
-	st = status -s -b
-	sg = stage
-	rs = reset
-	sw = switch
+	bl = branch-list
 
 	short = show --quiet --format=%h
 	ref = show --quiet --format=reference
-	fast-forward = merge --ff-only
-	undo = reset --hard @{1}
 
 	d = diff
 	o = show -C
 	p = push
 	b = branch
 	s = stage
-	l = log --oneline --decorate --boundary
 
-	lg = l --graph
 	lo = log ORIG_HEAD.. --stat --no-merges
 
 	rbi = rebase --interactive
@@ -34,24 +21,12 @@
 	bg = bisect good
 	bb = bisect bad
 	bs = bisect skip
-[init]
-	defaultbranch = master # silence bullshit message
 [merge]
-	conflictstyle = diff3
 	tool = gvimdiff3
 	log = true
-[rebase]
-	autosquash = true
 [mergetool]
 	keepbackup = false
 	automerge = true
-[rerere]
-	enabled = true
-	autoupdate = true
-[commit]
-	verbose = true
-[tag]
-	sort = -version:refname
 [sendemail]
 	smtpserver = /usr/bin/msmtp
 	assume8bitEncoding = utf-8
