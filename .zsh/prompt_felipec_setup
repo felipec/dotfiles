@@ -4,8 +4,7 @@ prompt_felipec_setup () {
 
   PS1=' %(2L.%L .)%F{green}%#%f '
   RPS1='%~$(__git_ps1 "[%s]") %F{blue}%B%m%b%f'
-
-  prompt_opts=( cr percent subst )
+  prompt_opts=(cr percent subst)
 }
 
 prompt_felipec_setup "$@"
