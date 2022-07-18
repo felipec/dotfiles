@@ -3,11 +3,11 @@ shortcuts:
   commands:
     "<Super>Return": xfce4-terminal
     "<Super>b": browser
+    "<Super>l": xfce4-screensaver-command --lock
     "<Super>r": rlaunch
     "<Super>r/startup-notify": false
     "<Super>w": xfce4-popup-whiskermenu
     "<Super>space": xfce4-terminal --drop-down --hide-menubar
-    "<Super>l": xfce4-screensaver-command --lock
   wm:
     left_workspace: "<Super>Left"
     right_workspace: "<Super>Right"
@@ -49,6 +49,9 @@ settings:
     "/general/popup_opacity": 90
     "/general/resize_opacity": 75
     "/general/snap_width": 25
+    "/general/placement_ratio": 60
+    "/general/title_font": Sans Bold 10
+    "/general/cycle_hidden": false
     "/general/workspace_names":
     - '1'
     - '2'
@@ -58,21 +61,18 @@ settings:
     - '6'
     - '7'
     - '8'
-    "/general/placement_ratio": 60
-    "/general/title_font": Sans Bold 10
-    "/general/cycle_hidden": false
   xfce4-session:
     "/general/SaveOnExit": false
     "/compat/LaunchGNOME": true
     "/general/LockCommand": xfce4-screensaver-command --lock
+  xfce4-desktop:
+    "/desktop-icons/style": 0
+    "/backdrop/screen0/monitoreDP/workspace0/last-image": "/usr/share/backgrounds/archlinux/simple.png"
   xfce4-panel:
     "/panels/dark-mode": true
   keyboards:
     "/Default/KeyRepeat/Delay": 200
     "/Default/KeyRepeat/Rate": 50
-  xfce4-desktop:
-    "/desktop-icons/style": 0
-    "/backdrop/screen0/monitoreDP/workspace0/last-image": "/usr/share/backgrounds/archlinux/simple.png"
   xsettings:
     "/Net/ThemeName": Arc-Darker
     "/Net/IconThemeName": Arc-X-D
@@ -99,11 +99,8 @@ settings:
     "/xfce4-power-manager/logind-handle-lid-switch": false
     "/xfce4-power-manager/logind-handle-power-key": false
     "/xfce4-power-manager/logind-handle-suspend-key": false
-  xfce4-notifyd:
-    "/expire-timeout": 4
-    "/primary-monitor": 0
-    "/do-slideout": true
-    "/notification-log": true
+  pointers:
+    "/Razer_Razer_DeathAdder_Elite/Acceleration": 0.0
 panels:
 - size: 30
   length: 100
