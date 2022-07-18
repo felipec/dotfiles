@@ -1,8 +1,9 @@
 source ~/.rc
 
-source /usr/local/share/bash-completion/completions/git
-
-__git_complete g git
+if [[ -r /usr/local/share/bash-completion/completions/git ]]; then
+  source /usr/local/share/bash-completion/completions/git
+  __git_complete g git
+fi
 
 # Dummy version of __git_ps1
 declare -f __git_ps1 > /dev/null || __git_ps1 () { PS1="$1$2"; }
