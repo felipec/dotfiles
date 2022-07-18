@@ -2,7 +2,6 @@ UPATH="$HOME/bin"
 UPATH="$UPATH:$HOME/.local/bin"
 UPATH="$UPATH:/usr/lib/ccache/bin"
 UPATH="$UPATH:/opt/git/bin"
-UPATH="$UPATH:/opt/groff/bin"
 
 # Bundle doesn't know where to install gems otherwise
 export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
