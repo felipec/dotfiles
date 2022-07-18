@@ -3,10 +3,10 @@ filetype plugin indent on
 
 set hlsearch
 set clipboard^=unnamedplus
-set laststatus=2
 set incsearch
+set laststatus=2
 set scrolloff=5
-set history=1000
+set history=200
 set nofixeol
 set wildmenu
 set display=truncate
@@ -15,12 +15,13 @@ set formatoptions+=n
 
 colorscheme felipec
 
-set noshelltemp " why does vim do this?
-
 set expandtab
 set tabstop=2
 set shiftwidth=0
 set textwidth=100
+
+set noshelltemp " retard vim
+set diffopt-=closeoff " git bug
 
 set showbreak=↪
 set fillchars+=vert:\ 
