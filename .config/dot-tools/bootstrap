@@ -17,6 +17,8 @@ if command -v xfconf-load > /dev/null; then
 	[[ "$load" == 'y' ]] && xfconf-load ~/.config/xfconf-helper/config.yml
 fi
 
+# Create GTK bookmarks
+mkdir -p ~/.config/gtk-3.0 &&
 cat <<EOF > ~/.config/gtk-3.0/bookmarks
 file:///home/$USER/documents
 file:///home/$USER/downloads
