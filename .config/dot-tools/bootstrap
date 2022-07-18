@@ -11,7 +11,11 @@ git clone https://github.com/itchyny/lightline.vim.git ~/.vim/pack/plugins/start
 git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/pack/plugins/start/syntastic
 git clone https://github.com/tpope/vim-commentary ~/.vim/pack/plugins/start/commentary
 
-xfconf-load ~/.config/xfconf-helper/config.yml
+if command -v xfconf-load > /dev/null; then
+	echo -n "Do you want to load the Xfce configuration? (y/N): "
+	read load
+	[[ "$load" == 'y' ]] && xfconf-load ~/.config/xfconf-helper/config.yml
+fi
 
 cat <<EOF > ~/.config/gtk-3.0/bookmarks
 file:///home/$USER/documents
