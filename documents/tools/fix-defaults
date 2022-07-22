@@ -3,7 +3,7 @@
 require 'inifile'
 
 config = ENV['XDG_CONFIG_HOME'] || "#{Dir.home}/.config"
-$list_file = IniFile.load("#{config}/mimeapps.list", comment: '#')
+$list_file = IniFile.load("#{config}/mimeapps.list")
 $defaults = $list_file['Default Applications']
 $ignore = %w[x-scheme-handler/http x-scheme-handler/https]
 
@@ -42,4 +42,4 @@ $types.each do |type, apps|
   $defaults[type] = apps.join(';')
 end
 
-File.write($list_file.filename, $list_file.to_s.gsub(' = ', '='))
+File.write($list_file.filename, $list_file.to_s.gsub(' = ', '=') + "; vim: ft=ini\n")
