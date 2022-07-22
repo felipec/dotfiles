@@ -7,6 +7,7 @@ $tdir = '~/.config/transmission/torrents'
 
 $dirs = []
 $dirs << '~/downloads/torrents/series'
+$dirs << '~/downloads/torrents/movies'
 $dirs << '/run/media/felipec/shared/torrents/series'
 $dirs << '/run/media/felipec/shared/torrents/movies'
 $dirs << '/run/media/felipec/shared/torrents/other'
