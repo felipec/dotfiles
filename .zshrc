@@ -21,8 +21,6 @@ setopt hist_ignore_space
 setopt hist_verify
 setopt correct
 
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
 bindkey -e
 bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
@@ -33,6 +31,8 @@ bindkey "\e[5~" beginning-of-history
 bindkey "\e[6~" end-of-history
 bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
+
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 hash -d d=~/dev
 hash -d c=~/contrib
