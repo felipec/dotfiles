@@ -3,6 +3,7 @@ source ~/.rc
 if [[ -r /usr/local/share/bash-completion/completions/git ]]; then
   source /usr/local/share/bash-completion/completions/git
   __git_complete g git
+  __git_complete c git
 fi
 
 # Dummy version of __git_ps1
