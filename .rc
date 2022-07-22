@@ -20,6 +20,10 @@ alias vd='v -d'
 alias m='mv'
 alias mv='mv -i'
 
+alias gd='g diff'
+alias gv='g vs'
+alias gl='g ls'
+
 alias sudo='sudo -A'
 alias R='R --no-save'
 
