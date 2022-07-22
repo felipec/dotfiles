@@ -2,6 +2,8 @@ fpath=(~/.zsh $fpath)
 
 source ~/.rc
 
+alias git='noglob git'
+
 HISTFILE=~/.history
 HISTSIZE=10000
 SAVEHIST=50000

@@ -2,7 +2,7 @@ alias c='dot-config'
 alias v='$VISUAL'
 alias e='$EDITOR'
 alias o='xdg-open'
-alias g='noglob git'
+alias g='git'
 
 # color
 alias ls='ls --color=auto -hv'
