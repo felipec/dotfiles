@@ -1,0 +1,6 @@
+export EDITOR='vim'
+export VISUAL='gvim'
+
+export MAKEFLAGS='-j24'
+export EMAIL=felipe.contreras@gmail.com
+export PS_FORMAT='pid,cmd'
