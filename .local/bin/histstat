@@ -25,13 +25,13 @@ def bump_cmd(cmd)
   end
 end
 
-File.open($base_dir + '/commands').each("\0") do |e|
-  cmd = e.chomp("\0").chomp('')
+File.foreach($base_dir + '/commands', sep="\0", chomp: true) do |e|
+  cmd = e.chomp('')
   bump_cmd(cmd)
 end
 
-File.open($base_dir + '/dirs').each("\0") do |e|
-  dir = e.chomp("\0")
+File.foreach($base_dir + '/dirs', sep="\0", chomp: true) do |e|
+  dir = e
   $dirs[dir] += 1
 end
 

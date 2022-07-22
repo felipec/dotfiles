@@ -2,6 +2,6 @@
 
 commands = ARGV[0] || Dir.home + '/.local/share/histstat/commands'
 
-File.open(commands).each("\0", chomp: true) do |e|
+File.foreach(commands, sep="\0", chomp: true) do |e|
   print e
 end
