@@ -257,4 +257,3 @@ text/xml=chromium.desktop
 x-scheme-handler/ftp=chromium.desktop
 image/x-sun-raster=gimp.desktop
 image/vnd.djvu=org.gnome.Evince.desktop
-; vim: ft=ini
