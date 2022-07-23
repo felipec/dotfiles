@@ -1,1 +1,1 @@
-set ts=4
+setl ts=4
