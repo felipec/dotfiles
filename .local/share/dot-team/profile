@@ -20,3 +20,5 @@ export MAKEFLAGS=${MAKEFLAGS:-"-j$(nproc)"}
 # Colorize man
 export MANPAGER=${MANPAGER:-'less -RX --use-color -Dd+r -Du+b'}
 export MANROFFOPT=${MANROFFOPT:-'-c'}
+
+# vim: ft=sh
