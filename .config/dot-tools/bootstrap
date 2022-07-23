@@ -47,5 +47,7 @@ if [[ ! -e ~/.config/gtk-3.0/bookmarks ]]; then
 	cat <<-EOF > ~/.config/gtk-3.0/bookmarks
 	file:///home/$USER/documents
 	file:///home/$USER/downloads
+	file:///home/$USER/backup
+	file:///home/$USER/tmp
 	EOF
 fi
