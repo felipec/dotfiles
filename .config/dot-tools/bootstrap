@@ -26,6 +26,12 @@ if ! git config user.email > /dev/null; then
 	git config --global user.email "$EMAIL"
 fi
 
+if command -v xfconf-load > /dev/null; then
+	echo -n "Do you want to load the Xfce configuration? (y/N): "
+	read load
+	[[ "$load" == 'y' ]] && xfconf-load ~/.config/xfconf-helper/config.yml
+fi
+
 mkdir -p ~/{downloads,documents/{,pictures}}
 mkdir -p ~/.local/share/histstat
 chmod go-rw ~/.msmtprc
@@ -34,12 +40,6 @@ git clone https://github.com/felipec/vim-felipec.git ~/.vim/pack/colors/start/fe
 git clone https://github.com/itchyny/lightline.vim.git ~/.vim/pack/plugins/start/lightline 2> /dev/null
 git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/pack/plugins/start/syntastic 2> /dev/null
 git clone https://github.com/tpope/vim-commentary ~/.vim/pack/plugins/start/commentary 2> /dev/null
-
-if command -v xfconf-load > /dev/null; then
-	echo -n "Do you want to load the Xfce configuration? (y/N): "
-	read load
-	[[ "$load" == 'y' ]] && xfconf-load ~/.config/xfconf-helper/config.yml
-fi
 
 # Create GTK bookmarks
 if [[ ! -e ~/.config/gtk-3.0/bookmarks ]]; then
