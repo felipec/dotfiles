@@ -2,6 +2,30 @@
 
 dot-checkout
 
+if [[ -e ~/.config/profile ]]; then
+	source ~/.config/profile
+else
+	echo -n "Which editor do you prefer? (e.g. nano, vim, emacs): "
+	read EDITOR
+	[[ -z "$EDITOR" ]] && EDITOR='vim'
+	export EDITOR
+	[[ "$EDITOR" == 'vim' ]] && VISUAL='gvim'
+	cat <<-EOF > ~/.config/profile
+	export EDITOR='$EDITOR'
+	export VISUAL='$VISUAL'
+	EOF
+fi
+
+if ! git config user.email > /dev/null; then
+	echo "Git configuration"
+	echo -n "What's your name? (e.g. John Doe): "
+	read NAME
+	git config --global user.name "$NAME"
+	echo -n "What's your email? (e.g. john@doe.com): "
+	read EMAIL
+	git config --global user.email "$EMAIL"
+fi
+
 mkdir -p ~/{downloads,documents/{,pictures}}
 mkdir -p ~/.local/share/histstat
 chmod go-rw ~/.msmtprc
