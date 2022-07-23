@@ -42,8 +42,10 @@ if command -v xfconf-load > /dev/null; then
 fi
 
 # Create GTK bookmarks
-mkdir -p ~/.config/gtk-3.0 &&
-cat <<EOF > ~/.config/gtk-3.0/bookmarks
-file:///home/$USER/documents
-file:///home/$USER/downloads
-EOF
+if [[ ! -e ~/.config/gtk-3.0/bookmarks ]]; then
+	mkdir -p ~/.config/gtk-3.0 &&
+	cat <<-EOF > ~/.config/gtk-3.0/bookmarks
+	file:///home/$USER/documents
+	file:///home/$USER/downloads
+	EOF
+fi
