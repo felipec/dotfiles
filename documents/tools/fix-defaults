@@ -7,13 +7,9 @@ $list_file = IniFile.load("#{config}/mimeapps.list")
 $defaults = $list_file['Default Applications']
 $ignore = %w[x-scheme-handler/http x-scheme-handler/https]
 
-# xdg-mime query default x-scheme-handler/magnet
-# update-mime-database ~/.local/share/mime
-
 $dirs = ENV['XDG_DATA_DIRS']&.split(':') || '/usr/local/share/:/usr/share/'
 
 apps = %w[gvim viewnior org.gnome.Evince gimp vlc chromium]
-# Thunar-folder-handler
 
 apps = ARGV unless ARGV.empty?
 
