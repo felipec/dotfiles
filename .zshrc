@@ -34,6 +34,7 @@ bindkey "\e[1;5D" backward-word
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+hash -d dot=~/.local/share/dot-files
 hash -d d=~/dev
 hash -d c=~/contrib
 hash -d g=~d/git
@@ -42,8 +43,6 @@ hash -d l=~d/linux
 hash -d mnt=/run/media/$USER
 hash -d shared=~mnt/shared
 hash -d data=~mnt/data
-
-hash -d dot=~/.local/share/dot-files
 
 source /usr/share/fzf/key-bindings.zsh
 
