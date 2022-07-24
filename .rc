@@ -70,5 +70,3 @@ _git_reintegrate () {
 	__gitcomp_nl "$(git --git-dir="$(__gitdir)" \
 		for-each-ref --format='%(refname)' refs/int | sed -e 's#^refs/int/##')"
 }
-
-# vim: ft=sh
