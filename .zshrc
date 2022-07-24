@@ -39,6 +39,8 @@ hash -d d=~/dev
 hash -d c=~/contrib
 hash -d g=~d/git/git
 hash -d l=~d/linux
+hash -d b=~/backup
+hash -d o=~b/home
 
 hash -d mnt=/run/media/$USER
 hash -d shared=~mnt/shared
