@@ -37,7 +37,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 hash -d dot=~/.local/share/dot-files
 hash -d d=~/dev
 hash -d c=~/contrib
-hash -d g=~d/git
+hash -d g=~d/git/git
 hash -d l=~d/linux
 
 hash -d mnt=/run/media/$USER
