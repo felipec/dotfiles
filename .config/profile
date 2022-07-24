@@ -9,3 +9,6 @@ export PS_FORMAT='pid,cmd'
 export PATH="/opt/git/bin:$PATH"
 
 export SUDO_ASKPASS=$HOME/bin/user_password
+
+# git test improvements
+export NO_SVN_TESTS=1 TEST_OUTPUT_DIRECTORY=/tmp/tests
