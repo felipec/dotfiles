@@ -18,7 +18,7 @@ colorscheme felipec
 set expandtab
 set tabstop=2
 set shiftwidth=0
-set textwidth=100
+set textwidth=0
 
 set noshelltemp " retard vim
 set diffopt-=closeoff diffopt-=hiddenoff " git bug
