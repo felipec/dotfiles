@@ -34,7 +34,7 @@ fi
 
 mkdir -p ~/{downloads,documents/{,pictures}}
 mkdir -p ~/.local/share/histstat
-chmod go-rw ~/.msmtprc
+chmod go-rw ~/.config/msmtp/config
 
 git clone https://github.com/felipec/vim-felipec.git ~/.vim/pack/colors/start/felipec 2> /dev/null
 git clone https://github.com/itchyny/lightline.vim.git ~/.vim/pack/plugins/start/lightline 2> /dev/null
