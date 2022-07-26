@@ -8,6 +8,7 @@ shortcuts:
     "<Super>r/startup-notify": false
     "<Super>w": xfce4-popup-whiskermenu
     "<Super>space": xfce4-terminal --drop-down --hide-menubar
+    "<Super>v": record
   wm:
     left_workspace: "<Super>Left"
     right_workspace: "<Super>Right"
