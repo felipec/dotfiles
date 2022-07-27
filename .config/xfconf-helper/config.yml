@@ -103,18 +103,18 @@ settings:
   pointers:
     "/Razer_Razer_DeathAdder_Elite/Acceleration": 0.0
 panels:
-- size: 30
+- icon-size: 16
   length: 100
   length-adjust: false
   position: p=10;x=0;y=0
   position-locked: true
-  icon-size: 16
+  size: 30
   plugins:
   - - whiskermenu
   - - tasklist
-    - grouping: 0
+    - flat-buttons: true
+      grouping: 0
       sort-order: 0
-      flat-buttons: true
   - - separator
     - expand: true
       style: 0
