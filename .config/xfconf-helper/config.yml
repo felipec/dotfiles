@@ -130,6 +130,7 @@ panels:
       square-icons: true
   - - mailwatch
   - - pulseaudio
+    - enable-keyboard-shortcuts: true
   - - power-manager-plugin
   - - notification-plugin
   - - clock
