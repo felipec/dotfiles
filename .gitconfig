@@ -29,7 +29,7 @@
 	automerge = true
 [sendemail]
 	smtpserver = /usr/bin/msmtp
-	assume8bitEncoding = utf-8
+	assume8bitencoding = utf-8
 	confirm = never
 	envelopesender = auto
 	annotate = true
