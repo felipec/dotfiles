@@ -10,6 +10,7 @@
 	rs = reset
 	sw = switch
 	ls = ls-files
+	ch = checkout
 
 	fast-forward = merge --ff-only
 	undo = reset --hard @{1}
