@@ -33,6 +33,7 @@ bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' menu select yes=long
 
 hash -d dot=~/.local/share/dot-files
 hash -d d=~/dev
