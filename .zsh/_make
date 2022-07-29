@@ -1,85 +1,18 @@
-#compdef make gmake pmake dmake
+#compdef make
 
-_make_find_basedir () {
-  local file index basedir
-  basedir=$PWD
-  for (( index = 0; index < $#@; index++ ))
-  do
-    if [[ $@[index] == -C ]]
-    then
-      file=${~@[index+1]};
-      if [[ -z $file ]]
-      then
-        # make returns with an error if an empty arg is given
-        # even if the concatenated path is a valid directory
-        return
-      elif [[ $file == /* ]]
-      then
-        # Absolute path, replace base directory
-        basedir=$file
-      else
-        # Relative, concatenate path
-        basedir=$basedir/$file
-      fi
-    fi
-  done
-  print -- $basedir
+_make_parse () {
+  awk -v RS= -v PFX="$1" -F: '!match($1, "^" PFX) { next } $1 ~ /^[^#%]+$/ { print $1 }'
 }
 
-_make_parse_makefile () {
-  awk -v RS="\n\n" -v PFX="$1" -e '!match($1, "^" PFX) { next } match($1, /^([^#\t:%]+):/, a) { print a[1] }'
-}
+local -a targets cmd=(${words[1,CURRENT-1]})
+local cur=$words[CURRENT] prev=$words[CURRENT-1]
+local ret=1
 
-# Stupid zsh
-_make_path_files () {
-  local -a list files
-  local pfx="" cur="${words[CURRENT]}" file
+if [[ "$prev" == -[CI] ]]; then
+  _files -/ && ret=0
+else
+  targets=($($cmd -npq .DEFAULT 2> /dev/null | _make_parse "$cur"))
+  _multi_parts -f -- / targets && ret=0
+fi
 
-  files=(${(f)"$(_make_parse_makefile "$cur" < <(make -npq -C "$1" 2> /dev/null))"})
-
-  case "$cur" in
-    ?*/*)
-      pfx="${cur%/*}"
-      cur="${cur##*/}"
-      pfx="${pfx}/"
-      ;;
-  esac
-
-  for file in $files
-  do
-    case "$file" in
-      ${pfx}*)
-	file="${file##$pfx}"
-	;;
-      *)
-	continue
-	;;
-    esac
-    case "$file" in
-      ?*/*)
-	list+="${file%%/*}"
-	;;
-      *)
-	list+="${file}"
-	;;
-    esac
-  done
-
-  compadd -Q -p "${pfx-}" -f -a list
-}
-
-_make () {
-  local prev="$words[CURRENT-1]"
-  local ret=1
-
-  if [[ "$prev" == -[CI] ]]
-  then
-    _files -W ${(q)$(_make_find_basedir ${words[1,CURRENT-1]})} -/ && ret=0
-  else
-    _make_path_files "$(_make_find_basedir $words)" && ret=0
-  fi
-
-  return ret
-}
-
-_make "$@"
+return ret
