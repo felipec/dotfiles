@@ -1,7 +1,7 @@
 #compdef make
 
 _make_parse () {
-  awk -v RS= -v PFX="$1" -F: '!match($1, "^" PFX) { next } $1 ~ /^[^#%]+$/ { print $1 }'
+  awk -v RS= -F: "!/^$1/ { next } \$1 ~ /^[^#%]+\$/ { print \$1 }"
 }
 
 local -a targets cmd=(${words[1,CURRENT-1]})
