@@ -24,7 +24,6 @@ alias gd='g diff'
 alias gv='g vs'
 alias gl='g ls'
 
-alias sudo='sudo -A'
 alias R='R --no-save'
 
 eval $(dircolors -b)
