@@ -10,17 +10,10 @@
 /dconf/
 /libreoffice/
 /discord/
-/pipewire/
 /vlc/
 /transmission/
 /hexchat/
-/enchant/
-/octave/
-/calibre/
 
 /git/gitk
 
 /gtk-3.0/bookmarks
-
-/unity3d/
-/menus/applications-merged/xdg-desktop-menu-dummy.menu

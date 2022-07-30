@@ -14,22 +14,17 @@
 /.timewarrior/
 /.password-store/
 
-/.wine/
-
 /.ICEauthority
 /.Xauthority
 /.xsession-errors*
-/.rnd
 
 /.bash_history
 /.history
 /.lesshst
 /.node_repl_history
 /.irb_history
-/.python_history
-/.sqlite_history
 /.mysql_history
-/.octave_hist
+/.python_history
 
 /.notmuch/compose/
 
@@ -50,6 +45,6 @@
 /.steampath
 /.steampid
 .pulse-cookie
+/.wine/
 
 /.factorio/
-/StarCraft II/
