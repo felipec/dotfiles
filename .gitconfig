@@ -41,7 +41,7 @@
 	denyCurrentBranch = warn
 [notes]
 	rewriteref = refs/notes/*
-[include]
-	path = ~/.config/git/smartlist.config
 [integration]
 	autocontinue = true
+[include]
+	path = ~/.config/git/smartlist.config
