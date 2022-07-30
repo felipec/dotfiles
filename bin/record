@@ -2,16 +2,13 @@
 
 if [[ -e ~/.cache/record-pid ]]; then
 	kill -15 "$(cat ~/.cache/record-pid)"
-
-	notify-send --urgency=low --icon=media-playback-stop 'Stop the recording'
-
 	rm -f ~/.cache/record-pid
 
+	notify-send --urgency=low --icon=media-playback-stop 'Stop the recording'
 else
-	notify-send --urgency=low --icon=media-record 'Start the recording'
-
 	echo $$ > ~/.cache/record-pid
 
-	sleep 2 &&
+	notify-send --urgency=low --icon=media-record --wait 'Start the recording'
+
 	exec ffmpeg -f x11grab -thread_queue_size 1024 -i "$DISPLAY" -f pulse -i bluez_output.20_20_12_30_07_44.a2dp-sink.monitor -c:v h264_nvenc -preset medium -c:a aac -y ~/documents/record-"$(date +'%FT%R')".mp4
 fi
