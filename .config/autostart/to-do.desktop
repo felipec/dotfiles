@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=To-do
+Exec=/home/felipec/bin/to-do
+Icon=gnome-todo
+Type=Application

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+xdg-open 'file:///home/felipec/documents/to-do.txt'
