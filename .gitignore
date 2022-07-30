@@ -51,6 +51,7 @@
 /.steam/
 /.steampath
 /.steampid
+.pulse-cookie
 
 /.factorio/
 /StarCraft II/
