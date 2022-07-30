@@ -5,10 +5,8 @@
 
 /.cache/
 /.local/
-/.ccache/
 /.icons/
 /.themes/
-/.thumbnails/
 
 /downloads/
 /documents/
