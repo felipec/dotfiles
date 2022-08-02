@@ -19,7 +19,7 @@ def ticks_to_seconds(v)
   ((v.to_f * $total_seconds) / $total_ticks).to_i
 end
 
-def parse(clock)
+def display(clock)
   seconds = ticks_to_seconds(clock)
   Time.at($today + seconds).strftime('%T')
 end
@@ -28,22 +28,20 @@ def clock
   seconds_to_ticks(Time.now - $today)
 end
 
-$clock = clock()
-
 =begin
 title 'help'
 
 16.times do |e|
-  puts '%s: %s' % ['%04b' % e, parse(e << 12)]
+  puts '%s: %s' % ['%04b' % e, display(e << 12)]
 end
 
-title 'value'
-
-puts '%016b' % $clock
-
 title 'clock'
+puts '%016b' % clock()
+
+title 'fancy'
 =end
 
+$clock = clock()
 $simple = false
 
 if $simple
@@ -71,7 +69,6 @@ else
 end
 
 =begin
-title 'parse'
-
-puts parse(0b0100_000000000000)
+title 'display'
+puts display(0b0100_0000_0000_0000)
 =end
