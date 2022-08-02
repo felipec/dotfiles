@@ -72,3 +72,11 @@ end
 title 'display'
 puts display(0b0100_0000_0000_0000)
 =end
+
+loop do
+  c = clock()
+  system(*%w[notify-send -u low -i appointment-soon -t 0] << ('%04b' % (c >> 12)))
+  n = (c & 0xf000) + 0x1000
+  s = Time.at($today + ticks_to_seconds(n)) - Time.now
+  sleep(s + 1)
+end
