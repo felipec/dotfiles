@@ -11,7 +11,7 @@ local ret=1
 if [[ "$prev" == -[CI] ]]; then
   _files -/ && ret=0
 else
-  targets=($($cmd -npq .DEFAULT 2> /dev/null | _make_parse "$cur"))
+  targets=($($cmd -npq : 2> /dev/null | _make_parse "$cur"))
   _multi_parts -f -- / targets && ret=0
 fi
 
