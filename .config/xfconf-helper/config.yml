@@ -3,7 +3,7 @@ shortcuts:
   commands:
     "<Super>Return": xfce4-terminal
     "<Super>b": browser
-    "<Super>l": xfce4-screensaver-command --lock
+    "<Super>l": slock
     "<Super>r": rlaunch
     "<Super>r/startup-notify": false
     "<Super>w": xfce4-popup-whiskermenu
@@ -65,7 +65,7 @@ settings:
   xfce4-session:
     "/general/SaveOnExit": false
     "/compat/LaunchGNOME": true
-    "/general/LockCommand": xfce4-screensaver-command --lock
+    "/general/LockCommand": slock
   xfce4-desktop:
     "/desktop-icons/style": 0
     "/backdrop/screen0/monitoreDP/workspace0/last-image": "/usr/share/backgrounds/archlinux/simple.png"
@@ -133,5 +133,4 @@ panels:
     - enable-keyboard-shortcuts: true
   - - power-manager-plugin
   - - notification-plugin
-  - - clock
-    - digital-format: "%R"
+  - - hexclock
