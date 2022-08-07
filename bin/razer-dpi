@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 $dir = '/sys/bus/hid/devices'
-$dpi = ARGV.first&.to_i || 3200
+$dpi = ARGV.first&.to_i || 4500
 
 Dir.children($dir).each do |e|
   dir = File.join($dir, e)
