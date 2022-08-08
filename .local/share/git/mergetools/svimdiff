@@ -1,0 +1,14 @@
+merge_cmd () {
+	gvim --nofork -c "set hidden diffopt-=hiddenoff diffopt-=closeoff | only" -d \
+		"$MERGED" "$BASE" "$LOCAL" "$REMOTE"
+}
+
+translate_merge_tool_path () {
+	echo gvim
+}
+
+exit_code_trustable () {
+	true
+}
+
+# vim: ft=sh

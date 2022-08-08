@@ -22,7 +22,7 @@
 	bb = bisect bad
 	bs = bisect skip
 [merge]
-	tool = gvimdiff3
+	tool = svimdiff
 	log = true
 [mergetool]
 	keepbackup = false

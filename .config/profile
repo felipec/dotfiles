@@ -10,3 +10,6 @@ export PATH="/opt/git/bin:$PATH"
 
 # git test improvements
 export NO_SVN_TESTS=1 TEST_OUTPUT_DIRECTORY=/tmp/tests
+
+# workaround git's complex vimdiff
+export MERGE_TOOLS_DIR=~/.local/share/git/mergetools
