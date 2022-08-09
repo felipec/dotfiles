@@ -9,8 +9,8 @@ HISTSIZE=10000
 SAVEHIST=50000
 
 autoload -U compinit && compinit
-autoload -U promptinit && promptinit
 
+autoload -U promptinit && promptinit
 prompt felipec
 
 setopt auto_cd
