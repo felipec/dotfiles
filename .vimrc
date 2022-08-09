@@ -21,7 +21,6 @@ set shiftwidth=0
 set textwidth=0
 
 set noshelltemp " retard vim
-set diffopt-=closeoff diffopt-=hiddenoff " git bug
 
 set showbreak=↪
 set fillchars+=vert:\ 
