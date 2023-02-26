@@ -5,8 +5,8 @@ source ~/.rc
 alias git='noglob git'
 
 HISTFILE=~/.history
-HISTSIZE=10000
-SAVEHIST=50000
+HISTSIZE=100000
+SAVEHIST=100000
 
 autoload -U compinit && compinit
 
