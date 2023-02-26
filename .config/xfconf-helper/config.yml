@@ -49,7 +49,7 @@ settings:
     "/general/move_opacity": 50
     "/general/popup_opacity": 90
     "/general/resize_opacity": 75
-    "/general/snap_width": 25
+    "/general/snap_width": 20
     "/general/placement_ratio": 60
     "/general/title_font": Sans Bold 10
     "/general/cycle_hidden": false
@@ -62,10 +62,12 @@ settings:
     - '6'
     - '7'
     - '8'
+    "/general/wrap_windows": true
   xfce4-session:
     "/general/SaveOnExit": false
     "/compat/LaunchGNOME": true
     "/general/LockCommand": slock
+    "/general/PromptOnLogout": false
   xfce4-desktop:
     "/desktop-icons/style": 0
     "/backdrop/screen0/monitoreDP/workspace0/last-image": "/usr/share/backgrounds/archlinux/simple.png"
@@ -100,6 +102,9 @@ settings:
     "/xfce4-power-manager/logind-handle-lid-switch": false
     "/xfce4-power-manager/logind-handle-power-key": false
     "/xfce4-power-manager/logind-handle-suspend-key": false
+    "/xfce4-power-manager/handle-brightness-keys": true
+    "/xfce4-power-manager/brightness-switch-restore-on-exit": 0
+    "/xfce4-power-manager/lock-screen-suspend-hibernate": false
   pointers:
     "/Razer_Razer_DeathAdder_Elite/Acceleration": 0.0
 panels:
@@ -113,7 +118,7 @@ panels:
   - - whiskermenu
   - - tasklist
     - flat-buttons: true
-      grouping: 0
+      grouping: 1
       sort-order: 0
   - - separator
     - expand: true
