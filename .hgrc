@@ -1,9 +1,6 @@
 [ui]
 username = Felipe Contreras <felipe.contreras@gmail.com>
 
-[web]
-cacerts = /etc/ssl/certs/ca-certificates.crt
-
 [extensions]
 hgext.schemes =
 hgext.purge =
