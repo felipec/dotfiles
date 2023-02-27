@@ -2,7 +2,6 @@
 	name = Felipe Contreras
 	email = felipe.contreras@gmail.com
 [alias]
-	co = commit -s
 	bl = branch-list
 
 	short = show --quiet --format=%h
