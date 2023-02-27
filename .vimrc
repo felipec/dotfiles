@@ -20,6 +20,8 @@ set tabstop=2
 set shiftwidth=0
 set textwidth=0
 
+set relativenumber
+
 set noshelltemp " retard vim
 
 set showbreak=↪
