@@ -2,7 +2,5 @@
 username = Felipe Contreras <felipe.contreras@gmail.com>
 
 [extensions]
-hgext.schemes =
-hgext.purge =
-hgk =
-mq =
+evolve =
+topic =
