@@ -40,6 +40,7 @@ hash -d d=~/dev
 hash -d c=~/contrib
 hash -d g=~d/git/git
 hash -d l=~d/linux
+hash -d ghg=~d/git-remote-hg
 hash -d b=~/backup
 hash -d o=~b/home
 
