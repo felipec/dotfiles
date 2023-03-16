@@ -24,6 +24,9 @@
 	bg = bisect good
 	bb = bisect bad
 	bs = bisect skip
+
+	sl = simple-list lg
+	sv = simple-list v
 [merge]
 	tool = svimdiff
 	log = true
@@ -46,5 +49,3 @@
 	rewriteref = refs/notes/*
 [integration]
 	autocontinue = true
-[include]
-	path = ~/.config/git/smartlist.config

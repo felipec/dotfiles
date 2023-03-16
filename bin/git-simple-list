@@ -1,0 +1,11 @@
+#!/bin/sh
+
+[ $# -ge 2 ] && exec git "$@"
+
+cmd=$1
+branch=${2:-@}
+u="${branch}@{u}"
+
+# XXX git isn't quiet
+git rev-parse --verify --quiet "$u" > /dev/null 2>&1 || u=master
+exec git "$cmd" "${u}..${branch}"
