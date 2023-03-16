@@ -42,10 +42,6 @@ _git_v () {
 	_git_gitk
 }
 
-_git_smartlist () {
-	_git_log
-}
-
 _git_related () {
 	_git_log
 }
