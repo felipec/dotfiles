@@ -10,7 +10,7 @@ alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip -color=auto'
 
-alias l='ls'
+alias l='ls -tc'
 alias ll='ls -l'
 alias la='ls -lA'
 alias l1='ls -1'
