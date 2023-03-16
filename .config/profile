@@ -8,6 +8,9 @@ export PS_FORMAT='pid,cmd'
 
 export PATH="/opt/git/bin:$PATH"
 
+# R installs packages to ~/R otherwise
+export R_LIBS_USER="$HOME/.local/lib/r"
+
 # git test improvements
 export NO_SVN_TESTS=1 TEST_OUTPUT_DIRECTORY=/tmp/tests
 
