@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ $# -ge 2 ] && exec git "$@"
+[ $# -gt 2 ] && exec git "$@"
 
 cmd=$1
 branch=${2:-@}
