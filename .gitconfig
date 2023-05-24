@@ -6,6 +6,7 @@
 
 	short = show --quiet --format=%h
 	ref = show --quiet --format=reference
+	stopped = !git show $(cat .git/rebase-merge/stopped-sha)
 
 	d = diff
 	o = show -C
