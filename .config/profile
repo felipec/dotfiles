@@ -8,6 +8,9 @@ export PS_FORMAT='pid,cmd'
 
 export PATH="/opt/git/bin:$PATH"
 
+# git
+export USE_LIBPCRE=1 DEVELOPER=1
+
 # git test improvements
 export NO_SVN_TESTS=1 TEST_OUTPUT_DIRECTORY=/tmp/tests
 
