@@ -14,6 +14,8 @@
 	b = branch
 	s = stage
 
+	rsh = reset --hard
+
 	cos = commit --signoff
 	cod = commit --no-signoff
 	coa = commit --amend
