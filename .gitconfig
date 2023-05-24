@@ -26,6 +26,11 @@
 	bb = bisect bad
 	bs = bisect skip
 
+	sa = stage --add
+	sr = stage --remove
+	sd = stage --diff
+	se = stage --edit
+
 	sl = "!f() { : git log ; git simple-list lg \"$@\"; }; f"
 	sv = "!f() { : git log ; git simple-list v \"$@\"; }; f"
 [merge]
