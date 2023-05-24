@@ -26,8 +26,8 @@
 	bb = bisect bad
 	bs = bisect skip
 
-	sl = "!f() { : git log; git simple-list lg \"$@\"; }; f"
-	sv = "!f() { : git log; git simple-list v \"$@\"; }; f"
+	sl = "!f() { : git log ; git simple-list lg \"$@\"; }; f"
+	sv = "!f() { : git log ; git simple-list v \"$@\"; }; f"
 [merge]
 	tool = svimdiff
 	log = true
