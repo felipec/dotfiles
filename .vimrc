@@ -31,4 +31,3 @@ set listchars+=eol:↲,extends:❯,precedes:❮
 
 runtime lightline_config.vim
 runtime syntax_groups.vim
-runtime load_cscope.vim
