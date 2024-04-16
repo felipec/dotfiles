@@ -12,7 +12,6 @@
 	ls = ls-files
 	ch = checkout
 
-	fast-forward = merge --ff-only
 	undo = reset --hard @{1}
 
 	l = log --oneline --decorate --boundary
