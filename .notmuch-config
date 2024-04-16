@@ -7,7 +7,7 @@ primary_email=felipe.contreras@gmail.com
 
 [new]
 tags=new;inbox;
-ignore=.mbsyncstate;.uidvalidity;.gitignore;
+ignore=.uidvalidity;.gitignore;
 
 [search]
 exclude_tags=deleted;spam;
