@@ -26,7 +26,7 @@ alias gl='g ls'
 
 alias R='R --no-save'
 
-eval $(dircolors -b)
+eval "$(dircolors -b)"
 export LS_COLORS="$LS_COLORS*.txt=00;36:*.patch=00;36:*.csv=00;36:*.json=00;36:*.yml=00;36:ow=00:"
 
 GIT_PS1_SHOWCOLORHINTS=1

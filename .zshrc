@@ -13,9 +13,9 @@ autoload -U compinit && compinit
 autoload -U promptinit && promptinit
 prompt felipec
 
-setopt auto_cd
 setopt inc_append_history
 
+setopt auto_cd
 setopt auto_param_slash
 setopt hist_ignore_space
 setopt hist_verify

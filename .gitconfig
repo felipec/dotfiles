@@ -14,14 +14,13 @@
 	b = branch
 	s = stage
 
-	rsh = reset --hard
-
 	cos = commit --signoff
 	cod = commit --no-signoff
 	coa = commit --amend
 
 	lo = log ORIG_HEAD.. --stat --no-merges
 
+	rsh = reset --hard
 	rbi = rebase --interactive
 	rbc = rebase --continue
 	bg = bisect good

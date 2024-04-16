@@ -4,3 +4,4 @@ username = Felipe Contreras <felipe.contreras@gmail.com>
 [extensions]
 evolve =
 topic =
+rebase =
