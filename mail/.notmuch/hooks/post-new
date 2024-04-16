@@ -1,9 +1,0 @@
-#!/bin/sh
-
-notmuch tag --batch <<EOF
-+sent -inbox -unread from:felipe.contreras and tag:new
-
-+git List:git.vger.kernel.org and tag:new
-
--new tag:new
-EOF
