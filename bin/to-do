@@ -1,3 +1,6 @@
 #!/bin/sh
 
 xdg-open 'file:///home/felipec/documents/to-do.txt'
+xdg-open 'file:///home/felipec/documents/to-do/'
+xdg-open 'https://mail.google.com/'
+xdg-open 'https://github.com/felipec?tab=repositories&q=&type=&language=&sort=stargazers'
