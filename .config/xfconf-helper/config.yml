@@ -64,7 +64,6 @@ settings:
     - '8'
     "/general/wrap_windows": true
   xfce4-session:
-    "/general/SaveOnExit": false
     "/compat/LaunchGNOME": true
     "/general/LockCommand": slock
     "/general/PromptOnLogout": false
@@ -110,7 +109,6 @@ settings:
 panels:
 - icon-size: 16
   length: 100
-  length-adjust: false
   position: p=10;x=0;y=0
   position-locked: true
   size: 30
@@ -118,7 +116,7 @@ panels:
   - - whiskermenu
   - - tasklist
     - flat-buttons: true
-      grouping: 1
+      grouping: 0
       sort-order: 0
   - - separator
     - expand: true
@@ -133,7 +131,6 @@ panels:
   - - systray
     - icon-size: 16
       square-icons: true
-  - - mailwatch
   - - pulseaudio
     - enable-keyboard-shortcuts: true
   - - power-manager-plugin
