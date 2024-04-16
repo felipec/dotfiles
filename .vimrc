@@ -14,6 +14,7 @@ set display=truncate
 set formatoptions+=n
 
 colorscheme felipec
+set termguicolors
 
 set expandtab
 set tabstop=2
