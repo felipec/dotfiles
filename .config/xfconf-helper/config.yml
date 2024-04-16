@@ -109,6 +109,7 @@ settings:
 panels:
 - icon-size: 16
   length: 100
+  output-name: Primary
   position: p=10;x=0;y=0
   position-locked: true
   size: 30
