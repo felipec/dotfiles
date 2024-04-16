@@ -1,10 +1,10 @@
 merge_cmd () {
-	gvim --nofork -c "set hidden diffopt-=hiddenoff diffopt-=closeoff | only" -d \
+	$VISUAL --nofork -c "set hidden diffopt-=hiddenoff diffopt-=closeoff | only" -d \
 		"$MERGED" "$BASE" "$LOCAL" "$REMOTE"
 }
 
 translate_merge_tool_path () {
-	echo gvim
+	echo $VISUAL
 }
 
 exit_code_trustable () {
