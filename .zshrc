@@ -56,7 +56,7 @@ source /usr/share/fzf/key-bindings.zsh
 precmd () {
 	# Change the window title of X terminals
 	# http://tldp.org/HOWTO/Xterm-Title-3.html
-	print -Pn "\e]2;%2~\a"
+	print -Pn "\e]2;%-3~\a"
 }
 
 zshaddhistory () {
