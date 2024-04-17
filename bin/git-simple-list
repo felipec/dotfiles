@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-[ $# -gt 2 ] && exec git "$@"
+[[ $# -gt 2 || $2 == -* ]] && exec git "$@"
 
 cmd=$1
 branch=${2:-@}
