@@ -64,7 +64,6 @@ settings:
     - '8'
     "/general/wrap_windows": true
   xfce4-session:
-    "/compat/LaunchGNOME": true
     "/general/LockCommand": slock
     "/general/PromptOnLogout": false
   xfce4-desktop:
