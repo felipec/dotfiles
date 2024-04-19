@@ -76,8 +76,8 @@ settings:
     "/Default/KeyRepeat/Rate": 50
   xsettings:
     "/Net/ThemeName": Arc-Darker
-    "/Net/IconThemeName": Arc-X-D
-    "/Xft/DPI": 108
+    "/Net/IconThemeName": Arc
+    "/Xft/DPI": -1
     "/Gtk/CursorThemeName": Vanilla-DMZ
     "/Net/CursorBlinkTime": 500
     "/Xft/HintStyle": hintnone
@@ -121,7 +121,6 @@ panels:
   - - separator
     - expand: true
       style: 0
-  - - windowmenu
   - - separator
     - style: 0
   - - pager
@@ -135,4 +134,5 @@ panels:
     - enable-keyboard-shortcuts: true
   - - power-manager-plugin
   - - notification-plugin
+  - - windowmenu
   - - hexclock
