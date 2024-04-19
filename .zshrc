@@ -46,14 +46,14 @@ hash -d c=~/contrib
 hash -d g=~d/git
 hash -d l=~d/linux
 hash -d ghg=~d/git-remote-hg
-hash -d b=~/backup
-hash -d o=~b/home
 
 hash -d mnt=/run/media/$USER
 hash -d srv=/srv/http
 
 hash -d shared=~mnt/shared
 hash -d data=~mnt/data
+hash -d b=~mnt/backup
+hash -d o=~b/home
 
 source /usr/share/fzf/key-bindings.zsh
 
