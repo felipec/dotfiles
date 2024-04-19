@@ -114,6 +114,7 @@ panels:
   size: 30
   plugins:
   - - whiskermenu
+    - button-icon: archlinux
   - - tasklist
     - flat-buttons: true
       grouping: 0
