@@ -1,4 +1,4 @@
-XDG_DOWNLOAD_DIR="$HOME/downloads"
+XDG_DOWNLOAD_DIR="$HOME/download"
 XDG_DOCUMENTS_DIR="$HOME/documents"
 XDG_PICTURES_DIR="$HOME/documents/pictures"
 XDG_DESKTOP_DIR="$HOME/"
