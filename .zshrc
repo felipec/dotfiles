@@ -32,6 +32,10 @@ bindkey "\e[6~" end-of-history
 bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
 
+# console
+bindkey "\e[1~" beginning-of-line
+bindkey "\e[4~" end-of-line
+
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' file-sort modification
 zstyle ':completion:*' menu select yes=long
