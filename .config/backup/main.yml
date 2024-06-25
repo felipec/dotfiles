@@ -1,6 +1,9 @@
 dest:
-  device: backup
+- device: backup
   dir: /main
+- device: data
+  dir: /backup_natae
+
 paths:
 - src: /home/felipec
   dest: /home

@@ -32,36 +32,34 @@ def rsync(src, dest, excludes: nil, sudo: false)
   end
 end
 
-def backup(src:, dest: src, excludes: nil)
+def backup(dest_path, src:, dest: src, excludes: nil)
   if $stdout.isatty
     puts "\e[1;34mBacking up '#{src}'\e[0m\033[K\n"
   else
     puts "Backing up '#{src}'"
   end
 
-  rsync(src, $dest_path + dest, excludes: excludes, sudo: true)
-end
-
-def load_dest(dir:, device: nil)
-  if device
-    dev_path = File.join('/run/media/', ENV['USER'], device)
-    path = File.join(dev_path, dir)
-
-    system(*%w[udisksctl mount -b], '/dev/disk/by-label/' + device, exception: true) unless File.exists?(dev_path)
-    raise unless File.exists?(dev_path)
-  else
-    path = dir
-  end
-
-  FileUtils.mkdir_p(path) unless File.directory?(path)
-  path
+  rsync(src, dest_path + dest, excludes: excludes, sudo: true)
 end
 
 profile = ARGV.first || 'main'
-config = File.join(ENV['HOME'], '.config', 'backup', profile + '.yml')
+config = Dir.home + "/.config/backup/#{profile}.yml"
+$data = YAML.load_file(config, symbolize_names: true)
 
-$data = YAML.load(File.read(config), symbolize_names: true)
-$dest_path = load_dest(**$data[:dest])
 $data[:paths].each do |path|
-  backup(**path)
+  $data[:dest].each do |dest|
+    if dest[:device]
+      dev_path = '/dev/disk/by-label/' + dest[:device]
+      next unless File.exist?(dev_path)
+      dest_path = '/run/media/%s/%s' % [ENV['USER'], dest[:device]]
+      system(*%w[udisksctl mount -b], dev_path, exception: true) unless File.exists?(dest_path)
+      dest_path += dest[:dir] if dest[:dir]
+    else
+      dest_path = dest[:dir]
+    end
+
+    FileUtils.mkdir_p(dest_path) unless File.directory?(dest_path)
+
+    backup(dest_path, **path)
+  end
 end
