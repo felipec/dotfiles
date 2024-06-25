@@ -1,5 +1,5 @@
 merge_cmd () {
-	$VISUAL --nofork -c "set hidden diffopt-=hiddenoff diffopt-=closeoff | only" -d \
+	$VISUAL -c "set hidden diffopt-=hiddenoff diffopt-=closeoff | only" -d \
 		"$MERGED" "$BASE" "$LOCAL" "$REMOTE"
 }
 
