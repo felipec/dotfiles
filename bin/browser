@@ -1,3 +1,3 @@
 #!/bin/sh
 
-$BROWSER
+exec $BROWSER
