@@ -22,7 +22,7 @@ def rsync(src, dest, excludes: nil, sudo: false)
     pipe.each do |e|
       file, op = e.chomp.split("\t")
       next if file.end_with?('/')
-      if $stdout.isatty
+      if $stdout.isatty and !$dry_run
         print "\e[2K\e[u"
         print "%s %.100s\e[K\r" % [$ops[op], file]
       else

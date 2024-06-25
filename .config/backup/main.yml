@@ -1,14 +1,16 @@
 dest:
 - device: backup
-  dir: /main
 - device: data
-  dir: /backup_natae
+  dir: /backup_2
 
 paths:
 - src: /home/felipec
-  dest: /home
+  dest: /home/0
   excludes: |
     /tmp/
+    /dev/
+    /contrib/
+    /download/
 
     /.cache/
     /.ccache/
@@ -26,6 +28,8 @@ paths:
 
     /.zcompdump
     /.local/share/gvfs-metadata
+
+    /.vim/pack
 
     # Steam
     /.steam/
@@ -46,6 +50,7 @@ paths:
     /.config/octave/
     /.config/GIMP/
     /.config/calibre/
+    /.thunderbird/
     /.wine/
 
     # Extra
@@ -57,8 +62,17 @@ paths:
     /.npm-packages/
     /.cargo/
     /.bundle/cache/
-    /R/
+    /.local/lib/r/
 
-- src: /root
-- src: /etc
-- src: /srv
+    # Xfce
+    /.config/xfce4/
+
+    # KDE
+    /.local/share/
+
+    # tmp
+    /.config/Element/
+    /rovi
+
+- src: /home/felipec/download
+  dest: /download/0
