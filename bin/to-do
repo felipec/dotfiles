@@ -1,6 +1,17 @@
-#!/bin/sh
+#!/usr/bin/env ruby
 
-xdg-open 'file:///home/felipec/documents/to-do.txt'
-xdg-open 'file:///home/felipec/documents/to-do/'
-xdg-open 'https://mail.google.com/'
-xdg-open 'https://github.com/felipec?tab=repositories&q=&type=&language=&sort=stargazers'
+$mark = (ENV['XDG_STATE_HOME'] || ENV['HOME'] + '/.local/state') + '/to-do.mark'
+$new = true
+
+if File.exist?($mark)
+  $new = Time.now - File.mtime($mark) > 60 * 60 * 24
+end
+
+exit unless $new
+
+system('xdg-open', 'file:///home/felipec/documents/to-do.txt')
+system('xdg-open', 'file:///home/felipec/documents/to-do/')
+system('xdg-open', 'https://mail.google.com/')
+system('xdg-open', 'https://github.com/felipec?tab=repositories&sort=stargazers')
+
+File.write($mark, '')
