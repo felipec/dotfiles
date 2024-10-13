@@ -12,6 +12,8 @@ else
 
 	f=~/documents/videos/record-"$(date +'%FT%R')".mp4
 
-	exec ffmpeg -f x11grab -thread_queue_size 1024 -i "$DISPLAY" \
+	exec ffmpeg \
+		-f x11grab -thread_queue_size 1024 -video_size "1920x1080" -i "$DISPLAY" \
+		-vf "scale=1280:720" \
 		-c:v h264_nvenc -preset medium -c:a aac -y "$f"
 fi
