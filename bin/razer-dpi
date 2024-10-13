@@ -1,13 +1,13 @@
 #!/usr/bin/env ruby
 
 $dir = '/sys/bus/hid/devices'
-$dpi = ARGV.first&.to_i || 4500
+$dpi = ARGV.first&.to_i || 3200
 
 Dir.children($dir).each do |e|
   dir = File.join($dir, e)
-  next unless File.exists?("#{dir}/driver")
+  next unless File.exist?("#{dir}/driver")
   next if File.basename(File.readlink("#{dir}/driver")) != 'razermouse'
-  next unless File.exists?("#{dir}/dpi")
+  next unless File.exist?("#{dir}/dpi")
   current = File.read("#{dir}/dpi").chomp
   File.write("#{dir}/dpi", [$dpi].pack('S>'))
   puts "#{current} -> #{$dpi}:#{$dpi}"
