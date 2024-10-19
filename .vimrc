@@ -32,3 +32,6 @@ set listchars+=eol:↲,extends:❯,precedes:❮
 
 runtime lightline_config.vim
 runtime syntax_groups.vim
+
+let g:ale_linters = { 'c': ['gcc'], 'asm': ['nasm'] }
+let g:ale_c_parse_makefile = 1
