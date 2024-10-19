@@ -52,7 +52,7 @@ $data[:paths].each do |path|
       dev_path = '/dev/disk/by-label/' + dest[:device]
       next unless File.exist?(dev_path)
       dest_path = '/run/media/%s/%s' % [ENV['USER'], dest[:device]]
-      system(*%w[udisksctl mount -b], dev_path, exception: true) unless File.exists?(dest_path)
+      system(*%w[udisksctl mount -b], dev_path, exception: true) unless File.exist?(dest_path)
       dest_path += dest[:dir] if dest[:dir]
     else
       dest_path = dest[:dir]
