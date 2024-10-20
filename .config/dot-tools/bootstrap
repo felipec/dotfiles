@@ -2,34 +2,10 @@
 
 dot-checkout
 
-if [[ -e ~/.config/profile ]]; then
-	source ~/.config/profile
-else
-	echo -n "Which editor do you prefer? (e.g. nano, vim, emacs): "
-	read EDITOR
-	[[ -z "$EDITOR" ]] && EDITOR='vim'
-	export EDITOR
-	[[ "$EDITOR" == 'vim' ]] && VISUAL='vim'
-	cat <<-EOF > ~/.config/profile
-	export EDITOR='$EDITOR'
-	export VISUAL='$VISUAL'
-	EOF
-fi
-
-if ! git config user.email > /dev/null; then
-	echo "Git configuration"
-	echo -n "What's your name? (e.g. John Doe): "
-	read NAME
-	git config --file ~/.gitconfig user.name "$NAME"
-	echo -n "What's your email? (e.g. john@doe.com): "
-	read EMAIL
-	git config --file ~/.gitconfig user.email "$EMAIL"
-fi
+source ~/.config/profile
 
 if command -v xfconf-load > /dev/null; then
-	echo -n "Do you want to load the Xfce configuration? (y/N): "
-	read load
-	[[ "$load" == 'y' ]] && xfconf-load ~/.config/xfconf-helper/config.yml
+	xfconf-load ~/.config/xfconf-helper/config.yml
 fi
 
 mkdir -p ~/{download,documents/{,pictures}}
