@@ -66,6 +66,7 @@ settings:
   xfce4-session:
     "/general/LockCommand": slock
     "/general/PromptOnLogout": false
+    "/shutdown/LockScreen": false
   xfce4-desktop:
     "/desktop-icons/style": 0
     "/backdrop/screen0/monitoreDP/workspace0/last-image": "/usr/share/backgrounds/archlinux/simple.png"
@@ -80,9 +81,9 @@ settings:
     "/Xft/DPI": -1
     "/Gtk/CursorThemeName": Vanilla-DMZ
     "/Net/CursorBlinkTime": 500
-    "/Xft/HintStyle": hintnone
     "/Xft/Hinting": 0
     "/Xft/RGBA": rgb
+    "/Xft/Antialias": 1
   xfce4-power-manager:
     "/xfce4-power-manager/show-panel-label": 0
     "/xfce4-power-manager/sleep-button-action": !uint 1
@@ -95,16 +96,15 @@ settings:
     "/xfce4-power-manager/lid-action-on-ac": !uint 1
     "/xfce4-power-manager/lid-action-on-battery": !uint 1
     "/xfce4-power-manager/dpms-enabled": false
-    "/xfce4-power-manager/general-notification": false
     "/xfce4-power-manager/logind-handle-hibernate-key": false
     "/xfce4-power-manager/logind-handle-lid-switch": false
     "/xfce4-power-manager/logind-handle-power-key": false
     "/xfce4-power-manager/logind-handle-suspend-key": false
-    "/xfce4-power-manager/handle-brightness-keys": true
-    "/xfce4-power-manager/brightness-switch-restore-on-exit": 0
     "/xfce4-power-manager/lock-screen-suspend-hibernate": false
   pointers:
     "/Razer_Razer_DeathAdder_Elite/Acceleration": 0.0
+  xfce4-screensaver:
+    "/lock/sleep-activation": false
 panels:
 - icon-size: 16
   length: 100
@@ -114,7 +114,7 @@ panels:
   size: 30
   plugins:
   - - whiskermenu
-    - button-icon: archlinux
+    - button-icon: archlinux-logo
   - - tasklist
     - flat-buttons: true
       grouping: 0
