@@ -50,10 +50,11 @@ hash -d ghg=~d/git-remote-hg
 hash -d mnt=/run/media/$USER
 hash -d srv=/srv/http
 
-hash -d shared=~mnt/shared
-hash -d data=~mnt/data
 hash -d b=~mnt/backup
 hash -d o=~b/home
+
+hash -d shared=~mnt/shared
+hash -d data=~mnt/data
 
 source /usr/share/fzf/key-bindings.zsh
 

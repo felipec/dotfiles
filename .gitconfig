@@ -51,7 +51,7 @@
 [format]
 	coverletter = auto
 [receive]
-	denyCurrentBranch = warn
+	denycurrentbranch = warn
 [notes]
 	rewriteref = refs/notes/*
 [integration]
