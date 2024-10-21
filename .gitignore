@@ -28,7 +28,7 @@
 /.viminfo
 
 /.ssh/known_hosts
-/.ssh/*_rsa*
+/.ssh/id_ed25519*
 /.pki/
 /.gnupg/
 /.password-store/
