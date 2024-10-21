@@ -67,12 +67,5 @@ paths:
     # Xfce
     /.config/xfce4/
 
-    # KDE
-    /.local/share/
-
-    # tmp
-    /.config/Element/
-    /rovi
-
 - src: /home/felipec/download
   dest: /download/0
