@@ -22,7 +22,7 @@
 /.node_repl_history
 /.irb_history
 /.python_history
-/.mysql_history
+/.mariadb_history
 
 /.zcompdump
 /.viminfo
@@ -34,7 +34,6 @@
 /.password-store/
 
 /.npm/
-/.cargo/
 
 /.debug/
 
