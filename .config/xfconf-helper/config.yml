@@ -37,8 +37,7 @@ shortcuts:
 settings:
   xfwm4:
     "/general/easy_click": Super
-    "/general/cycle_tabwin_mode": 0
-    "/general/cycle_preview": false
+    "/general/cycle_tabwin_mode": 1
     "/general/workspace_count": 8
     "/general/theme": Arc-Darker
     "/general/titleless_maximize": true
@@ -100,8 +99,6 @@ settings:
     "/xfce4-power-manager/logind-handle-power-key": false
     "/xfce4-power-manager/logind-handle-suspend-key": false
     "/xfce4-power-manager/lock-screen-suspend-hibernate": false
-  pointers:
-    "/Razer_Razer_DeathAdder_Elite/Acceleration": 0.0
   xfce4-screensaver:
     "/lock/sleep-activation": false
 panels:
@@ -117,12 +114,11 @@ panels:
   - - tasklist
     - flat-buttons: true
       grouping: 0
+      include-all-monitors: false
       sort-order: 0
   - - separator
     - expand: true
       style: 0
-  - - separator
-    - style: 0
   - - pager
     - rows: 2
   - - separator
