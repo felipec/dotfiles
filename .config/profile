@@ -16,3 +16,6 @@ export NO_SVN_TESTS=1 TEST_OUTPUT_DIRECTORY=/tmp/tests
 
 # workaround git's complex vimdiff
 export MERGE_TOOLS_DIR=~/.local/share/git/mergetools
+
+# sharness temp output
+export SHARNESS_TEST_OUTDIR=/tmp/tests
