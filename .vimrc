@@ -35,3 +35,4 @@ runtime syntax_groups.vim
 
 let g:ale_linters = { 'c': ['gcc'], 'asm': ['nasm'] }
 let g:ale_c_parse_makefile = 1
+let g:ale_html_tidy_options = '-q -e -config ~/.config/tidy.conf'
