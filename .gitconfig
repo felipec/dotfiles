@@ -56,3 +56,5 @@
 	rewriteref = refs/notes/*
 [integration]
 	autocontinue = true
+[advice]
+	detachedhead = false
