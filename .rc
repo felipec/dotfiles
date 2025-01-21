@@ -8,7 +8,7 @@ alias g='git'
 alias ls='ls --color=auto -hv'
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'
-alias ip='ip -color=auto'
+alias ip='ip -c=auto'
 
 alias l='ls -tc'
 alias ll='ls -l'
