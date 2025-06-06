@@ -10,11 +10,12 @@ else
 
 	notify-send --urgency=low --icon=media-record --wait 'Start the recording'
 
-	f=~/documents/videos/record-"$(date +'%FT%R')".mp4
+	f=~/documents/videos/record-"$(date +'%FT%R')".mkv
 
 	exec ffmpeg \
-		-f x11grab -thread_queue_size 1024 -video_size "1920x1080" -i "$DISPLAY" \
+		-f x11grab -thread_queue_size 1024 -i "$DISPLAY" \
 		-f pulse -i default \
-		-vf "scale=1280:720" \
-		-c:v h264_nvenc -preset medium -c:a aac -y "$f"
+		-c:v hevc_nvenc -qp 20 \
+		-c:a aac \
+		-y "$f"
 fi
