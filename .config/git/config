@@ -15,8 +15,8 @@
 	undo = reset --hard @{1}
 	fast-forward = merge --ff-only
 
-	l = log --oneline --decorate --boundary
-	lg = l --graph
+	l = log --oneline --decorate
+	lg = l --graph --boundary
 [init]
 	defaultbranch = master # silence bullshit message
 [merge]
