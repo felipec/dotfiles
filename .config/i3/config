@@ -5,6 +5,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 bindsym $mod+Return exec kitty
+bindsym $mod+r exec --no-startup-id rlaunch
 
 bindsym $mod+Shift+q kill
 
