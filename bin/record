@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'dbus'
+
 PID_FILE = File.join(Dir.home, '.cache/record-pid')
 
 if File.exist?(PID_FILE)
@@ -14,7 +16,26 @@ if File.exist?(PID_FILE)
   end
 end
 
-File.write(PID_FILE, Process.pid.to_s)
+bus = DBus.session_bus
+
+class StatusNotifierItem < DBus::Object
+  dbus_interface 'org.freedesktop.DBus.Properties' do
+    dbus_method :GetAll, 'in s, out a{sv}' do |iface|
+      return [{}] unless iface == 'org.kde.StatusNotifierItem'
+      [{
+        'Id' => 'recording',
+        'IconName' => 'media-record',
+      }]
+    end
+  end
+end
+
+bus.object_server.export(StatusNotifierItem.new('/StatusNotifierItem'))
+
+watcher = bus.service('org.kde.StatusNotifierWatcher')
+watcher.object('/StatusNotifierWatcher')
+       .tap { |o| o['org.kde.StatusNotifierWatcher']
+       .RegisterStatusNotifierItem('/StatusNotifierItem') }
 
 f = File.join(Dir.home, 'documents/videos/record-%s.mkv' % Time.now.strftime('%FT%R'))
 display = ENV.fetch('DISPLAY')
@@ -28,4 +49,17 @@ cmd = %W[
   -y #{f}
 ]
 
-exec(*cmd)
+pid = spawn(*cmd)
+File.write(PID_FILE, pid.to_s)
+
+at_exit do
+  File.delete(PID_FILE) rescue nil
+end
+
+dbus_thread = Thread.new do
+  DBus::Main.new.tap { |m| m << bus }.run
+end
+
+Process.wait(pid)
+
+Thread.kill(dbus_thread)
