@@ -1,21 +1,31 @@
-#!/bin/bash
+#!/usr/bin/env ruby
 
-if [[ -e ~/.cache/record-pid ]]; then
-	kill -15 "$(cat ~/.cache/record-pid)"
-	rm -f ~/.cache/record-pid
+PID_FILE = File.join(Dir.home, '.cache/record-pid')
 
-	notify-send --urgency=low --icon=media-playback-stop 'Stop the recording'
-else
-	echo $$ > ~/.cache/record-pid
+if File.exist?(PID_FILE)
+  pid = File.read(PID_FILE).to_i
+  begin
+    Process.kill('TERM', pid)
+    exit 0
+  rescue Errno::ESRCH
+    exit 1
+  ensure
+    File.delete(PID_FILE) rescue nil
+  end
+end
 
-	notify-send --urgency=low --icon=media-record --wait 'Start the recording'
+File.write(PID_FILE, Process.pid.to_s)
 
-	f=~/documents/videos/record-"$(date +'%FT%R')".mkv
+f = File.join(Dir.home, 'documents/videos/record-%s.mkv' % Time.now.strftime('%FT%R'))
+display = ENV.fetch('DISPLAY')
 
-	exec ffmpeg \
-		-f x11grab -thread_queue_size 1024 -i "$DISPLAY" \
-		-f pulse -i default \
-		-c:v hevc_nvenc -qp 20 \
-		-c:a aac \
-		-y "$f"
-fi
+cmd = %W[
+  ffmpeg
+  -f x11grab -thread_queue_size 1024 -i #{display}
+  -f pulse -i default
+  -c:v hevc_nvenc -qp 20
+  -c:a aac
+  -y #{f}
+]
+
+exec(*cmd)
