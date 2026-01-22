@@ -2,10 +2,16 @@
 
 [[ $# -gt 2 || $2 == -* ]] && exec git "$@"
 
+check() {
+	# XXX git isn't quiet
+	git rev-parse --verify --quiet "$1" > /dev/null 2>&1
+}
+
 cmd=$1
 branch=${2:-@}
-u="${branch}@{u}"
 
-# XXX git isn't quiet
-git rev-parse --verify --quiet "$u" > /dev/null 2>&1 || u=master
+check "${branch}@{u}" && u="${branch}@{u}" ||
+check "${branch}@{p}" && u="${branch}@{p}" ||
+u="master"
+
 exec git "$cmd" "${u}..${branch}"
