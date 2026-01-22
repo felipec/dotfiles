@@ -22,8 +22,8 @@ end
 
 exit if $packages.empty?
 
-uri = URI('https://aur.archlinux.org/rpc/')
-uri.query = URI.encode_www_form(v: 5, type: 'info', 'arg[]' => $packages.keys)
+uri = URI('https://aur.archlinux.org/rpc/v5/info')
+uri.query = URI.encode_www_form('arg[]' => $packages.keys)
 
 data = JSON.parse(Net::HTTP.get(uri), symbolize_names: true)
 
