@@ -4,9 +4,7 @@ UPATH="$HOME/bin"
 UPATH="$UPATH:$HOME/.local/bin"
 UPATH="$UPATH:/usr/lib/ccache/bin"
 
-# Bundle doesn't know where to install gems otherwise
-export GEM_HOME=${GEM_HOME:-$(ruby -e 'puts Gem.user_dir')}
-UPATH="$UPATH:$GEM_HOME/bin"
+UPATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$UPATH"
 
 export PATH="$UPATH:$PATH"
 
