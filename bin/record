@@ -43,9 +43,9 @@ display = ENV.fetch('DISPLAY')
 cmd = %W[
   ffmpeg
   -f x11grab -thread_queue_size 1024 -i #{display}
-  -f pulse -i default
-  -c:v hevc_nvenc -qp 20
-  -c:a aac
+  -f pulse -thread_queue_size 1024 -i default
+  -c:v hevc_nvenc -qp 20 -preset p5 -tune ll -pix_fmt yuv420p
+  -c:a aac -b:a 160k
   -y #{f}
 ]
 
