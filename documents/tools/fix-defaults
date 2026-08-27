@@ -15,6 +15,9 @@ apps = ARGV unless ARGV.empty?
 
 $types = Hash.new { |h,k| h[k] = Array.new }
 
+# clear values
+# $defaults.each_key { |k| $defaults[k] = nil }
+
 apps.each do |app|
   file = $dirs.map { "#{it}/applications/#{app}.desktop" }.find { File.exist?(it) }
   unless file
