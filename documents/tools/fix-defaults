@@ -35,7 +35,7 @@ apps.each do |app|
   end
 end
 
-$types.each do |type, apps|
+$types.sort.each do |type, apps|
   $defaults[type] = apps.join(';')
 end
 
